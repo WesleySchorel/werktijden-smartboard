@@ -9,13 +9,13 @@ Het smartboard met unieke widgets voor werktijden.nl
 * Bronnen
 
 ## ℹ️ Beschrijving
-A small website that shows you awesome statistics from YouTube.
+Het smartboard met unieke widgets voor werktijden.nl
 
 ## 🖥️ Gebruik
 N/A
 
 ## ✨ Kenmerken
-The techniques used in this project are HTML, CSS and JS
+De volgende technieken worden gebruikt in dit project:  HTML, CSS, JS, SVELTE
 
 ## 📥 Installatie
 N/A
