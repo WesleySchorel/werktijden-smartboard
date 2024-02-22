@@ -5,3 +5,9 @@
 </script>
 
 <iframe src="{$page.url.origin}/widgets/{widgetPath}" title="actualiteitbanner widget" frameborder="0"></iframe>
+
+<style>
+    iframe {
+        height: 50vh;
+    }
+</style>
