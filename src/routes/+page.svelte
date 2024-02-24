@@ -1,8 +1,8 @@
 <script>
-	import { Weer1, Analogeklok1 } from '$lib/index.js';
+	import { QRcode, Koppelcode } from '$lib/index.js';
 </script>
 
-<h1>Werktijden.nl</h1>
+<h1>Homepage</h1>
 
-<Weer1 />
-<Analogeklok1 />
+<QRcode />
+<Koppelcode />
