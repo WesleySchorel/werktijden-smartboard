@@ -10,5 +10,3 @@
 
 <Weer1 />
 <Analogeklok1 />
-
-<ul></ul>
