@@ -22,10 +22,9 @@ app.post("/pusher/auth", (req, res) => {
   const channel = req.body.channel_name;
   // This authenticates every user. Don't do this in production!
   const authResponse = pusher.authorizeChannel(socketId, channel);
+  // console.log(socketId)
   res.send(authResponse);
 });
-
-pusher.trigger("private-channel", "my-event", { message: "hoooi" });
 
 const port = process.env.PORT || 3000;
 app.listen(port);

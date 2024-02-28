@@ -1,1 +1,4 @@
-<p>koppelcode</p>
+<script>
+    export let koppelcode
+</script>
+<p>{koppelcode}</p>
