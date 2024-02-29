@@ -32,12 +32,14 @@
 	<div class="banner">
 		<div class="banner-content">
 			{#each items as item}
-				<h2>{item.title}</h2>●
+				<h2>{item.title}</h2>
+				●
 			{/each}
 		</div>
 		<div class="banner-content">
 			{#each items as item}
-				<h2>{item.title}</h2>●
+				<h2>{item.title}</h2>
+				●
 			{/each}
 		</div>
 	</div>
@@ -94,23 +96,17 @@
 		}
 	}
 
-	/* .nieuws-container {
-  display: flex;
-  flex-wrap: nowrap;
-  animation: marquee 30s linear infinite; 
-}
+	@media only screen and (max-width: 767px) {
+		h1, h2 {
+			font-size: 1rem;
+		}
 
-.nieuws-item {
-  margin-right: 1.5rem;
-  white-space: nowrap;
-}
+		.banner {
+			padding: 0.75rem;
+		}
 
-@keyframes marquee {
-  0% {
-    transform: translateX(25%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-} */
+		.banner-content {
+			gap: 1rem;
+		}
+	}
 </style>
