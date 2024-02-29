@@ -5,8 +5,8 @@
 	import { pusher } from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
-
 	const channel = pusher.subscribe(`private-${dashboardKoppelcode}`);
+
 	function verstuur() {
 		channel.trigger('client-setting-change', {
 			message: 'a client changed a setting on this channel'

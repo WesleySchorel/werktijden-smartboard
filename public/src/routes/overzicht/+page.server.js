@@ -7,7 +7,7 @@ export const load = async () => {
 export const actions = {
 	koppel: async ({ request }) => {
 		const formData = await request.formData();
-		const koppelcode = formData.get('koppelcode');
+		const koppelcode = formData.get('koppelcode').replace(/\s/g, '');
 		koppelcodes.push(koppelcode);
 		return {
 			koppelcode,

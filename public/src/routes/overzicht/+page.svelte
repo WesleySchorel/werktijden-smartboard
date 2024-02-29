@@ -1,8 +1,11 @@
 <script>
 	import { enhance } from '$app/forms';
+	import { goto } from '$app/navigation';
 
 	export let data;
 	export let form;
+
+	$: if (form?.koppel) goto(`/overzicht/${form?.koppelcode}`);
 </script>
 
 <h1>Overzicht van dashboards</h1>
