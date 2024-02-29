@@ -6,11 +6,11 @@
 
 	const { dashboardKoppelcode } = $page.params;
 
-	console.log(dashboardKoppelcode);
-
 	const channel = pusher.subscribe(`private-${dashboardKoppelcode}`);
 	function verstuur() {
-		channel.trigger('client-setting-change', { message: 'a client changed a setting on this channel' });
+		channel.trigger('client-setting-change', {
+			message: 'a client changed a setting on this channel'
+		});
 	}
 
 	onMount(() => {

@@ -25,8 +25,45 @@
 	<button>Koppel met dashboard</button>
 </form>
 
-{#if form?.success}
-	<p>gekoppeld!</p>
+{#if form?.koppel}
+	<div class="notification">{form?.koppelcode} is succesvol gekoppeld!</div>
+{/if}
+
+{#if form?.ontkoppel}
+	<div class="notification">{form?.koppelcode} is succesvol ontkoppeld!</div>
 {/if}
 
 <a href="/">home</a>
+
+<style>
+	.notification {
+		position: fixed;
+		bottom: 1rem;
+		right: 1rem;
+		padding: 0.5rem;
+		background-color: rgba(0, 188, 0, 0.15);
+		border: 1px solid rgb(0, 188, 0);
+		border-radius: 3px;
+		width: fit-content;
+		animation: 5s show forwards;
+	}
+
+	@keyframes show {
+		from {
+			transform: translateX(50vw);
+			display: block;
+		}
+		10% {
+			transform: translateX(0);
+			display: block;
+		}
+		80% {
+			transform: translateX(0);
+			display: block;
+		}
+		to {
+			transform: translateX(50vw);
+			display: none;
+		}
+	}
+</style>
