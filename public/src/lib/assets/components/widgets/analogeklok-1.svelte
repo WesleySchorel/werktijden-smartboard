@@ -1,7 +1,18 @@
 <script>
 	import { page } from '$app/stores';
+	import { sizes } from '$lib/index.js';
 
-	const widgetPath = 'analogeklok-1';
+	export let size;
+	export let path;
+	export let title;
+
+	const sizeInPx = sizes.find(({ reference }) => reference === size);
 </script>
 
-<iframe src="{$page.url.origin}/widgets/{widgetPath}" title="analoge klok 1 widget" frameborder="0"></iframe>
+<iframe
+	width={sizeInPx.x}
+	height={sizeInPx.y}
+	src="{$page.url.origin}/widgets/{path}"
+	{title}
+	frameborder="1"
+></iframe>
