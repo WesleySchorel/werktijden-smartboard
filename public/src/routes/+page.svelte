@@ -12,10 +12,19 @@
 		channel.bind('client-setting-change', function (data) {
 			alert(JSON.stringify(data));
 		});
-		channel.bind('client-join', function () {
+		channel.bind('client-join', async function () {
+			const img = document.querySelector('#check');
+			img.classList.add('connected');
+			console.log(img);
+			// changeRoute();
+			await delay(1500);
 			goto(`/${generatedKoppelcode.replace(/\s/g, '')}`);
 		});
 	});
+
+	async function changeRoute() {
+	}
+	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 </script>
 
 <div>
@@ -43,7 +52,18 @@
 		max-width: 85rem;
 		margin-inline: auto;
 		margin-top: 6rem;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			Roboto,
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			'Open Sans',
+			'Helvetica Neue',
+			sans-serif;
 		font-weight: 500;
 	}
 	.intro {
@@ -80,7 +100,8 @@
 			margin-top: 3.5rem;
 			align-items: normal;
 		}
-		.intro, p {
+		.intro,
+		p {
 			display: flex;
 			align-items: start;
 		}

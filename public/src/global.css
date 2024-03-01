@@ -1,0 +1,13 @@
+.connected {
+    display: block !important;
+    animation: connected 1s forwards;
+}
+
+@keyframes connected {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}

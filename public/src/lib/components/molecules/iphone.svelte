@@ -7,10 +7,8 @@
 
 <div>
 	<img src={iphone} alt="" />
-	<div>
-		<QRcode />
-		<Koppelcode {koppelcode} />
-	</div>
+	<QRcode />
+	<Koppelcode {koppelcode} />
 </div>
 
 <style>
@@ -23,9 +21,6 @@
 		width: 20rem;
 		height: 36rem;
 	}
-    div > div {
-        margin-bottom: 2.2rem;
-    }
 	img {
 		position: absolute;
 		top: 0;

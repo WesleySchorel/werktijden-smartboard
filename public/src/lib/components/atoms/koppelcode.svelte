@@ -13,6 +13,8 @@
         flex-direction: column;
         align-items: center;
         gap: .5rem;
+        margin-bottom: 2rem;
+        z-index: 0;
     }
     h3, p {
         margin: 0;
