@@ -6,8 +6,8 @@
 
 <style>
     p {
-        color: gray;
-        font-size: 1.5rem;
-        margin: 0 0 .5rem 0;
+        color: #696969;
+        font-size: 1.3rem;
+        margin: 0 0 .2rem 0;
     }
 </style>

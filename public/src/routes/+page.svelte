@@ -40,31 +40,35 @@
 	div {
 		display: flex;
 		justify-content: space-between;
-		max-width: 80rem;
+		max-width: 85rem;
 		margin-inline: auto;
-		margin-top: 4rem;
+		margin-top: 6rem;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-weight: 500;
 	}
 	.intro {
 		margin-top: 5rem;
 		max-width: 30rem;
+		color: #202020;
 	}
 	h1 {
 		margin: 0 0 1rem 0;
-		font-size: 3.2rem;
+		font-size: clamp(3.1rem, 13vw, 3.5rem);
+		line-height: 110%;
 	}
 	p {
 		margin: 0 0 2.5rem 0;
-		font-size: 1.3rem;
+		font-size: 1.4rem;
 	}
 
-	@media screen and (max-width: 1170px) {
+	@media screen and (max-width: 1221px) {
 		div {
 			align-items: center;
 			flex-direction: column;
 			max-width: none;
-			gap: 7rem;
+			gap: 4rem;
 		}
-		div * {
+		div *:not(h1, p) {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
@@ -73,8 +77,12 @@
 	}
 	@media screen and (max-width: 720px) {
 		div {
-			margin: 1rem;
+			margin-top: 3.5rem;
 			align-items: normal;
+		}
+		.intro, p {
+			display: flex;
+			align-items: start;
 		}
 		div * {
 			align-items: start;

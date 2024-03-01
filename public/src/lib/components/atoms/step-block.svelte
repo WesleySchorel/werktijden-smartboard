@@ -8,11 +8,11 @@
 	div {
 		display: grid;
 		place-items: center;
-		background-color: rgba(0, 128, 0, 0.15);
-		color: green;
-		height: 3.5rem;
-		width: 3.5rem;
-		font-size: 2rem;
-		border-radius: 7px;
+		background-color: #00ac5f11;
+		color: #00AC5F;
+		height: 3rem;
+		width: 3rem;
+		font-size: 1.8rem;
+		border-radius: 8px;
 	}
 </style>

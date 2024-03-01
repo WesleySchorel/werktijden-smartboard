@@ -12,7 +12,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: .5rem;
     }
     h3, p {
         margin: 0;
@@ -21,9 +21,9 @@
         font-size: 1.3rem;
     }
     p {
-        border: 2px solid black;
-        border-radius: 3px;
-        padding: .4rem 1rem;
+        border: 1px solid black;
+        border-radius: 4px;
+        padding: .3rem 1rem;
         font-size: 2rem;
     }
 </style>

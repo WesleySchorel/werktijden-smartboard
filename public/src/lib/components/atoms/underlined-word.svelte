@@ -8,11 +8,12 @@
 
 <style>
 	span {
-		display: flex;
+		display: inline-flex;
 		flex-direction: column;
 		width: fit-content;
 	}
 	span img {
 		width: fit-content;
+		z-index: -1;
 	}
 </style>

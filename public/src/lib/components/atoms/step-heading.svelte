@@ -6,7 +6,8 @@
 
 <style>
     h2 {
-        font-size: 2.2rem;
-        margin: .5rem 0;
+        font-size: 1.5rem;
+        margin: 0;
+        color: #202020;
     }
 </style>

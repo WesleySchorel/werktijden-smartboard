@@ -21,10 +21,10 @@
 		justify-content: end;
 		position: relative;
 		width: 20rem;
-		height: 40rem;
+		height: 36rem;
 	}
     div > div {
-        margin-bottom: 2rem;
+        margin-bottom: 2.2rem;
     }
 	img {
 		position: absolute;

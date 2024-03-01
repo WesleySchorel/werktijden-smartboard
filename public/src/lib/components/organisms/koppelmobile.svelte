@@ -27,10 +27,14 @@
 	.steps {
 		display: flex;
 		flex-direction: column;
-		gap: 3rem;
-        padding: 1rem 0;
+		justify-content: space-between;
+        padding: 2rem 0 4rem 0;
 	}
     @media screen and (max-width: 720px) {
+		.steps {
+			padding: 0;
+			gap: 3rem;
+		}
 		.demo {
             flex-direction: column-reverse;
             margin-inline: auto;
