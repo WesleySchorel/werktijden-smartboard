@@ -1,9 +1,10 @@
 <script>
 	import check from '$lib/assets/check.svg';
+	import placeholderqrcode from '$lib/assets/placeholder_qr-code.svg';
 </script>
 
 <div>
-	<p>qr-code</p>
+	<img id="qr-code" src={placeholderqrcode} alt="" />
 	<img id="check" src={check} alt="" />
 </div>
 
@@ -14,10 +15,7 @@
 		position: relative;
 		margin: auto 0;
 	}
-	p {
-		margin: auto;
-	}
-	img {
+	#check {
 		display: none;
 		position: absolute;
 	}

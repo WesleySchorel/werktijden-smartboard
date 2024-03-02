@@ -13,19 +13,19 @@
         flex-direction: column;
         align-items: center;
         gap: .5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 2.5rem;
         z-index: 0;
     }
     h3, p {
         margin: 0;
     }
     h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     p {
-        border: 1px solid black;
+        border: 1px solid #202020;
         border-radius: 4px;
-        padding: .3rem 1rem;
-        font-size: 2rem;
+        padding: .3rem .8rem;
+        font-size: 1.7rem;
     }
 </style>

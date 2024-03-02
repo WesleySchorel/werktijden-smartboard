@@ -14,16 +14,14 @@
 		});
 		channel.bind('client-join', async function () {
 			const img = document.querySelector('#check');
+			const qrcode = document.querySelector('#qr-code')
 			img.classList.add('connected');
+			qrcode.classList.add('fadeout')
 			console.log(img);
-			// changeRoute();
 			await delay(1500);
 			goto(`/${generatedKoppelcode.replace(/\s/g, '')}`);
 		});
 	});
-
-	async function changeRoute() {
-	}
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 </script>
 
