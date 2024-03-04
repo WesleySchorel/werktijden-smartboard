@@ -13,7 +13,7 @@
 		<StepHeading {heading} />
 	</div>
 	<StepText {text} />
-	<img src={arrow} alt="" />
+	<img src={arrow} alt="" width="90" height="63" />
 </section>
 
 <style>

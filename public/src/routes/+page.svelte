@@ -14,9 +14,9 @@
 		});
 		channel.bind('client-join', async function () {
 			const img = document.querySelector('#check');
-			const qrcode = document.querySelector('#qr-code')
+			const qrcode = document.querySelector('#qr-code');
 			img.classList.add('connected');
-			qrcode.classList.add('fadeout')
+			qrcode.classList.add('fadeout');
 			console.log(img);
 			await delay(1500);
 			goto(`/${generatedKoppelcode.replace(/\s/g, '')}`);
@@ -24,6 +24,14 @@
 	});
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 </script>
+
+<svelte:head>
+	<title>LiveWidgets Werktijden</title>
+	<meta
+		name="description"
+		content="Uitleg over het LiveWidgets dashboard van Werktijden.nl"
+	/>
+</svelte:head>
 
 <div>
 	<section class="intro">

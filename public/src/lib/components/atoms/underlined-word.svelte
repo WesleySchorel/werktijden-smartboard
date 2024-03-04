@@ -4,7 +4,7 @@
 	export let content;
 </script>
 
-<span>{content}<img alt="" src={underline} /></span>
+<span>{content}<img alt="" src={underline} width="307" height="15" /></span>
 
 <style>
 	span {

@@ -4,7 +4,7 @@
 </script>
 
 <div>
-	<img id="qr-code" src={placeholderqrcode} alt="" />
+	<img id="qr-code" src={placeholderqrcode} alt="" width="170" height="170" />
 	<img id="check" src={check} alt="" />
 </div>
 

@@ -1,12 +1,12 @@
 <script>
-	import iphone from '$lib/assets/iphoneframe.png';
+	import iphone from '$lib/assets/iphoneframe.webp';
 	import { QRcode, Koppelcode } from '$lib/index.js';
 
 	export let koppelcode;
 </script>
 
 <div>
-	<img src={iphone} alt="" />
+	<img src={iphone} alt="" width="320" height="576" />
 	<QRcode />
 	<Koppelcode {koppelcode} />
 </div>

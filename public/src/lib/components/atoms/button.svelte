@@ -8,7 +8,7 @@
     button {
         all: unset;
         padding: .5rem 1rem;
-        background-color: #00AC5F;
+        background-color: #008649;
         color: white;
         border-radius: 4px;
         font-size: 1.1rem;
