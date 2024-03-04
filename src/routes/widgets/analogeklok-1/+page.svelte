@@ -1,1 +1,0 @@
-analoge klok 1
