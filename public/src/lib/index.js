@@ -14,6 +14,7 @@ export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.
 
 export { default as Weer1 } from '$lib/components/widgets/weer-1.svelte';
 export { default as Analogeklok1 } from '$lib/components/widgets/analogeklok-1.svelte';
+export { default as Actualiteitbanner } from '$lib/components/widgets/actualiteitbanner.svelte';
 
 import Pusher from 'pusher-js';
 
