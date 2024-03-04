@@ -1,10 +1,10 @@
 <script>
 	import check from '$lib/assets/check.svg';
-	import placeholderqrcode from '$lib/assets/placeholder_qr-code.svg';
+	import qrcode from '$lib/assets/qr-code.svg';
 </script>
 
 <div>
-	<img id="qr-code" src={placeholderqrcode} alt="" width="170" height="170" />
+	<img id="qr-code" src={qrcode} alt="" width="170" height="170" />
 	<img id="check" src={check} alt="" />
 </div>
 
