@@ -1,0 +1,26 @@
+.connected {
+    display: block !important;
+    animation: connected .5s forwards;
+}
+
+.fadeout {
+    animation: fadeout .5s forwards;
+}
+
+@keyframes connected {
+    from {
+        scale: 0;
+    }
+    to {
+        scale: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: .1;
+    }
+}
