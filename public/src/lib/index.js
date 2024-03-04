@@ -22,7 +22,7 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	channelAuthorization: {
 		// transport: 'jsonp',
-		endpoint: `http://localhost:3000/pusher/auth`
+		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
 	}
 });
 
