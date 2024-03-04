@@ -27,6 +27,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>LiveWidgets Werktijden</title>
+	<meta name="description" content="Actualiteits banner widget" />
+</svelte:head>
+
 <div id="rss-feed">
 	<h1>Nieuws</h1>
 	<div class="banner">
@@ -97,7 +102,8 @@
 	}
 
 	@media only screen and (max-width: 767px) {
-		h1, h2 {
+		h1,
+		h2 {
 			font-size: 1rem;
 		}
 
