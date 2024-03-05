@@ -5,7 +5,9 @@
 	export let data;
 	export let form;
 
-	$: if (form?.koppel) goto(`/overzicht/${form?.koppelcode}`);
+	$: if (form?.koppel) {
+		goto(`/overzicht/${form?.koppelcode}`);
+	}
 </script>
 
 <h1>Overzicht van dashboards</h1>

@@ -21,9 +21,6 @@ app.post("/pusher/auth", (req, res) => {
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
 
-  pusher.trigger(channel, "join", {
-    join: true,
-  });
   // This authenticates every user. Don't do this in production!
   const authResponse = pusher.authorizeChannel(socketId, channel);
   // console.log(socketId)
