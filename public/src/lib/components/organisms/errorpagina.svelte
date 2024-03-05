@@ -1,5 +1,5 @@
 <script>
-	import { UnderlinedWord, Button, Link } from '$lib/index.js';
+	import { Button, Link } from '$lib/index.js';
 </script>
 
 <div>

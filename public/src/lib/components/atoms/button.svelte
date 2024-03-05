@@ -6,7 +6,7 @@
 
 <style>
     a {
-        all: unset;
+        text-decoration: none;
         padding: .5rem 1rem;
         background-color: #008649;
         color: white;
