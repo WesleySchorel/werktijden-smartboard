@@ -11,7 +11,7 @@
 		channel.bind('client-setting-change', function (data) {
 			alert(JSON.stringify(data));
 		});
-		channel.bind('join', async function () {
+		channel.bind('client-join', async function () {
 			const img = document.querySelector('#check');
 			const qrcode = document.querySelector('#qr-code');
 			img.classList.add('connected');
