@@ -12,7 +12,7 @@ export const actions = {
 		const koppelcode = formData.get('koppelcode').replace(/\s/g, '');
 
 		const channel = pusher.subscribe(`private-${koppelcode}`);
-		channel.trigger('client-join', { join: true });
+		await channel.trigger('client-join', { join: true });
 
 		koppelcodes.push(koppelcode);
 		return {
