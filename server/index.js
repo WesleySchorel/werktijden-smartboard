@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
@@ -29,4 +29,4 @@ app.post("/pusher/auth", (req, res) => {
 const port = process.env.PORT || 3000;
 app.listen(port);
 
-module.exports = app
+module.exports = app;

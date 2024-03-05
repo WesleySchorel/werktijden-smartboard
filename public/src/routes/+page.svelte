@@ -1,5 +1,4 @@
 <script>
-	import { goto } from '$app/navigation';
 	import { UnderlinedWord, Button, KoppelMobile } from '$lib/index.js';
 	import { onMount } from 'svelte';
 	import { pusher } from '$lib/index.js';
@@ -19,7 +18,7 @@
 			qrcode.classList.add('fadeout');
 			console.log(img);
 			await delay(1500);
-			goto(`/${generatedKoppelcode.replace(/\s/g, '')}`);
+			window.location.href = generatedKoppelcode.replace(/\s/g, '');
 		});
 	});
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
@@ -27,10 +26,7 @@
 
 <svelte:head>
 	<title>LiveWidgets Werktijden</title>
-	<meta
-		name="description"
-		content="Uitleg over het LiveWidgets dashboard van Werktijden.nl"
-	/>
+	<meta name="description" content="Uitleg over het LiveWidgets dashboard van Werktijden.nl" />
 </svelte:head>
 
 <div>
