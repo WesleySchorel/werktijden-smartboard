@@ -2,6 +2,7 @@
 	import { UnderlinedWord, Button, KoppelMobile } from '$lib/index.js';
 	import { onMount } from 'svelte';
 	import { pusher } from '$lib/index.js';
+	import { goto } from '$app/navigation';
 
 	export let data;
 
@@ -18,7 +19,8 @@
 			qrcode.classList.add('fadeout');
 			console.log(img);
 			await delay(1500);
-			window.location.href = generatedKoppelcode.replace(/\s/g, '');
+			// window.location.href = generatedKoppelcode.replace(/\s/g, '');
+			goto(generatedKoppelcode.replace(/\s/g, ''));
 		});
 	});
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));

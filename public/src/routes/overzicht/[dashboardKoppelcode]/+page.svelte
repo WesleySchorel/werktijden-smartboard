@@ -14,6 +14,8 @@
 	}
 
 	onMount(() => {
+		// channel.trigger('client-join', { join: true });
+
 		channel.bind('client-setting-change', function (data) {
 			alert(JSON.stringify(data));
 		});
