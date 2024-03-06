@@ -76,15 +76,6 @@
 		max-width: 30rem;
 		color: #202020;
 	}
-	h1 {
-		margin: 0 0 1rem 0;
-		font-size: clamp(3.1rem, 13vw, 3.5rem);
-		line-height: 110%;
-	}
-	p {
-		margin: 0 0 2.5rem 0;
-		font-size: 1.4rem;
-	}
 
 	@media screen and (max-width: 1221px) {
 		div {
