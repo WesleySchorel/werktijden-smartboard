@@ -1,23 +1,21 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-
 	import { pusher } from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
-	const channel = pusher.subscribe(`private-${dashboardKoppelcode}`);
+	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 
 	function verstuur() {
-		channel.trigger('client-setting-change', {
-			message: 'a client changed a setting on this channel'
+		presenceChannel.trigger('client-change-setting', {
+			settingId: '123',
+			isTrue: true
 		});
 	}
 
 	onMount(() => {
-		// channel.trigger('client-join', { join: true });
-
-		channel.bind('client-setting-change', function (data) {
-			alert(JSON.stringify(data));
+		presenceChannel.bind('client-change-setting', (data) => {
+			alert(`setting ID: "${data.settingId}" is updated to "${data.isTrue}"`);
 		});
 	});
 </script>

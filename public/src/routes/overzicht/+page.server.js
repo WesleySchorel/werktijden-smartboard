@@ -1,5 +1,3 @@
-import { pusher } from '$lib/index.js';
-
 let koppelcodes = [];
 
 export const load = async () => {
@@ -10,9 +8,6 @@ export const actions = {
 	koppel: async ({ request }) => {
 		const formData = await request.formData();
 		const koppelcode = formData.get('koppelcode').replace(/\s/g, '');
-		const channel = pusher.subscribe(`private-${koppelcode}`);
-		channel.trigger('client-join', { message: 'yoooo' });
-
 		koppelcodes.push(koppelcode);
 		return {
 			koppelcode,

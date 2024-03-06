@@ -7,23 +7,24 @@
 	export let data;
 
 	const generatedKoppelcode = data.koppelcode;
-	const channel = pusher.subscribe(`private-${generatedKoppelcode.replace(/\s/g, '')}`);
+	const presenceChannel = pusher.subscribe(`presence-${generatedKoppelcode.replace(/\s/g, '')}`);
+	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
 	onMount(() => {
-		channel.bind('client-setting-change', function (data) {
-			alert(JSON.stringify(data));
-		});
-		channel.bind('client-join', async function () {
+		presenceChannel.bind('pusher:member_added', async () => {
 			const img = document.querySelector('#check');
 			const qrcode = document.querySelector('#qr-code');
+
 			img.classList.add('connected');
 			qrcode.classList.add('fadeout');
-			console.log(img);
-			await delay(1500);
-			// window.location.href = generatedKoppelcode.replace(/\s/g, '');
+
+			await delay(1000);
 			goto(generatedKoppelcode.replace(/\s/g, ''));
 		});
+		presenceChannel.bind('client-change-setting', (data) => {
+			alert(`setting ID: "${data.settingId}" is updated to "${data.isTrue}"`);
+		});
 	});
-	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 </script>
 
 <svelte:head>

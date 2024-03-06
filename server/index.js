@@ -17,13 +17,14 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.post("/pusher/auth", (req, res) => {
+app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
-
+  const presenceData = {
+    user_id: socketId,
+  };
   // This authenticates every user. Don't do this in production!
-  const authResponse = pusher.authorizeChannel(socketId, channel);
-  // console.log(socketId)
+  const authResponse = pusher.authorizeChannel(socketId, channel, presenceData);
   res.send(authResponse);
 });
 
