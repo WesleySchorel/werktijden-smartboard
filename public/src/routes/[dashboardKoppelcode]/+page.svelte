@@ -6,11 +6,11 @@
 	import { onMount } from 'svelte';
 
 	const { dashboardKoppelcode } = $page.params;
-	const channel = pusher.subscribe(`private-${dashboardKoppelcode}`);
+	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 
 	onMount(() => {
-		channel.bind('client-setting-change', function (data) {
-			alert(JSON.stringify(data));
+		presenceChannel.bind('client-change-setting', (data) => {
+			alert(`setting ID: "${data.settingId}" is updated to "${data.isTrue}"`);
 		});
 	});
 </script>
