@@ -5,7 +5,7 @@
 	export let size;
 	export let path;
 
-	const sizeInPx = sizes.find(({ reference }) => reference === size);
+	$: sizeInPx = sizes.find(({ reference }) => reference === size);
 </script>
 
 <iframe

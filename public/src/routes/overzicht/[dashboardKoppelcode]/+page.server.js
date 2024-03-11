@@ -7,7 +7,6 @@ export const actions = {
 		const widgetPath = formData.get('widgetPath');
 		const widgetSize = formData.get('widgetSize');
 		let enabled = formData.get('enabled') != null ? true : false;
-
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 
 		await presenceChannel.trigger('client-change-setting', {

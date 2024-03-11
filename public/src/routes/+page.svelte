@@ -21,9 +21,6 @@
 			await delay(1000);
 			goto(generatedKoppelcode.replace(/\s/g, ''));
 		});
-		presenceChannel.bind('client-change-setting', (data) => {
-			alert(`setting ID: "${data.settingId}" is updated to "${data.isTrue}"`);
-		});
 	});
 </script>
 
