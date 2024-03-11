@@ -1,6 +1,6 @@
 <script>
 	import { page } from '$app/stores';
-	import { Weer1, Analogeklok1, Actualiteitbanner } from '$lib/index.js';
+	import { Weer1, Analogeklok1, Actualiteitbanner, Widget } from '$lib/index.js';
 
 	import { pusher } from '$lib/index.js';
 	import { onMount } from 'svelte';
@@ -8,9 +8,26 @@
 	const { dashboardKoppelcode } = $page.params;
 	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 
+	let widgetList = [];
+
 	onMount(() => {
+		let localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
+		localStorage.clear();
+		localStorage.setItem(`localWidgetListOf${dashboardKoppelcode}`, localWidgetList);
+		localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
+		if (JSON.parse(localWidgetList)) widgetList = JSON.parse(localWidgetList);
+
 		presenceChannel.bind('client-change-setting', (data) => {
-			alert(`setting ID: "${data.settingId}" is updated to "${data.isTrue}"`);
+			if (data.enabled) {
+				if (!widgetList.find((obj) => obj.path === data.path)) {
+					widgetList.push(data);
+				}
+			} else {
+				widgetList.splice(widgetList.indexOf(widgetList.find((obj) => obj.path === data.path)), 1);
+			}
+			localStorage.setItem(`localWidgetListOf${dashboardKoppelcode}`, JSON.stringify(widgetList));
+			localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
+			widgetList = widgetList;
 		});
 	});
 </script>
@@ -19,6 +36,6 @@
 	Dashboard: {dashboardKoppelcode}
 </h1>
 
-<Weer1 size={'l'} path={'weer-1'} title={'Weer 1 widget'} />
-<Analogeklok1 size={'m'} path={'analogeklok-1'} title={'Analoge klok 1 widget'} />
-<Actualiteitbanner size={'banner'} path={'actualiteitbanner'} title={'Actualiteitbanner widget'} />
+{#each widgetList as widget}
+	<Widget path={widget.path} size={widget.size} />
+{/each}

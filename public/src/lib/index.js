@@ -10,6 +10,8 @@ export { default as Link } from '$lib/components/atoms/link.svelte';
 
 export { default as Step } from '$lib/components/molecules/step.svelte';
 export { default as Iphone } from '$lib/components/molecules/iphone.svelte';
+export { default as Widget } from '$lib/components/molecules/widget.svelte';
+export { default as ListItem } from '$lib/components/molecules/listItem.svelte';
 
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
 export { default as ErrorPagina } from '$lib/components/organisms/errorpagina.svelte';
