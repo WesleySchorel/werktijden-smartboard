@@ -14,14 +14,13 @@
 	const { dashboardKoppelcode } = $page.params;
 	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 
-	presenceChannel.bind('pusher:subscription_succeeded', () => {
-		presenceChannel.trigger('client-request-data', {});
-	});
-
 	let loading = false;
 
-	onMount(() => {
-		presenceChannel.bind('client-new-data', (data) => {
+	onMount(async () => {
+		await presenceChannel.trigger('client-request-data', {});
+		await presenceChannel.bind('client-new-data', (data) => {
+
+			console.log(data)
 			enabledSettings = data;
 
 			enabledSettings.settings.find((e) => e.path === path) ? (enabled = true) : (enabled = false);
