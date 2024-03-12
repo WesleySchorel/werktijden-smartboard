@@ -32,6 +32,10 @@
 			localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 			widgetList = widgetList;
 		});
+
+		presenceChannel.bind('client-request-data', () => {
+			presenceChannel.trigger('client-new-data', { settings: widgetList });
+		});
 	});
 </script>
 
