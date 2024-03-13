@@ -1,5 +1,14 @@
 import { pusher } from '$lib/index.js';
 
+export const load = async ({ params }) => {
+	const { dashboardKoppelcode } = params
+	const res = await fetch(`http://localhost:3000/tempsettings`)
+
+	const dashboardSettings = await res.json();
+	console.log(dashboardSettings);
+
+	return { dashboardSettings }
+}
 export const actions = {
 	update: async ({ request, params }) => {
 		const { dashboardKoppelcode } = params;

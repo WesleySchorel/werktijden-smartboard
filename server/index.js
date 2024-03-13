@@ -1,3 +1,6 @@
+
+
+
 require("dotenv").config();
 
 const express = require("express");
@@ -27,6 +30,14 @@ app.post("/pusher/auth", function (req, res) {
   const authResponse = pusher.authorizeChannel(socketId, channel, presenceData);
   res.send(authResponse);
 });
+
+app.get("/tempsettings", function (req, res) {
+const tempSettings = require("./temp_settings.json")
+
+  const dashboardID = req.body.dashboardID
+  console.log(dashboardID)
+  res.send(tempSettings)
+})
 
 const port = process.env.PORT || 3000;
 app.listen(port);

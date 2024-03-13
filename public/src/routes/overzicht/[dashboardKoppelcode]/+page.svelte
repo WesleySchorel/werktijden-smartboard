@@ -1,13 +1,20 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { pusher } from '$lib/index.js';
+	import { pusher, availableWidgets } from '$lib/index.js';
 	import { enhance } from '$app/forms';
 	import { ListItem } from '$lib/index.js';
+
+	// console.log(availableWidgets);
+	export let data;
+
+	const dashboardSettings = data.dashboardSettings[0].enabledSettings;
 
 	const { dashboardKoppelcode } = $page.params;
 	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 	let enabledSettings;
+
+	// console.log(dashboardSettings);
 
 	onMount(() => {
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
@@ -20,6 +27,11 @@
 	Widget overzicht voor dashboard: {dashboardKoppelcode}
 </h1>
 
-<ListItem path={'weer-1'} size={'l'} {enabledSettings} />
-<ListItem path={'analogeklok-1'} size={'m'} {enabledSettings} />
-<ListItem path={'actualiteitbanner'} size={'banner'} {enabledSettings} />
+{#each availableWidgets as availableWidget}
+	<ListItem
+		title={availableWidget.title}
+		size={availableWidget.size}
+		path={availableWidget.path}
+		checked={dashboardSettings.find((e) => e === availableWidget.path)}
+	/>
+{/each}

@@ -6,6 +6,8 @@
 
 	export let size;
 	export let path;
+	export let title;
+	export let checked;
 
 	let enabledSettings;
 	let myForm;
@@ -19,8 +21,7 @@
 	onMount(async () => {
 		await presenceChannel.trigger('client-request-data', {});
 		await presenceChannel.bind('client-new-data', (data) => {
-
-			console.log(data)
+			console.log(data);
 			enabledSettings = data;
 
 			enabledSettings.settings.find((e) => e.path === path) ? (enabled = true) : (enabled = false);
@@ -48,12 +49,8 @@
 		<input type="hidden" name="widgetPath" value={path} />
 		<input type="hidden" name="widgetSize" value={size} />
 		<label>
-			{path} Widget, size {size}
-			{#if enabled}
-				<input checked type="checkbox" name="enabled" on:change={() => myForm.requestSubmit()} />
-			{:else}
-				<input type="checkbox" name="enabled" on:change={() => myForm.requestSubmit()} />
-			{/if}
+			{title}, size {size}
+				<input checked={checked} type="checkbox" name="enabled" on:change={() => myForm.requestSubmit()} />
 		</label>
 	</li>
 </form>
