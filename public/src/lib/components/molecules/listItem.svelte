@@ -12,11 +12,11 @@
 	let enabled;
 
 	const { dashboardKoppelcode } = $page.params;
-	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
-
+	
 	let loading = false;
-
+	
 	onMount(async () => {
+		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		await presenceChannel.trigger('client-request-data', {});
 		await presenceChannel.bind('client-new-data', (data) => {
 
