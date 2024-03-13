@@ -4,6 +4,18 @@ h1 {
     line-height: 110%;
 }
 
+h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    line-height: 110%;
+}
+
+h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    line-height: 110%;
+}
+
 p {
     margin: 0 0 2.5rem 0;
     font-size: 1.4rem;

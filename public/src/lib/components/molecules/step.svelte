@@ -13,7 +13,7 @@
 		<StepHeading {heading} />
 	</div>
 	<StepText {text} />
-	<img src={arrow} alt="" width="90" height="63" />
+	<img src={arrow} alt="" width="90" height="63" border="0"/>
 </section>
 
 <style>
@@ -27,10 +27,17 @@
 		padding-right: 0rem;
 		max-width: 19rem;
 	}
+
 	img {
-		float: right;
+		transform: rotate(5deg);
+		opacity: 0.35;
 	}
+
 	@media screen and (max-width: 720px) {
+		section {
+			margin-bottom: 0;
+		}
+
 		img {
 			display: none;
 		}

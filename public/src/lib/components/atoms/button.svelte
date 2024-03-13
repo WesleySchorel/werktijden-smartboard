@@ -6,12 +6,14 @@
 
 <style>
     a {
-        text-decoration: none;
-        padding: .5rem 1rem;
-        background-color: #008649;
         color: white;
-        border-radius: 4px;
+        background-color: #008649;
+        margin-right: 0.75rem;
+        padding: .5rem 1rem;
+        border-radius: 1.5rem;
         font-size: 1.1rem;
+        text-align: center;
+        text-decoration: none;
         cursor: pointer;
     }
 </style>

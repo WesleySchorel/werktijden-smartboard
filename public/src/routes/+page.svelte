@@ -1,5 +1,5 @@
 <script>
-	import { UnderlinedWord, Button, KoppelMobile } from '$lib/index.js';
+	import { Intro, KoppelMobile, BulletInfo, Demo, CTA,  } from '$lib/index.js';
 	import { onMount } from 'svelte';
 	import { pusher } from '$lib/index.js';
 	import { goto } from '$app/navigation';
@@ -33,30 +33,23 @@
 </svelte:head>
 
 <div>
-	<section class="intro">
-		<h1>
-			Creeër overzicht met
-			<UnderlinedWord content={'LiveWidgets'} />
-		</h1>
-		<p>
-			Met de Werktijden LiveWidgets kan je eenvoudig een gepersonaliseerd dashboard maken voor op
-			het grote scherm.
-		</p>
-		<Button content={'Probeer Gratis'} />
-	</section>
-
+	<Intro />
 	<KoppelMobile koppelcode={generatedKoppelcode} />
+	<BulletInfo />
+	<Demo />
+	<CTA />
 </div>
 
 <a href="/overzicht">overzicht</a>
+
+<div style="margin-bottom: 10rem;"></div>
 
 <style>
 	div {
 		display: flex;
 		justify-content: space-between;
-		max-width: 85rem;
 		margin-inline: auto;
-		margin-top: 6rem;
+		margin-top: 4rem;
 		font-family:
 			system-ui,
 			-apple-system,
@@ -70,40 +63,27 @@
 			'Helvetica Neue',
 			sans-serif;
 		font-weight: 500;
-	}
-	.intro {
-		margin-top: 5rem;
-		max-width: 30rem;
-		color: #202020;
+
+		align-items: center;
+		flex-direction: column;
+		max-width: none;
+		gap: 0;
 	}
 
-	@media screen and (max-width: 1221px) {
-		div {
-			align-items: center;
-			flex-direction: column;
-			max-width: none;
-			gap: 4rem;
-		}
-		div *:not(h1, p) {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
-		}
+	a {
+		position: absolute;
+		top: 1rem;
+		left: 1rem;
 	}
+
 	@media screen and (max-width: 720px) {
 		div {
-			margin-top: 3.5rem;
+			margin: 1rem;
+		}
+			
+		div {
+			margin: 0;
 			align-items: normal;
-		}
-		.intro,
-		p {
-			display: flex;
-			align-items: start;
-		}
-		div * {
-			align-items: start;
-			text-align: left;
 		}
 	}
 </style>

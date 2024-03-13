@@ -7,12 +7,25 @@ export { default as StepBlock } from '$lib/components/atoms/step-block.svelte';
 export { default as StepHeading } from '$lib/components/atoms/step-heading.svelte';
 export { default as StepText } from '$lib/components/atoms/step-text.svelte';
 export { default as Link } from '$lib/components/atoms/link.svelte';
+export { default as BulletText } from '$lib/components/atoms/bullet-text.svelte';
+export { default as BulletBlock } from '$lib/components/atoms/bullet-block.svelte';
+export { default as BulletHeading } from '$lib/components/atoms/bullet-heading.svelte';
+export { default as GreenLink } from '$lib/components/atoms/green-link.svelte';
+export { default as PipeHeading } from '$lib/components/atoms/pipe-heading.svelte';
+export { default as BulletCheck } from '$lib/components/atoms/bulletcheck.svelte';
 
 export { default as Step } from '$lib/components/molecules/step.svelte';
 export { default as Iphone } from '$lib/components/molecules/iphone.svelte';
+export { default as Bullet } from '$lib/components/molecules/bullet.svelte';
+export { default as DemoColumn } from '$lib/components/molecules/demo-column.svelte';
+export { default as Bulletchecks } from '$lib/components/molecules/bulletchecks.svelte';
 
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
 export { default as ErrorPagina } from '$lib/components/organisms/errorpagina.svelte';
+export { default as BulletInfo } from '$lib/components/organisms/bulletinfo.svelte';
+export { default as Demo } from '$lib/components/organisms/demo.svelte';
+export { default as CTA } from '$lib/components/organisms/cta.svelte';
+export { default as Intro } from '$lib/components/organisms/intro.svelte';
 
 export { default as Weer1 } from '$lib/components/widgets/weer-1.svelte';
 export { default as Analogeklok1 } from '$lib/components/widgets/analogeklok-1.svelte';
