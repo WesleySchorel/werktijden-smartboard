@@ -3,7 +3,7 @@
 	import ArrowRight from '$lib/assets/arrow-right.svg';
 </script>
 
-<a href={url}>{content}<img src={ArrowRight} alt="" /></a>
+<a href={url}>{content}<img src={ArrowRight} alt="" height="13" width="16"/></a>
 
 <style>
 	a {

@@ -22,7 +22,7 @@
 			frameborder="0"
 		></iframe>
 	</div>
-	<div class="phone-container"><img class="phone" src={phoneframe} alt=""/></div>
+	<div class="phone-container"><img class="phone" src={phoneframe} alt="" width="269" height="541"/></div>
 	<img class="underline" src={underline} alt=""/>
 	
 	<DemoColumn />
