@@ -13,7 +13,7 @@
         flex-direction: column;
         align-items: center;
         gap: .5rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 7rem;
         z-index: 0;
     }
     h3, p {
@@ -28,4 +28,10 @@
         padding: .3rem .8rem;
         font-size: 1.7rem;
     }
+
+	@media screen and (max-width: 720px) {
+		section {
+            margin-bottom: 3.5rem;
+        }
+	}
 </style>

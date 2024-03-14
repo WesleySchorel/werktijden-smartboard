@@ -2,12 +2,16 @@
     export let heading
 </script>
 
-<h3>{heading}</h3>
+<h3><span>&#124;</span>{heading}</h3>
 
 <style>
     h3 {
         font-size: 1.5rem;
-        margin: 0;
         color: #202020;
     }
+
+	span {
+		color: #009f66;
+        margin-right: 0.3rem;
+	}
 </style>
