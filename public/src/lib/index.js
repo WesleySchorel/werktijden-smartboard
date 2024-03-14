@@ -19,6 +19,8 @@ export { default as Iphone } from '$lib/components/molecules/iphone.svelte';
 export { default as Bullet } from '$lib/components/molecules/bullet.svelte';
 export { default as DemoColumn } from '$lib/components/molecules/demo-column.svelte';
 export { default as Bulletchecks } from '$lib/components/molecules/bulletchecks.svelte';
+export { default as Widget } from '$lib/components/molecules/widget.svelte';
+export { default as ListItem } from '$lib/components/molecules/listItem.svelte';
 
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
 export { default as ErrorPagina } from '$lib/components/organisms/errorpagina.svelte';
