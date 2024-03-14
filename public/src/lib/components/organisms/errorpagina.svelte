@@ -37,7 +37,6 @@
 		text-align: center;
 		margin: 0.5rem;
 		margin-top: 5rem;
-		
 	}
 
 	span {

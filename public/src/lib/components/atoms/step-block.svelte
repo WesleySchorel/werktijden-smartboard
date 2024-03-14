@@ -8,7 +8,7 @@
 	div {
 		display: grid;
 		place-items: center;
-		background-color: #00ac5f11;
+		background-color: #00ac5f21;
 		color: #00AC5F;
 		height: 3rem;
 		width: 3rem;

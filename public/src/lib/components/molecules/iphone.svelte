@@ -1,5 +1,5 @@
 <script>
-	import iphone from '$lib/assets/iphoneframe.webp';
+	import iphone from '$lib/assets/iphone.svg';
 	import { QRcode, Koppelcode } from '$lib/index.js';
 
 	export let koppelcode;
@@ -23,7 +23,7 @@
 	}
 	img {
 		position: absolute;
-		top: 0;
+		top: 1rem;
 		left: 0;
 		width: 100%;
 		height: 100%;
