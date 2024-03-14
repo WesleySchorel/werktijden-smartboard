@@ -62,6 +62,12 @@
         align-self: end;
     }
 
+    @media (max-width: 1448px) {
+        .container {
+            margin: 0 28rem 0 28rem;
+        }
+    }    
+
     @media (max-width: 768px) {
         .container {
             margin: 0;

@@ -16,4 +16,8 @@
         text-decoration: none;
         cursor: pointer;
     }
+
+    a:hover {
+        opacity: 0.9;
+    }
 </style>

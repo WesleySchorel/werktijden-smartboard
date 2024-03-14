@@ -90,7 +90,7 @@
 	}
 
     @media screen and (max-width: 720px) {
-		section, .tv-container {
+		section, .tv-container, .phone, .underline {
 			display: none;
 		}
 

@@ -51,7 +51,7 @@
 				'content'
 				'img';
 			width: auto;
-			margin: 3rem 1rem 0 1rem;
+			margin: 6rem 1rem 0 1rem;
 		}
 
 		img {

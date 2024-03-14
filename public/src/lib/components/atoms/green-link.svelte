@@ -13,8 +13,17 @@
 		font-size: 1.4rem;
 	}
 
+	a:hover {
+		opacity: 0.7;
+	}
+
+	a:hover img {
+		padding-left: 0.7rem;
+	}
+
 	img {
-		height: 1rem;
+		transition: 0.3s;
+		height: 0.8rem;
 		padding-left: 0.5rem;
 	}
 </style>
