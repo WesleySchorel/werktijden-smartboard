@@ -5,7 +5,7 @@
 
 <div class="container">
 	<div class="img">
-		<img src={phones} alt="" />
+		<img src={phones} alt="" width="333" height="512"/>
 	</div>
 	<div class="content">
 		<h2>Waar wacht je nog op?</h2>
