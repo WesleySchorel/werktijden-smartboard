@@ -1,10 +1,12 @@
 export const load = async () => {
-	return { koppelcode: generateKoppelcode() };
+	const koppelcode = generateKoppelcode();
+	return { koppelcode: koppelcode, QRcodeSrc: generateQRcodeSrc(koppelcode) };
 };
 
 function generateKoppelcode() {
-	return Math.floor(100000000 + Math.random() * 900000000)
-		.toString()
-		.match(/.{1,3}/g)
-		.join(' ');
+	return Math.floor(10000000000 + Math.random() * 90000000000).toString();
+}
+
+function generateQRcodeSrc(koppelcode) {
+	return `https://scorenu.app/qr/highres.php?link=https://werktijden-smartboard.vercel.app/settings/${koppelcode}`;
 }

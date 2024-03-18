@@ -1,16 +1,14 @@
 <script>
 	import arrow from '$lib/assets/arrow.svg';
 
-	import { StepBlock, StepHeading, StepText } from '$lib/index.js';
-	export let step;
+	import { StepHeading, StepText, PipeHeading } from '$lib/index.js';
 	export let heading;
 	export let text;
 </script>
 
 <section>
 	<div>
-		<StepBlock {step} />
-		<StepHeading {heading} />
+		<PipeHeading heading={heading} />
 	</div>
 	<StepText {text} />
 	<img src={arrow} alt="" width="90" height="63" border="0"/>
@@ -21,7 +19,7 @@
 		display: flex;
 		align-items: flex-end;
 		gap: 0.5rem;
-		margin-bottom: 0.5rem;
+		margin-bottom: -0.5rem;
 	}
 	section {
 		padding-right: 0rem;

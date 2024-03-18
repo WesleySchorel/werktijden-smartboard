@@ -7,8 +7,9 @@
 	export let data;
 
 	const generatedKoppelcode = data.koppelcode;
+	const QRcodeSrc = data.QRcodeSrc;
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
-	
+
 	onMount(() => {
 		const presenceChannel = pusher.subscribe(`presence-${generatedKoppelcode.replace(/\s/g, '')}`);
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
@@ -33,7 +34,7 @@
 
 <div>
 	<Intro />
-	<KoppelMobile koppelcode={generatedKoppelcode} />
+	<KoppelMobile qrcodesrc={QRcodeSrc} koppelcode={generatedKoppelcode} />
 	<BulletInfo />
 	<Demo />
 	<CTA />
