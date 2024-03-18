@@ -6,7 +6,6 @@
 	const { dashboardKoppelcode } = $page.params;
 	let enabledSettings;
 
-	
 	onMount(() => {
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		const allListItemCheckboxes = document.querySelectorAll('form input[type="checkbox"]');
@@ -29,9 +28,9 @@
 						: (checkbox.checked = false);
 				});
 			});
-		});
-		presenceChannel.bind('client-change-setting', (data) => {
-			document.querySelector(`input[data-path="${data.path}"]`).checked = data.enabled;
+			presenceChannel.bind('client-change-setting', (data) => {
+				document.querySelector(`input[data-path="${data.path}"]`).checked = data.enabled;
+			});
 		});
 	});
 </script>
