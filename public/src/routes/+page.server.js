@@ -4,7 +4,7 @@ export const load = async () => {
 };
 
 function generateKoppelcode() {
-	return Math.floor(100000000 + Math.random() * 900000000).toString();
+	return Math.floor(10000000000 + Math.random() * 90000000000).toString();
 }
 
 function generateQRcodeSrc(koppelcode) {
