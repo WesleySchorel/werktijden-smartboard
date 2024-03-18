@@ -6,9 +6,9 @@
 	const { dashboardKoppelcode } = $page.params;
 	let enabledSettings;
 
-	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
-
+	
 	onMount(() => {
+		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		const allListItemCheckboxes = document.querySelectorAll('form input[type="checkbox"]');
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
 			// console.log('pusher:subscription_succeeded');

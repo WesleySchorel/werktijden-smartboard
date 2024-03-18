@@ -6,11 +6,11 @@
 	import { onMount } from 'svelte';
 
 	const { dashboardKoppelcode } = $page.params;
-	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
-
+	
 	let widgetList = [];
-
+	
 	onMount(() => {
+		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		let localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 		localStorage.clear();
 		localStorage.setItem(`localWidgetListOf${dashboardKoppelcode}`, localWidgetList);

@@ -7,21 +7,19 @@
 	export let data;
 
 	const generatedKoppelcode = data.koppelcode;
-	const presenceChannel = pusher.subscribe(`presence-${generatedKoppelcode.replace(/\s/g, '')}`);
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 	onMount(() => {
-		presenceChannel.bind('pusher:subscription_succeeded', () => {
-			presenceChannel.bind('pusher:member_added', async () => {
-				const img = document.querySelector('#check');
-				const qrcode = document.querySelector('#qr-code');
+		const presenceChannel = pusher.subscribe(`presence-${generatedKoppelcode.replace(/\s/g, '')}`);
+		presenceChannel.bind('pusher:member_added', async () => {
+			const img = document.querySelector('#check');
+			const qrcode = document.querySelector('#qr-code');
 
-				img.classList.add('connected');
-				qrcode.classList.add('fadeout');
+			img.classList.add('connected');
+			qrcode.classList.add('fadeout');
 
-				await delay(1000);
-				goto(generatedKoppelcode.replace(/\s/g, ''));
-			});
+			await delay(1000);
+			goto(generatedKoppelcode.replace(/\s/g, ''));
 		});
 	});
 </script>
