@@ -1,14 +1,13 @@
 <script>
 	import iphone from '$lib/assets/iphone.svg';
-	import { QRcode, Koppelcode } from '$lib/index.js';
+	import { QRcode } from '$lib/index.js';
 
-	export let koppelcode;
+	export let qrcodesrc;
 </script>
 
 <div>
 	<img src={iphone} alt="" width="320" height="576" />
-	<QRcode />
-	<Koppelcode {koppelcode} />
+	<QRcode {qrcodesrc} />
 </div>
 
 <style>
@@ -19,7 +18,7 @@
 		justify-content: end;
 		position: relative;
 		width: 20rem;
-		height: 36rem;
+		height: 32rem;
 	}
 	img {
 		position: absolute;

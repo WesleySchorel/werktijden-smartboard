@@ -2,20 +2,15 @@
 	import { Step, Iphone } from '$lib/index.js';
 
 	export let koppelcode;
+	export let qrcodesrc;
 </script>
 
 <div class="koppel-container">
-	<Iphone {koppelcode} />
+	<Iphone {qrcodesrc} {koppelcode} />
 	<div class="steps">
 		<Step
-			step={'1'}
 			heading={'QR-code'}
-			text={'Scan deze qr-code om te starten met de koppeling.'}
-		/>
-		<Step
-			step={'2'}
-			heading={'Unieke koppelcode'}
-			text={'Gebruik deze code om je mobiel met het dashboard te koppelen.'}
+			text={'Scan deze qr-code om te koppelen met het dashboard.'}
 		/>
 	</div>
 </div>
@@ -24,7 +19,7 @@
 	.koppel-container {
 		display: flex;
 		justify-content: center;
-		height: 33rem;
+		height: 23rem;
 		overflow: hidden;
 		gap: 1rem;
 
