@@ -7,6 +7,14 @@
 	let enabledSettings;
 
 	onMount(() => {
+		const allListItemForms = document.querySelectorAll('form')
+
+		allListItemForms.forEach((form) => {
+			// console.log(form)
+			// form.querySelector('input').onchange(allListItemForms.find((obj) => { obj.id === form})requestSubmit())
+		})
+
+
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		const allListItemCheckboxes = document.querySelectorAll('form input[type="checkbox"]');
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
