@@ -15,11 +15,12 @@ Het smartboard met unieke widgets voor werktijden.nl
 N/A
 
 ## ✨ Kenmerken
-De volgende technieken worden gebruikt in dit project:  HTML, CSS, JS, SVELTE
+De volgende technieken worden gebruikt in dit project:  HTML, CSS, JS, SVELTE, PUSHER
 
 ## 📥 Installatie
 N/A
 
 ## 🌍 Bronnen
-N/A
+PusherJS - https://pusher.com/
+
 
