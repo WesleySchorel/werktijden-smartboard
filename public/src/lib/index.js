@@ -38,7 +38,6 @@ import Pusher from 'pusher-js';
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	channelAuthorization: {
-		// transport: 'jsonp',
 		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
 	}
 });
@@ -49,3 +48,9 @@ export const sizes = [
 	{ reference: 'l', x: 500, y: 300 },
 	{ reference: 'banner', x: '100%', y: 70 }
 ];
+
+export const availableWidgets = [
+	{ title: "Weer met voorspelling", size: "m", path: "weer-1" },
+	{ title: "Minimalistische analoge klok", size: "s", path: "analogeklok-1" },
+	{ title: "Actualiteitbanner", size: "banner", path: "actualiteitbanner" },
+]

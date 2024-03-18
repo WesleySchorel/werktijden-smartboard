@@ -1,17 +1,37 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { pusher } from '$lib/index.js';
-	import { enhance } from '$app/forms';
-	import { ListItem } from '$lib/index.js';
+	import { ListItem, pusher, availableWidgets } from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
-	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 	let enabledSettings;
 
+	const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
+
 	onMount(() => {
+		const allListItemCheckboxes = document.querySelectorAll('form input[type="checkbox"]');
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
+			// console.log('pusher:subscription_succeeded');
+
 			presenceChannel.trigger('client-request-data', {});
+			// console.log('client-request-data');
+
+			presenceChannel.bind('client-new-data', (data) => {
+				// console.log('client-new-data');
+				enabledSettings = data.settings;
+
+				allListItemCheckboxes.forEach((checkbox) => {
+					enabledSettings.find(
+						(e, i) =>
+							e.path === checkbox.getAttribute('data-path') && enabledSettings[i].enabled == true
+					)
+						? (checkbox.checked = true)
+						: (checkbox.checked = false);
+				});
+			});
+		});
+		presenceChannel.bind('client-change-setting', (data) => {
+			document.querySelector(`input[data-path="${data.path}"]`).checked = data.enabled;
 		});
 	});
 </script>
@@ -20,6 +40,6 @@
 	Widget overzicht voor dashboard: {dashboardKoppelcode}
 </h1>
 
-<ListItem path={'weer-1'} size={'l'} {enabledSettings} />
-<ListItem path={'analogeklok-1'} size={'m'} {enabledSettings} />
-<ListItem path={'actualiteitbanner'} size={'banner'} {enabledSettings} />
+{#each availableWidgets as widget}
+	<ListItem title={widget.title} size={widget.size} path={widget.path} />
+{/each}

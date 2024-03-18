@@ -1,34 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
 	import { enhance } from '$app/forms';
-	import { pusher } from '$lib/index.js';
 
+	export let title;
 	export let size;
 	export let path;
 
-	let enabledSettings;
 	let myForm;
-	let enabled;
 
-	const { dashboardKoppelcode } = $page.params;
-	
-	let loading = false;
-	
-	onMount(async () => {
-		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
-		await presenceChannel.trigger('client-request-data', {});
-		await presenceChannel.bind('client-new-data', (data) => {
-
-			console.log(data)
-			enabledSettings = data;
-
-			enabledSettings.settings.find((e) => e.path === path) ? (enabled = true) : (enabled = false);
-		});
+	onMount(() => {
+		// console.log('mounted new ListItem')
 		myForm = document.querySelector(`form#${path}`);
-		presenceChannel.bind('client-change-setting', (data) => {
-			document.querySelector(`form#${data.path} input[type="checkbox"]`).checked = data.enabled;
-		});
 	});
 </script>
 
@@ -37,9 +19,7 @@
 	method="POST"
 	action="?/update"
 	use:enhance={() => {
-		loading = true;
 		return async ({ update }) => {
-			loading = false;
 			update({ reset: false });
 		};
 	}}
@@ -48,12 +28,13 @@
 		<input type="hidden" name="widgetPath" value={path} />
 		<input type="hidden" name="widgetSize" value={size} />
 		<label>
-			{path} Widget, size {size}
-			{#if enabled}
-				<input checked type="checkbox" name="enabled" on:change={() => myForm.requestSubmit()} />
-			{:else}
-				<input type="checkbox" name="enabled" on:change={() => myForm.requestSubmit()} />
-			{/if}
+			{title}, {size}
+			<input
+				data-path={path}
+				type="checkbox"
+				name="enabled"
+				on:change={() => myForm.requestSubmit()}
+			/>
 		</label>
 	</li>
 </form>
