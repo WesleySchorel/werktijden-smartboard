@@ -40,8 +40,6 @@
 	<CTA />
 </div>
 
-<a href="/overzicht">overzicht</a>
-
 <div style="margin-bottom: 10rem;"></div>
 
 <style>
