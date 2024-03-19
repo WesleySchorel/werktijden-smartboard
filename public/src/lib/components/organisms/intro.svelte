@@ -13,13 +13,7 @@
 			<img src={weerWidget} alt="" width="94" height="94" style="margin-right: 10rem" />
 			<img src={clockWidget} alt="" width="64" height="64" style="margin-left: 10rem;" />
 			<img src={sportWidget} alt="" width="54" height="54" style="margin-right: 5rem" />
-			<img
-				src={actualiteitbannerWidget}
-				alt=""
-				width="34"
-				height="34"
-				style="margin-left: 4.5rem;"
-			/>
+			<img src={actualiteitbannerWidget} alt="" width="34" height="34" style="margin-left: 4.5rem;"/>
 			<img src={werktijdenWidget} alt="" width="74" height="74" style="margin-right: 10rem;" />
 		</div>
 
@@ -35,17 +29,11 @@
 		</section>
 
 		<div class="widgets" style="transform: rotate(5deg);">
-			<img src={clockWidget} alt="" width="84" height="84" style="margin-left: 10rem" />
-			<img src={werktijdenWidget} alt="" width="64" height="64" style="margin-right: 10rem;" />
-			<img src={weerWidget} alt="" width="54" height="54" style="margin-left: 5rem" />
-			<img src={sportWidget} alt="" width="44" height="44" style="margin-right: 4.5rem;" />
-			<img
-				src={actualiteitbannerWidget}
-				alt=""
-				width="64"
-				height="64"
-				style="margin-left: 10rem;"
-			/>
+			<img src={weerWidget} alt="" width="94" height="94" style="margin-left: 10rem" />
+			<img src={clockWidget} alt="" width="64" height="64" style="margin-right: 10rem;" />
+			<img src={sportWidget} alt="" width="54" height="54" style="margin-left: 5rem" />
+			<img src={actualiteitbannerWidget} alt="" width="34" height="34" style="margin-right: 4.5rem;"/>
+			<img src={werktijdenWidget} alt="" width="74" height="74" style="margin-left: 10rem;" />
 		</div>
 	</div>
 </div>
