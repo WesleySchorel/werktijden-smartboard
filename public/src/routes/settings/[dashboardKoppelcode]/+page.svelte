@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { WidgetSetting, pusher, availableWidgets } from '$lib/index.js';
+	import { WidgetSetting, pusher, availableWidgets, SearchBar } from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
 	let enabledSettings;
@@ -50,14 +50,21 @@
 	});
 </script>
 
-<h1>
-	Widget settings
-</h1>
+<header>
 
-<ul>
+	<h1>
+		Widget settings
+	</h1>
+
+	<SearchBar content={"Zoek een widget"} filter={"widget-setting"} />
+
+</header>
+
+<ul id="widget-settings">
 	{#each availableWidgets as widget}
 		<WidgetSetting title={widget.title} size={widget.size} path={widget.path} {enabled} />
 	{/each}
+	<span id="no-content" class="state hide">No widgets that match: </span>
 </ul>
 
 <style>

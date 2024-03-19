@@ -46,7 +46,7 @@
 	<li>
 		<input type="hidden" name="widgetPath" value={path} />
 		<input type="hidden" name="widgetSize" value={size} /> -->
-<li>
+<li class="widget-setting">
 	<label for={path}>
 		<h2>{title}</h2>
 		<p>

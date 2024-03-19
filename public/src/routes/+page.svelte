@@ -50,20 +50,6 @@
 		justify-content: space-between;
 		margin-inline: auto;
 		margin-top: 4rem;
-		font-family:
-			system-ui,
-			-apple-system,
-			BlinkMacSystemFont,
-			'Segoe UI',
-			Roboto,
-			Oxygen,
-			Ubuntu,
-			Cantarell,
-			'Open Sans',
-			'Helvetica Neue',
-			sans-serif;
-		font-weight: 500;
-
 		align-items: center;
 		flex-direction: column;
 		max-width: none;

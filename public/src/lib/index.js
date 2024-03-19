@@ -13,6 +13,7 @@ export { default as BulletHeading } from '$lib/components/atoms/bullet-heading.s
 export { default as GreenLink } from '$lib/components/atoms/green-link.svelte';
 export { default as PipeHeading } from '$lib/components/atoms/pipe-heading.svelte';
 export { default as BulletCheck } from '$lib/components/atoms/bulletcheck.svelte';
+export { default as SearchBar } from '$lib/components/atoms/searchbar.svelte';
 
 export { default as Step } from '$lib/components/molecules/step.svelte';
 export { default as Iphone } from '$lib/components/molecules/iphone.svelte';
