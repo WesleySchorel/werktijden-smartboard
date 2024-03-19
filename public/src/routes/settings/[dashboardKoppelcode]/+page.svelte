@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { ListItem, pusher, availableWidgets } from '$lib/index.js';
+	import { WidgetSetting, pusher, availableWidgets } from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
 	let enabledSettings;
@@ -51,9 +51,17 @@
 </script>
 
 <h1>
-	Widget overzicht voor dashboard: {dashboardKoppelcode}
+	Widget settings
 </h1>
 
-{#each availableWidgets as widget}
-	<ListItem title={widget.title} size={widget.size} path={widget.path} {enabled} />
-{/each}
+<ul>
+	{#each availableWidgets as widget}
+		<WidgetSetting title={widget.title} size={widget.size} path={widget.path} {enabled} />
+	{/each}
+</ul>
+
+<style>
+	ul {
+		list-style: none;
+	}
+</style>

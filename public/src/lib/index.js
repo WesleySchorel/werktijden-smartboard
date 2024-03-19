@@ -20,7 +20,7 @@ export { default as Bullet } from '$lib/components/molecules/bullet.svelte';
 export { default as DemoColumn } from '$lib/components/molecules/demo-column.svelte';
 export { default as Bulletchecks } from '$lib/components/molecules/bulletchecks.svelte';
 export { default as Widget } from '$lib/components/molecules/widget.svelte';
-export { default as ListItem } from '$lib/components/molecules/listItem.svelte';
+export { default as WidgetSetting } from '$lib/components/molecules/widget-setting.svelte';
 
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
 export { default as ErrorPagina } from '$lib/components/organisms/errorpagina.svelte';
@@ -43,14 +43,14 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 });
 
 export const sizes = [
-	{ reference: 's', x: 300, y: 100 },
-	{ reference: 'm', x: 400, y: 200 },
-	{ reference: 'l', x: 500, y: 300 },
-	{ reference: 'banner', x: '100%', y: 70 }
+	{ reference: 's', name: 'Small', x: 300, y: 100 },
+	{ reference: 'm', name: 'Medium', x: 400, y: 200 },
+	{ reference: 'l', name: 'Large', x: 500, y: 300 },
+	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
 
 export const availableWidgets = [
-	{ title: "Weer met voorspelling", size: "m", path: "weer-1" },
-	{ title: "Minimalistische analoge klok", size: "s", path: "analogeklok-1" },
-	{ title: "Actualiteitbanner", size: "banner", path: "actualiteitbanner" },
-]
+	{ title: 'Weer met voorspelling', size: 'm', path: 'weer-1' },
+	{ title: 'Minimalistische analoge klok', size: 's', path: 'analogeklok-1' },
+	{ title: 'Actualiteitbanner', size: 'banner', path: 'actualiteitbanner' }
+];

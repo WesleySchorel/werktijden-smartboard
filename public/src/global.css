@@ -1,6 +1,6 @@
 h1 {
     margin: 0 0 1rem 0;
-    font-size: clamp(3.1rem, 13vw, 3.5rem);
+    font-size: clamp(2.5rem, 12vw, 3rem);
     line-height: 110%;
 }
 
