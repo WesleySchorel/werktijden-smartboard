@@ -30,10 +30,6 @@ export { default as Demo } from '$lib/components/organisms/demo.svelte';
 export { default as CTA } from '$lib/components/organisms/cta.svelte';
 export { default as Intro } from '$lib/components/organisms/intro.svelte';
 
-export { default as Weer1 } from '$lib/components/widgets/weer-1.svelte';
-export { default as Analogeklok1 } from '$lib/components/widgets/analogeklok-1.svelte';
-export { default as Actualiteitbanner } from '$lib/components/widgets/actualiteitbanner.svelte';
-
 import Pusher from 'pusher-js';
 
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
@@ -53,5 +49,8 @@ export const sizes = [
 export const availableWidgets = [
 	{ title: 'Weer met voorspelling', size: 'm', path: 'weer-1' },
 	{ title: 'Minimalistische analoge klok', size: 's', path: 'analogeklok-1' },
-	{ title: 'Actualiteitbanner', size: 'banner', path: 'actualiteitbanner' }
+	{ title: 'Actualiteitbanner', size: 'banner', path: 'actualiteitbanner' },
+	{ title: 'De digitale klok', size: 's', path: 'digitaleklok-1' },
+	{ title: 'De digitale klok met seconden', size: 'l', path: 'digitaleklok-seconden' }
+
 ];
