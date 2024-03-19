@@ -4,7 +4,7 @@
 
 <div class="container">
     <section>
-        <h3 style="font-size: 2rem;">Intresse gekregen?</h3>
+        <h3 style="font-size: 2rem;">Interesse gekregen?</h3>
         <p>
             Maak dan nu 14 dagen gratis gebruik van alle functionaliteiten van het <span>LiveWidgets</span> dashboard van Werktijden.
         </p>
@@ -60,13 +60,7 @@
 
     section {
         align-self: end;
-    }
-
-    @media (max-width: 1448px) {
-        .container {
-            margin: 0 28rem 0 28rem;
-        }
-    }    
+    }   
 
     @media (max-width: 768px) {
         .container {

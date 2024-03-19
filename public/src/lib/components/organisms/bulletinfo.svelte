@@ -18,7 +18,7 @@
 		<Bullet
 			icon={ clock }
 			heading={'Bespaar tijd'}
-			text={'Wees minder tijd kwijt bent aan het zoeken naar informatie.'}
+			text={'Wees minder tijd kwijt aan het zoeken naar informatie.'}
 		/>
 	</div>
 	<img src={tv} alt="" width="336" height="336" />
