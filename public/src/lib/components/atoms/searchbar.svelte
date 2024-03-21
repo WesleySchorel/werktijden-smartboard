@@ -47,12 +47,10 @@
 
 <style>
 	div {
-		margin: 0.8rem;
-		height: 3rem;
+		height: 2.4rem;
 	}
 	label {
 		position: relative;
-		/* padding: 0 .8rem; */
 	}
 	span {
 		position: absolute;
@@ -62,25 +60,25 @@
 		font-size: 1rem;
 		background-color: white;
 		border: 3px solid white;
-		transition: 0.2s;
+		color: var(--c-text-secondary);
+		transition: 0.1s;
 	}
 	input {
 		width: 100%;
 		height: 100%;
 		padding-left: 1rem;
-		border-radius: 6px;
-		border: 1px solid gray;
-		transition: 0.2s;
+		border-radius: var(--border-radius-default);
+		border: var(--border-default);
+		transition: 0.1s;
 	}
 	input:focus {
-		/* background-color: white; */
-		outline: 2px solid var(--c-primary-werktijden);
-		border: none;
+		outline: none;
+		border: var(--border-focus);
 	}
 	input:focus + span,
 	input:not(:placeholder-shown) + span {
-		top: -1rem;
-		font-size: 0.9rem;
+		top: -.6rem;
+		font-size: 0.8rem;
 		color: var(--c-primary-werktijden);
 	}
 </style>

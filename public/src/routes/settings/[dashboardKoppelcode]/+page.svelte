@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { WidgetSetting, pusher, availableWidgets, SearchBar } from '$lib/index.js';
+	import { WidgetSetting, pusher, availableWidgets, SearchBar, FilterBlock } from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
 	let enabledSettings;
@@ -9,13 +9,6 @@
 	let enabled = false;
 
 	onMount(() => {
-		const allListItemForms = document.querySelectorAll('form');
-
-		allListItemForms.forEach((form) => {
-			// console.log(form)
-			// form.querySelector('input').onchange(allListItemForms.find((obj) => { obj.id === form})requestSubmit())
-		});
-
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		const allListItemCheckboxes = document.querySelectorAll('input[type="checkbox"]');
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
@@ -50,24 +43,29 @@
 	});
 </script>
 
-<header>
+<div>
+	<header>
+		<h1>Widget settings</h1>
 
-	<h1>
-		Widget settings
-	</h1>
+		<SearchBar content={'Zoek een widget'} filter={'widget-setting'} />
 
-	<SearchBar content={"Zoek een widget"} filter={"widget-setting"} />
+		<FilterBlock />
+	</header>
 
-</header>
-
-<ul id="widget-settings">
-	{#each availableWidgets as widget}
-		<WidgetSetting title={widget.title} size={widget.size} path={widget.path} {enabled} />
-	{/each}
-	<span id="no-content" class="state hide">No widgets that match: </span>
-</ul>
+	<ul id="widget-settings">
+		{#each availableWidgets as widget}
+			<WidgetSetting title={widget.title} size={widget.size} path={widget.path} {enabled} />
+		{/each}
+		<span id="no-content" class="state hide">No widgets that match: </span>
+	</ul>
+</div>
 
 <style>
+	div {
+		width: 93%;
+		max-width: 30rem;
+		margin-inline: auto;
+	}
 	ul {
 		list-style: none;
 	}

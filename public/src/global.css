@@ -1,5 +1,12 @@
 :root {
     --c-primary-werktijden: #00AE4A;
+    --c-text-primary: #202020;
+    --c-text-secondary: #9e9e9e;
+
+    --border-default: 2px solid #ebebeb;
+    --border-focus: 2px solid var(--c-primary-werktijden);
+
+    --border-radius-default: 6px;
 }
 
 * {
@@ -56,6 +63,10 @@ p {
 
 .hide {
     display: none !important;
+}
+
+*:has(#widget-filter input[data-filter="active-widgets"]:checked)+ul .widget-setting:has(input:not(:checked)) {
+    display: none;
 }
 
 @keyframes connected {
