@@ -13,9 +13,10 @@
 	label {
 		position: relative;
 		display: inline-block;
-		color: var(--c-text-secondary);
+		color: var(--c-text-primary);
 		border-radius: var(--border-radius-default);
 		padding: 0.3rem 0.6rem;
+		cursor: pointer;
 	}
 	label:has(input:checked) {
 		color: var(--c-text-primary);
@@ -26,7 +27,6 @@
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		/* display: none; */
 		opacity: 0;
 	}
 </style>

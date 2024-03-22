@@ -1,8 +1,9 @@
 :root {
     --c-primary-werktijden: #00AE4A;
     --c-text-primary: #202020;
-    --c-text-secondary: #9e9e9e;
+    --c-text-secondary: #727272;
     --c-border-default: #ebebeb;
+    --c-background: #f8f8f8;
 
     --border-default: 2px solid var(--c-border-default);
     --border-focus: 2px solid var(--c-primary-werktijden);

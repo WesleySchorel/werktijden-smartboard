@@ -56,7 +56,7 @@
 		position: absolute;
 		top: 50%;
 		transform: translateY(-50%);
-		left: 0.8rem;
+		left: 0.7rem;
 		font-size: 1rem;
 		background-color: white;
 		border: 3px solid white;
@@ -66,19 +66,23 @@
 	input {
 		width: 100%;
 		height: 100%;
-		padding-left: 1rem;
+		padding-left: .7rem;
 		border-radius: var(--border-radius-default);
 		border: var(--border-default);
+		background-color: white;
 		transition: 0.1s;
 	}
 	input:focus {
 		outline: none;
+		background-color: var(--c-background);
 		border: var(--border-focus);
 	}
 	input:focus + span,
 	input:not(:placeholder-shown) + span {
-		top: -.6rem;
+		top: -.5rem;
 		font-size: 0.8rem;
 		color: var(--c-primary-werktijden);
+		background-color: var(--c-background);
+		border: 2px solid var(--c-background);
 	}
 </style>

@@ -19,9 +19,9 @@
 </script>
 
 <div>
-	<label>
+	<label aria-label="options menu">
 		<input type="checkbox" id="kebab" />
-		<img src={kebab} alt="" />
+		<img src={kebab} alt="" width="24" height="24" />
 	</label>
 
 	<ul>
