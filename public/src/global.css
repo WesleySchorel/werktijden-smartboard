@@ -2,11 +2,14 @@
     --c-primary-werktijden: #00AE4A;
     --c-text-primary: #202020;
     --c-text-secondary: #9e9e9e;
+    --c-border-default: #ebebeb;
 
-    --border-default: 2px solid #ebebeb;
+    --border-default: 2px solid var(--c-border-default);
     --border-focus: 2px solid var(--c-primary-werktijden);
 
     --border-radius-default: 6px;
+
+    --box-shadow-default: 0px 1px 6px 0px rgba(0,0,0,0.04);
 }
 
 * {
@@ -27,6 +30,10 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F8F8F8;
 }
 
 h1 {

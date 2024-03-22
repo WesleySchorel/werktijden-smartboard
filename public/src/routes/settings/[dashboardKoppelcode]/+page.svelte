@@ -61,12 +61,23 @@
 </div>
 
 <style>
+	header {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
 	div {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
 		width: 93%;
 		max-width: 30rem;
 		margin-inline: auto;
 	}
 	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
 		list-style: none;
 	}
 </style>
