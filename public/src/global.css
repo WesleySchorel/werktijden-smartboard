@@ -9,7 +9,8 @@
 
     --border-radius-default: 6px;
 
-    --box-shadow-default: 0px 1px 6px 0px rgba(0,0,0,0.04);
+    --box-shadow-default: 0px 1px 6px 0px rgba(0, 0, 0, 0.04);
+    --box-shadow-extra: 0px 1px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -73,7 +74,41 @@ p {
 }
 
 *:has(#widget-filter input[data-filter="active-widgets"]:checked)+ul .widget-setting:has(input:not(:checked)) {
+    animation: disable .4s;
     display: none;
+}
+
+#no-active {
+    display: block;
+}
+
+#widget-settings:has(.widget-setting input:checked) #no-active {
+    display: none;
+}
+
+*:has(#widget-filter input[data-filter=""]:checked) #no-active {
+    display: none;
+}
+
+@keyframes disable {
+    from {
+        display: flex;
+        opacity: 1;
+    }
+
+    50% {
+        display: flex;
+        opacity: 1;
+    }
+
+    90% {
+        display: flex;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes connected {

@@ -1,7 +1,14 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { WidgetSetting, pusher, availableWidgets, SearchBar, FilterBlock } from '$lib/index.js';
+	import {
+		WidgetSetting,
+		pusher,
+		availableWidgets,
+		SearchBar,
+		FilterBlock,
+		Kebab
+	} from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
 	let enabledSettings;
@@ -43,20 +50,24 @@
 	});
 </script>
 
-<div>
+<div class="content">
 	<header>
 		<h1>Widget settings</h1>
 
 		<SearchBar content={'Zoek een widget'} filter={'widget-setting'} />
 
-		<FilterBlock />
+		<div class="options">
+			<FilterBlock />
+			<Kebab />
+		</div>
 	</header>
 
 	<ul id="widget-settings">
 		{#each availableWidgets as widget}
 			<WidgetSetting title={widget.title} size={widget.size} path={widget.path} {enabled} />
 		{/each}
-		<span id="no-content" class="state hide">No widgets that match: </span>
+		<span id="no-content" class="state hide">Geen widgets met: </span>
+		<span id="no-active">Er staan momenteel geen widgets aan.</span>
 	</ul>
 </div>
 
@@ -66,7 +77,12 @@
 		flex-direction: column;
 		gap: 12px;
 	}
-	div {
+	.options {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.content {
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
