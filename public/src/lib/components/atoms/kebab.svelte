@@ -43,6 +43,11 @@
 		position: relative;
 		margin: auto;
 		cursor: pointer;
+		opacity: 0.5;
+	}
+	label:hover,
+	label:has(input:checked) {
+		opacity: 1;
 	}
 	input {
 		position: absolute;

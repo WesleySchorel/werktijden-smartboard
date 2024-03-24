@@ -84,9 +84,10 @@
 		left: 0.7rem;
 		font-size: 1rem;
 		background-color: white;
-		border: 3px solid white;
+		border: 2px solid white;
 		color: var(--c-text-secondary);
-		transition: 0.1s;
+		pointer-events: none;
+		transition: 0.2s;
 	}
 	input {
 		width: 100%;
@@ -95,12 +96,22 @@
 		border-radius: var(--border-radius-default);
 		border: var(--border-default);
 		background-color: white;
-		transition: 0.1s;
+		transition: 0.2s;
+	}
+	input:hover {
+		background-color: var(--c-background);
+	}
+	label:hover span {
+		background-color: var(--c-background);
+		border: 2px solid var(--c-background);
 	}
 	input:focus {
 		outline: none;
-		background-color: var(--c-background);
 		border: var(--border-focus);
+		background-color: var(--c-background);
+	}
+	input:not(:placeholder-shown) {
+		background-color: var(--c-background);
 	}
 	input:focus + span,
 	input:not(:placeholder-shown) + span {
