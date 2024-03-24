@@ -3,18 +3,20 @@
 	import { onMount } from 'svelte';
 
 	let allListItemCheckboxes;
-    let kebabBtn;
+	let kebabBtn;
 
-    function clear() {
-        let allChecked = Array.from(allListItemCheckboxes).filter((obj) => obj.checked === true)
-        allChecked.forEach((obj) => {
-            obj.click()
-        })
-        kebabBtn.click()
-    }
+	function clear() {
+		let allChecked = Array.from(allListItemCheckboxes).filter((obj) => obj.checked === true);
+		allChecked.forEach((obj) => {
+			obj.click();
+		});
+		kebabBtn.click();
+	}
 	onMount(() => {
-        kebabBtn = document.querySelector('#kebab')
-		allListItemCheckboxes = Array.from(document.querySelectorAll('.widget-setting input[type="checkbox"]'));
+		kebabBtn = document.querySelector('#kebab');
+		allListItemCheckboxes = Array.from(
+			document.querySelectorAll('.widget-setting input[type="checkbox"]')
+		);
 	});
 </script>
 
@@ -25,8 +27,8 @@
 	</label>
 
 	<ul>
-		<li><button class="warning" on:click={clear}>Leeg dashboard</button></li>
 		<li><button>Toon QR-code</button></li>
+		<li><button class="warning" on:click={clear}>Leeg dashboard</button></li>
 	</ul>
 </div>
 
@@ -38,12 +40,13 @@
 		align-items: end;
 	}
 	label {
-        position: relative;
+		position: relative;
 		margin: auto;
-        cursor: pointer;
+		cursor: pointer;
 	}
 	input {
 		position: absolute;
+		cursor: pointer;
 		opacity: 0;
 	}
 	label img {
@@ -73,7 +76,7 @@
 		min-width: max-content;
 		width: 100%;
 	}
-	button {
+	/* button {
 		all: unset;
         cursor: pointer;
 		display: block;
@@ -90,5 +93,26 @@
 		border: 1px solid red;
 		background-color: rgba(255, 0, 0, 0.05);
 		color: red;
+	} */
+
+	/* alternative button styling */
+
+	button {
+		all: unset;
+		cursor: pointer;
+		display: block;
+		width: -webkit-fill-available;
+		min-width: 9rem;
+		padding: 0.6rem;
+		border-radius: var(--border-radius-default);
+	}
+	button.warning {
+		color: red;
+	}
+	button:hover {
+		background-color: var(--c-background);
+	}
+	button.warning:hover {
+		background-color: rgba(255, 0, 0, 0.05);
 	}
 </style>

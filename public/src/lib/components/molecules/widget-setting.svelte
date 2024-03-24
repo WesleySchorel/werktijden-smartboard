@@ -73,6 +73,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: start;
+		cursor: pointer;
 	}
 	h2 {
 		font-size: 1.1rem;
@@ -97,8 +98,8 @@
 	.switch {
 		position: relative;
 		display: inline-block;
-		width: 52px;
-		height: 30px;
+		width: 56px;
+		height: 28px;
 	}
 
 	.switch input {
@@ -115,20 +116,19 @@
 		right: 0;
 		bottom: 0;
 		background-color: var(--c-border-default);
-		-webkit-transition: 0.2s;
-		transition: 0.2s;
+		transition: 0.2s ease-in-out;
 	}
 
 	.slider:before {
 		position: absolute;
 		content: '';
-		height: 22px;
-		width: 22px;
+		height: 20px;
+		width: 20px;
 		left: 4px;
 		bottom: 4px;
 		background-color: white;
-		-webkit-transition: 0.2s;
-		transition: 0.2s;
+		transition: 0.2s ease-in-out;
+
 	}
 
 	input:checked + .slider {
@@ -136,10 +136,8 @@
 	}
 
 	input:checked + .slider:before {
-		-webkit-transform: translateX(22px);
-		-ms-transform: translateX(22px);
-		transform: translateX(22px);
-		box-shadow: 0 1px 6px rgba(0, 0, 0, .3);
+		transform: translateX(28px);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, .15);
 	}
 
 	.slider.round {

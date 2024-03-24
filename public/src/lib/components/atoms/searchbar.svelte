@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import cross from '$lib/assets/cross.svg';
 
 	export let content;
 	export let filter;
@@ -8,13 +9,20 @@
 		const searchBar = document.querySelector('#searchbar');
 		const widgetSettingsList = document.querySelector('#widget-settings');
 		const noContentState = document.querySelector('.state#no-content');
+		const crossBtn = document.querySelector('#clear');
 
 		const noContentStateText = noContentState.innerHTML;
+
+		crossBtn.addEventListener('click', () => {
+			searchBar.value = null;
+			searchBar.dispatchEvent(new Event('input'));
+			crossBtn.classList.add('hide');
+		});
 
 		searchBar.addEventListener('input', () => {
 			let input = searchBar.value.toLowerCase();
 
-			console.log(input, filter);
+			input != '' ? crossBtn.classList.remove('hide') : crossBtn.classList.add('hide');
 
 			let widgetSettings = document.querySelectorAll(`.${filter}`);
 
@@ -42,15 +50,32 @@
 	<label>
 		<input placeholder="" id="searchbar" type="text" />
 		<span>{content}</span>
+		<button id="clear" class="hide" aria-label="clear searchbar">
+			<img src={cross} alt="" />
+		</button>
 	</label>
 </div>
 
 <style>
 	div {
+		position: relative;
 		height: 2.4rem;
 	}
 	label {
 		position: relative;
+	}
+	#clear {
+		all: unset;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		right: 0.7rem;
+		transform: translateY(-50%);
+		height: min-content;
+		opacity: 0.5;
+	}
+	#clear:hover {
+		opacity: 1;
 	}
 	span {
 		position: absolute;
@@ -66,7 +91,7 @@
 	input {
 		width: 100%;
 		height: 100%;
-		padding-left: .7rem;
+		padding-left: 0.7rem;
 		border-radius: var(--border-radius-default);
 		border: var(--border-default);
 		background-color: white;
@@ -79,7 +104,7 @@
 	}
 	input:focus + span,
 	input:not(:placeholder-shown) + span {
-		top: -.5rem;
+		top: -0.5rem;
 		font-size: 0.8rem;
 		color: var(--c-primary-werktijden);
 		background-color: var(--c-background);

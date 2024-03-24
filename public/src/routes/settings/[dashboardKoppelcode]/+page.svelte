@@ -51,8 +51,8 @@
 </script>
 
 <div class="content">
+	<h1>Widget settings</h1>
 	<header>
-		<h1>Widget settings</h1>
 
 		<SearchBar content={'Zoek een widget'} filter={'widget-setting'} />
 
@@ -73,9 +73,15 @@
 
 <style>
 	header {
+		position: sticky;
+		top: 0;
+		padding: .8rem 0 .4rem 0;
 		display: flex;
 		flex-direction: column;
 		gap: 12px;
+		background-color: var(--c-background);
+		box-shadow: 0 0 0 .4rem var(--c-background);
+		z-index: 1;
 	}
 	.options {
 		display: flex;
