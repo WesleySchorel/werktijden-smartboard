@@ -50,8 +50,13 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Widgets</title>
+	<meta name="description" content="De beschikbare widgets voor het LiveWidgets dashboard van Werktijden.nl" />
+</svelte:head>
+
 <div class="content">
-	<h1>Widget settings</h1>
+	<h1>Widgets</h1>
 	<header>
 
 		<SearchBar content={'Zoek een widget'} filter={'widget-setting'} />
