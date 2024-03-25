@@ -18,7 +18,6 @@
 		if (JSON.parse(localWidgetList)) widgetList = JSON.parse(localWidgetList);
 
 		presenceChannel.bind('client-change-setting', (widget) => {
-			console.log(widget);
 			if (widget.enabled && !widgetList.find((obj) => obj.path === widget.path)) {
 				widgetList.push(widget);
 			}

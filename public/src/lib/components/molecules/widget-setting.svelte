@@ -10,16 +10,11 @@
 	export let path;
 	export let enabled;
 
-	// let myForm;
 	let allListItemCheckboxes;
-	// let enabled = false;
 
 	const presenceChannel = pusher.subscribe(`presence-${$page.params.dashboardKoppelcode}`);
 
 	function triggerEvent(path, size) {
-		// console.log(Array.from(allListItemCheckboxes).find((obj) => obj.dataset.path === path).checked)
-		// enabled = !enabled;
-		// console.log(enabled);
 		presenceChannel.trigger('client-change-setting', {
 			path: path,
 			size: size,
@@ -29,76 +24,128 @@
 
 	onMount(() => {
 		allListItemCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-		// console.log(allListItemCheckboxes)
 	});
 </script>
 
-<!-- <form
-	id={path}
-	method="POST"
-	action="?/update"
-	use:enhance={() => {
-		return async ({ update }) => {
-			update({ reset: false });
-		};
-	}}
->
-	<li>
-		<input type="hidden" name="widgetPath" value={path} />
-		<input type="hidden" name="widgetSize" value={size} /> -->
 <li class="widget-setting">
-	<label for={path}>
-		<h2>{title}</h2>
-		<p>
-			{sizes.find((obj) => {
-				return obj.reference === size;
-			}).name}
-		</p>
-	</label>
-	<input
-		id={path}
-		{enabled}
-		data-path={path}
-		type="checkbox"
-		name="enabled"
-		on:change={triggerEvent(path, size)}
-	/>
+	<div class="top">
+		<label for={path}>
+			<div class="description">
+				<h2>{title}</h2>
+				<p>
+					{sizes.find((obj) => {
+						return obj.reference === size;
+					}).name}
+				</p>
+			</div>
+			<div class="switch">
+				<input
+					id={path}
+					{enabled}
+					data-path={path}
+					type="checkbox"
+					name="enabled"
+					on:change={triggerEvent(path, size)}
+				/>
+				<span class="slider round"></span>
+			</div>
+		</label>
+	</div>
+	<div class="preview"></div>
 </li>
 
-<!-- </li>
-</form> -->
-
 <style>
-	li:first-child {
-		border-top: 1px solid rgb(208, 208, 208);
-	}
 	li {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		gap: 1.2rem;
+		padding: 1.2rem;
 		background-color: white;
-		border-bottom: 1px solid rgb(208, 208, 208);
-		padding: 0.8rem;
+		border-radius: var(--border-radius-default);
+		box-shadow: var(--box-shadow-default);
+	}
+	.description {
+		display: flex;
+		flex-direction: column;
+		width: 75%;
 	}
 	label {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-	}
-	h2,
-	p {
-		margin: 0;
-		padding: 0;
+		justify-content: space-between;
+		align-items: start;
+		cursor: pointer;
 	}
 	h2 {
-		font-size: 1.3rem;
+		font-size: 1.1rem;
+		color: var(--c-text-primary);
+		margin: 0;
 	}
 	p {
-		font-size: 1rem;
-		opacity: 0.6;
+		font-size: 0.9rem;
+		color: var(--c-text-secondary);
+		margin: 0;
 	}
-	input {
-		height: 1.5rem;
-		width: 1.5rem;
-		margin: auto 0 auto 0;
+	.preview {
+		height: 8.5rem;
+		width: 11rem;
+		max-width: 100%;
+		background-color: black;
+		border-radius: 12px;
+		margin-inline: auto;
+	}
+
+	/* toggle */
+	.switch {
+		position: relative;
+		display: inline-block;
+		width: 56px;
+		height: 28px;
+	}
+
+	.switch input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	.slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--c-border-default);
+		transition: 0.2s ease-in-out;
+	}
+
+	.slider:before {
+		position: absolute;
+		content: '';
+		height: 20px;
+		width: 20px;
+		left: 4px;
+		bottom: 4px;
+		background-color: white;
+		transition: 0.2s ease-in-out;
+
+	}
+
+	input:checked + .slider {
+		background-color: var(--c-primary-werktijden);
+	}
+
+	input:checked + .slider:before {
+		transform: translateX(28px);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, .15);
+	}
+
+	.slider.round {
+		border-radius: 34px;
+		overflow: hidden;
+	}
+
+	.slider.round:before {
+		border-radius: 50%;
 	}
 </style>
