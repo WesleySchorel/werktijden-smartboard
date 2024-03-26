@@ -11,7 +11,7 @@
 <iframe
 	width={sizeInPx.x}
 	height={sizeInPx.y}
-	src="{$page.url.origin}/widgets/{path}"
+	src="{$page.url.origin}/widget-frames/{path}"
 	title={`${path} Widget, size ${size}`}
 	frameborder="1"
 ></iframe>
