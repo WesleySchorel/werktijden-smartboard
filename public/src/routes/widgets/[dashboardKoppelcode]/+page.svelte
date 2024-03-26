@@ -50,6 +50,28 @@
 				document.querySelector(`input[data-path="${data.path}"]`).checked = data.enabled;
 			});
 		});
+		presenceChannel.trigger('client-request-data', {});
+		// console.log('client-request-data');
+
+		presenceChannel.bind('client-new-data', (data) => {
+			// console.log('client-new-data');
+			enabledSettings = data.settings;
+
+			allListItemCheckboxes.forEach((checkbox) => {
+				if (
+					enabledSettings.find(
+						(e, i) =>
+							e.path === checkbox.getAttribute('data-path') && enabledSettings[i].enabled == true
+					)
+				) {
+					enabled = true;
+					checkbox.checked = true;
+				} else {
+					enabled = false;
+					checkbox.checked = false;
+				}
+			});
+		});
 	});
 </script>
 
