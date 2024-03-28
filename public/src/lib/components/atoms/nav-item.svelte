@@ -10,15 +10,15 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: .4rem;
+        gap: .3rem;
     }
     img {
-        width: 1.7rem;
-        height: 1.7rem;
+        width: 1.5rem;
+        height: 1.5rem;
         filter: contrast(0);
     }
     li {
         filter: contrast(0);
-        font-size: .9rem;
+        font-size: .8rem;
     }
 </style>

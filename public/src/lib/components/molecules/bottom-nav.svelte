@@ -37,7 +37,7 @@
 		justify-content: space-around;
 		width: 100%;
 		max-width: 40rem;
-		margin: 1rem 0;
+		margin: .6rem 0;
 	}
 	a {
 		text-decoration: none;
