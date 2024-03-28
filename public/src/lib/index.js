@@ -28,6 +28,7 @@ export { default as Widget } from '$lib/components/molecules/widget.svelte';
 export { default as WidgetSetting } from '$lib/components/molecules/widget-setting.svelte';
 export { default as FilterBlock } from '$lib/components/molecules/filter-block.svelte';
 export { default as BottomNav } from '$lib/components/molecules/bottom-nav.svelte';
+export { default as Template } from '$lib/components/molecules/template.svelte';
 
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
 export { default as ErrorPagina } from '$lib/components/organisms/errorpagina.svelte';
@@ -58,5 +59,10 @@ export const availableWidgets = [
 	{ title: 'Actualiteitbanner', size: 'banner', path: 'actualiteitbanner' },
 	{ title: 'De digitale klok', size: 's', path: 'digitaleklok-1' },
 	{ title: 'De digitale klok met seconden', size: 'l', path: 'digitaleklok-seconden' }
+];
 
+export const availableTemplates = [
+	{ title: 'Standaard', preview: '', widgets: ['weer-1', 'actualiteitbanner'] },
+	{ title: 'Woensdag', preview: '', widgets: ['digitaleklok-1', 'actualiteitbanner'] },
+	{ title: 'Kerst', preview: '', widgets: ['weer-1', 'actualiteitbanner'] }
 ];

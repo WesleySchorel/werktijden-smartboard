@@ -75,7 +75,8 @@ p {
     display: none !important;
 }
 
-.active li, .active img {
+.active li,
+.active img {
     filter: contrast(1) !important;
 }
 
@@ -94,6 +95,14 @@ p {
 
 *:has(#widget-filter input[data-filter=""]:checked) #no-active {
     display: none;
+}
+
+#templatesList.open {
+    height: 100dvh;
+}
+
+#templatesBtn.open::after {
+    rotate: 180deg;
 }
 
 @keyframes disable {

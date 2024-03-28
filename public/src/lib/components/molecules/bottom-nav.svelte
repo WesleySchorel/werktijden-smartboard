@@ -31,13 +31,15 @@
 		align-items: center;
 		width: 100%;
 		background-color: white;
+		z-index: 1;
 	}
 	nav {
 		display: flex;
 		justify-content: space-around;
 		width: 100%;
 		max-width: 40rem;
-		margin: .6rem 0;
+		padding: .6rem 0;
+		background-color: white;
 	}
 	a {
 		text-decoration: none;
