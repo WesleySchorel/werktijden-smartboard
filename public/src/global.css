@@ -98,7 +98,7 @@ p {
 }
 
 #templatesList.open {
-    height: 100dvh;
+    height: 100dvh !important;
 }
 
 #templatesBtn.open::after {
