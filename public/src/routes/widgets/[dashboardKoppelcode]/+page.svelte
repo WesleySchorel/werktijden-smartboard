@@ -96,7 +96,7 @@
 
 	<ul id="widget-settings">
 		{#each availableWidgets as widget}
-			<WidgetSetting title={widget.title} size={widget.size} path={widget.path} {enabled} />
+			<WidgetSetting title={widget.title} size={widget.size} path={widget.path} preview={widget.preview} {enabled} />
 		{/each}
 		<span id="no-content" class="state hide">Geen widgets met: </span>
 		<span id="no-active">Er staan momenteel geen widgets aan.</span>

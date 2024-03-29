@@ -50,12 +50,15 @@
 		<h2>{title}</h2>
 		<img src={arrowRight} alt="" />
 	</div>
-	<div class="preview"></div>
+	{#if preview}
+		<img class="preview" src={preview} alt="" />
+	{/if}
 </button>
 
 <style>
 	.template {
 		display: flex;
+		gap: 1rem;
 		flex-direction: column;
 		border: 1px solid var(--c-border-default);
 		width: 100%;
@@ -67,7 +70,6 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		padding-bottom: 1rem;
 	}
 	h2 {
 		font-size: 1.2rem;
@@ -75,9 +77,7 @@
 	}
 	.preview {
 		width: 100%;
-		height: 10rem;
-		border-radius: 6px;
+		/* height: 12rem; */
 		margin-inline: auto;
-		background-color: black;
 	}
 </style>

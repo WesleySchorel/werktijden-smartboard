@@ -9,6 +9,7 @@
 	export let size;
 	export let path;
 	export let enabled;
+	export let preview;
 
 	let allListItemCheckboxes;
 
@@ -51,7 +52,9 @@
 			</div>
 		</label>
 	</div>
-	<div class="preview"></div>
+	{#if preview}
+		<img class="preview" src={preview} alt="" />
+	{/if}
 </li>
 
 <style>
@@ -86,11 +89,8 @@
 		margin: 0;
 	}
 	.preview {
-		height: 8.5rem;
-		width: 11rem;
+		height: 12rem;
 		max-width: 100%;
-		background-color: black;
-		border-radius: 12px;
 		margin-inline: auto;
 	}
 
@@ -128,7 +128,6 @@
 		bottom: 4px;
 		background-color: white;
 		transition: 0.2s ease-in-out;
-
 	}
 
 	input:checked + .slider {
@@ -137,7 +136,7 @@
 
 	input:checked + .slider:before {
 		transform: translateX(28px);
-		box-shadow: 0 1px 6px rgba(0, 0, 0, .15);
+		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
 	}
 
 	.slider.round {

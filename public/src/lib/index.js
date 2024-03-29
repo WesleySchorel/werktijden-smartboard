@@ -1,4 +1,5 @@
-// place files you want to import through the `$lib` alias in this folder.
+// ATOMIC DESIGN
+// ATOMS
 export { default as Koppelcode } from '$lib/components/atoms/koppelcode.svelte';
 export { default as QRcode } from '$lib/components/atoms/qr-code.svelte';
 export { default as UnderlinedWord } from '$lib/components/atoms/underlined-word.svelte';
@@ -19,6 +20,7 @@ export { default as Kebab } from '$lib/components/atoms/kebab.svelte';
 export { default as NavItem } from '$lib/components/atoms/nav-item.svelte';
 export { default as TemplateList } from '$lib/components/atoms/template-list.svelte';
 
+// MOLECULES
 export { default as Step } from '$lib/components/molecules/step.svelte';
 export { default as Iphone } from '$lib/components/molecules/iphone.svelte';
 export { default as Bullet } from '$lib/components/molecules/bullet.svelte';
@@ -30,6 +32,7 @@ export { default as FilterBlock } from '$lib/components/molecules/filter-block.s
 export { default as BottomNav } from '$lib/components/molecules/bottom-nav.svelte';
 export { default as Template } from '$lib/components/molecules/template.svelte';
 
+// ORGANISMS
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
 export { default as ErrorPagina } from '$lib/components/organisms/errorpagina.svelte';
 export { default as BulletInfo } from '$lib/components/organisms/bulletinfo.svelte';
@@ -37,6 +40,16 @@ export { default as Demo } from '$lib/components/organisms/demo.svelte';
 export { default as CTA } from '$lib/components/organisms/cta.svelte';
 export { default as Intro } from '$lib/components/organisms/intro.svelte';
 
+
+// PREVIEWS
+// WIDGETS
+import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.svg'
+
+// TEMPLATES
+import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg'
+
+
+// PUSHER
 import Pusher from 'pusher-js';
 
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
@@ -46,6 +59,9 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	}
 });
 
+
+// OTHER
+// WIDGET SIZES
 export const sizes = [
 	{ reference: 's', name: 'Small', x: 300, y: 100 },
 	{ reference: 'm', name: 'Medium', x: 400, y: 200 },
@@ -53,16 +69,22 @@ export const sizes = [
 	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
 
+// AVAILABLE WIDGETS
+// path must be unique
+// preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
-	{ title: 'Weer met voorspelling', size: 'm', path: 'weer-1' },
+	{ title: 'Weer met voorspelling', size: 'm', preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Minimalistische analoge klok', size: 's', path: 'analogeklok-1' },
 	{ title: 'Actualiteitbanner', size: 'banner', path: 'actualiteitbanner' },
 	{ title: 'De digitale klok', size: 's', path: 'digitaleklok-1' },
 	{ title: 'De digitale klok met seconden', size: 'l', path: 'digitaleklok-seconden' }
 ];
 
+// AVAILABLE TEMPLATES
+// title must be unique
+// preview has IMPORT from PREVIEW TEMPLATES
 export const availableTemplates = [
-	{ title: 'Standaard', preview: '', widgets: ['weer-1', 'actualiteitbanner'] },
-	{ title: 'Woensdag', preview: '', widgets: ['digitaleklok-1', 'actualiteitbanner'] },
-	{ title: 'Kerst', preview: '', widgets: ['weer-1', 'actualiteitbanner'] }
+	{ title: 'Standaard', preview: PreviewStandaard, widgets: ['weer-1', 'actualiteitbanner'] },
+	{ title: 'Woensdag', widgets: ['digitaleklok-1', 'actualiteitbanner'] },
+	{ title: 'Kerst', widgets: ['weer-1', 'actualiteitbanner'] }
 ];
