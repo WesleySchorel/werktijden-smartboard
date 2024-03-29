@@ -65,6 +65,7 @@
 		border-radius: var(--border-radius-default);
 		background-color: white;
 		padding: 1rem;
+		cursor: pointer;
 	}
 	.top {
 		display: flex;
