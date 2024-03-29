@@ -43,7 +43,7 @@ export { default as Intro } from '$lib/components/organisms/intro.svelte';
 
 // PREVIEWS
 // WIDGETS
-import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.svg'
+import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg'
 
 // TEMPLATES
 import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg'
