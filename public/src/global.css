@@ -36,7 +36,6 @@
 
 body {
     background-color: #F8F8F8;
-    padding-bottom: 10rem;
 }
 
 h1 {
@@ -78,6 +77,10 @@ p {
 .active li,
 .active img {
     filter: contrast(1) !important;
+}
+
+#templatesBtn.active, #templatesList.active {
+    display: flex !important;
 }
 
 *:has(#widget-filter input[data-filter="active-widgets"]:checked)+ul .widget-setting:has(input:not(:checked)) {

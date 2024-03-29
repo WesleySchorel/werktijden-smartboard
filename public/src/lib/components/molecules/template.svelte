@@ -60,6 +60,7 @@
 		border: 1px solid var(--c-border-default);
 		width: 100%;
 		border-radius: var(--border-radius-default);
+		background-color: white;
 		padding: 1rem;
 	}
 	.top {
