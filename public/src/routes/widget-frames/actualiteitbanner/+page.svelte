@@ -19,6 +19,10 @@
 				// pubDate: item.querySelector('pubDate').textContent
 			}))
 			.filter((item) => !isRTLNieuws(item.title));
+
+			setInterval(() => document.getElementById('currentTime').innerText = new Date().toLocaleTimeString());
+
+			
 	});
 
 	function isRTLNieuws(title) {
@@ -33,18 +37,18 @@
 </svelte:head>
 
 <div id="rss-feed">
-	<h1>Nieuws</h1>
+	<h1 id="currentTime"> </h1>
 	<div class="banner">
 		<div class="banner-content">
 			{#each items as item}
 				<h2>{item.title}</h2>
-				●
+				-
 			{/each}
 		</div>
 		<div class="banner-content">
 			{#each items as item}
 				<h2>{item.title}</h2>
-				●
+				-
 			{/each}
 		</div>
 	</div>
@@ -64,23 +68,34 @@
 	}
 
 	h1 {
-		color: #ffff;
-		background-color: #27ae60;
+		color: white;
+		background-color: #404052;
 		text-transform: uppercase;
 		margin-right: 0;
-		padding: 0.75rem;
 		z-index: 1;
+		padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+		font-size: 2rem;
+		height: 3rem;
+	}
+
+	h2 {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+		font-size: 2rem;
+		padding: 0.2rem;
 	}
 
 	.banner {
+		color: white;
+		background-color: #1941A7;
 		position: relative;
 		flex-shrink: 0;
 		display: flex;
 		overflow: hidden;
-		gap: 2rem;
 		z-index: 1;
-		padding: 1rem;
-		border: 2px solid #27ae60;
+		font-size: 1.85rem;
+		height: 3rem;
 	}
 
 	.banner-content {
@@ -89,7 +104,7 @@
 		flex-direction: row;
 		gap: 2rem;
 		flex-shrink: 0;
-		animation: scroll 60s linear infinite;
+		animation: scroll 100s linear infinite;
 	}
 
 	@keyframes scroll {
