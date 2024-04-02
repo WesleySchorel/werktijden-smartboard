@@ -6,7 +6,9 @@
 	import { sizes } from '$lib/index.js';
 
 	export let title;
-	export let size;
+	// export let size;
+	export let x;
+	export let y;
 	export let path;
 	export let enabled;
 	export let preview;
@@ -15,10 +17,11 @@
 
 	const presenceChannel = pusher.subscribe(`presence-${$page.params.dashboardKoppelcode}`);
 
-	function triggerEvent(path, size) {
+	function triggerEvent(path, x, y) {
 		presenceChannel.trigger('client-change-setting', {
 			path: path,
-			size: size,
+			x: x,
+			y: y,
 			enabled: Array.from(allListItemCheckboxes).find((obj) => obj.dataset.path === path).checked
 		});
 	}
@@ -34,9 +37,7 @@
 			<div class="description">
 				<h2>{title}</h2>
 				<p>
-					{sizes.find((obj) => {
-						return obj.reference === size;
-					}).name}
+					{x} x {y}
 				</p>
 			</div>
 			<div class="switch">
@@ -46,7 +47,7 @@
 					data-path={path}
 					type="checkbox"
 					name="enabled"
-					on:change={triggerEvent(path, size)}
+					on:change={triggerEvent(path, x, y)}
 				/>
 				<span class="slider round"></span>
 			</div>

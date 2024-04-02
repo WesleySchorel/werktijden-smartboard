@@ -39,10 +39,21 @@
 	});
 </script>
 
-<h1>
+<!-- <h1>
 	Dashboard: {dashboardKoppelcode}
-</h1>
+</h1> -->
 
-{#each widgetList as widget}
-	<Widget path={widget.path} size={widget.size} />
-{/each}
+<div>
+	{#each widgetList as widget}
+		<Widget path={widget.path} x={widget.x} y={widget.y} />
+	{/each}
+</div>
+
+<style>
+	div {
+		position: absolute;
+		padding: 0.6rem;
+		width: 100%;
+		height: 100vh;
+	}
+</style>

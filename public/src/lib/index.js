@@ -40,14 +40,12 @@ export { default as Demo } from '$lib/components/organisms/demo.svelte';
 export { default as CTA } from '$lib/components/organisms/cta.svelte';
 export { default as Intro } from '$lib/components/organisms/intro.svelte';
 
-
 // PREVIEWS
 // WIDGETS
-import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg'
+import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
 
 // TEMPLATES
-import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg'
-
+import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg';
 
 // PUSHER
 import Pusher from 'pusher-js';
@@ -58,7 +56,6 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
 	}
 });
-
 
 // OTHER
 // WIDGET SIZES
@@ -73,11 +70,11 @@ export const sizes = [
 // path must be unique
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
-	{ title: 'Weer met voorspelling', size: 'm', preview: PreviewWeer1, path: 'weer-1' },
-	{ title: 'Minimalistische analoge klok', size: 's', path: 'analogeklok-1' },
-	{ title: 'Actualiteitbanner', size: 'banner', path: 'actualiteitbanner' },
-	{ title: 'De digitale klok', size: 's', path: 'digitaleklok-1' },
-	{ title: 'De digitale klok met seconden', size: 'l', path: 'digitaleklok-seconden' }
+	{ title: 'Weer met voorspelling', x: 8, y: 4, preview: PreviewWeer1, path: 'weer-1' },
+	{ title: 'Minimalistische analoge klok', x: 4, y: 4, path: 'analogeklok-1' },
+	{ title: 'Actualiteitbanner', x: 'full', y: 1, path: 'actualiteitbanner' },
+	{ title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
+	{ title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' }
 ];
 
 // AVAILABLE TEMPLATES
