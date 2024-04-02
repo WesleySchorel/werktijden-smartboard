@@ -115,19 +115,4 @@
 			transform: translateX(calc(-100% - 0.5rem));
 		}
 	}
-
-	@media only screen and (max-width: 767px) {
-		h1,
-		h2 {
-			font-size: 1rem;
-		}
-
-		.banner {
-			padding: 0.75rem;
-		}
-
-		.banner-content {
-			gap: 1rem;
-		}
-	}
 </style>
