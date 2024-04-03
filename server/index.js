@@ -32,3 +32,18 @@ const port = process.env.PORT || 3000;
 app.listen(port);
 
 module.exports = app;
+
+// weather API fetch
+async function updateLiveWeer() {
+  console.log("--weather poll--");
+  const res = await fetch(
+    `https://weerlive.nl/api/weerlive_api_v2.php?key=6ddd27a02e&locatie=Amsterdam`
+  );
+  const data = await res.json();
+
+  await pusher.trigger("liveweer-channel", "update-liveweer", { data: data });
+
+  setTimeout(updateLiveWeer, 600000);
+  // setTimeout(updateLiveWeer, 5000);
+}
+updateLiveWeer();

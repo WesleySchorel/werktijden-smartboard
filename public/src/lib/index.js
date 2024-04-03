@@ -54,6 +54,7 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	channelAuthorization: {
 		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
+		// endpoint: `http://localhost:3000/pusher/auth`
 	}
 });
 
@@ -70,7 +71,7 @@ export const sizes = [
 // path must be unique
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
-	{ title: 'Weer met voorspelling', x: 8, y: 4, preview: PreviewWeer1, path: 'weer-1' },
+	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Minimalistische analoge klok', x: 4, y: 4, path: 'analogeklok-1' },
 	{ title: 'Actualiteitbanner', x: 'full', y: 1, path: 'actualiteitbanner' },
 	{ title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
