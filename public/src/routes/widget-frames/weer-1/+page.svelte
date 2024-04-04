@@ -18,7 +18,7 @@
 
 <div class="widget">
 	<div class="top">
-		<img src="/{weatherData.liveweer[0].image}.svg" alt="" />
+		<img src="/weather_icons/{weatherData.liveweer[0].image}.svg" alt="" />
 		<div class="gtemp">Gvl temp: {weatherData.liveweer[0].gtemp}</div>
 	</div>
 	<p class="temp">{weatherData.liveweer[0].temp}°</p>
