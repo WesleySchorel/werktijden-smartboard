@@ -18,13 +18,64 @@
 
 	$: switch (image) {
 		case 'zonnig':
-			bg = ['#5586cf', '#30afd7'];
+			bg = ['#0053A2', '#407EBE'];
 			color = '#ffffff';
-			console.log('changeBg');
 			break;
 		case 'bewolkt':
-			bg = ['#cdcdcd', '#ffffff'];
-			color = '#2d2d2d';
+			bg = ['#233858', '#2C333F'];
+			color = '#ffffff';
+			break;
+		case 'bliksem':
+			bg = ['#233858', '#2C333F'];
+			color = '#ffffff';
+			break;
+		case 'buien':
+			bg = ['#6A7F9B', '#344B66'];
+			color = '#ffffff';
+			break;
+		case 'hagel':
+			bg = ['#6A7F9B', '#344B66'];
+			color = '#ffffff';
+			break;
+		case 'halfbewolkt_regen':
+			bg = ['#6A7F9B', '#344B66'];
+			color = '#ffffff';
+			break;
+		case 'halfbewolkt':
+			bg = ['#233858', '#2C333F'];
+			color = '#ffffff';
+			break;
+		case 'helderenacht':
+			bg = ['#320064', '#100527'];
+			color = '#ffffff';
+			break;
+		case 'lichtbewolkt':
+			bg = ['#233858', '#2C333F'];
+			color = '#ffffff';
+			break;
+		case 'mist':
+			bg = ['#233858', '#2C333F'];
+			color = '#ffffff';
+			break;
+		case 'nachtbewolkt':
+			bg = ['#320064', '#100527'];
+			color = '#ffffff';
+			break;
+		case 'nachtmist':
+			bg = ['#320064', '#100527'];
+			color = '#ffffff';
+			break;
+		case 'regen':
+			bg = ['#6A7F9B', '#344B66'];
+			color = '#ffffff';
+			break;
+		case 'sneeuw':
+			bg = ['#6A7F9B', '#344B66'];
+			color = '#ffffff';
+			break;
+		case 'zwaarbewolkt':
+			bg = ['#233858', '#2C333F'];
+			color = '#ffffff';
 			break;
 		default:
 			bg = ['#000000', '#ffffff'];
@@ -32,6 +83,7 @@
 	}
 
 	onMount(() => {
+		// image = 'zonnig';
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
@@ -73,8 +125,11 @@
 		width: 100%;
 	}
 	img {
-		height: 3rem;
-		width: 3rem;
+		height: fit-content;
+		width: 2.8rem;
+	}
+	.gtemp {
+		margin-top: 0.2rem;
 	}
 	.temp {
 		position: absolute;
