@@ -6,28 +6,51 @@
 
 	$: weatherData = data;
 
+	$: image = weatherData.liveweer[0].image;
+	$: temperature = weatherData.liveweer[0].temp;
+	$: gtemp = weatherData.liveweer[0].gtemp;
+	$: hoursOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getHours()).slice(-2);
+	$: minutesOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getMinutes()).slice(-2);
+	$: location = weatherData.liveweer[0].plaats;
+
+	$: bg = [];
+	$: color = '';
+
+	$: switch (image) {
+		case 'zonnig':
+			bg = ['#5586cf', '#30afd7'];
+			color = '#ffffff';
+			console.log('changeBg');
+			break;
+		case 'bewolkt':
+			bg = ['#cdcdcd', '#ffffff'];
+			color = '#2d2d2d';
+			break;
+		default:
+			bg = ['#000000', '#ffffff'];
+			color = '#ffffff';
+	}
+
 	onMount(() => {
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
-			// console.log(data);
+			console.log(data);
 			weatherData = data.data;
 		});
 	});
 </script>
 
-<div class="widget">
+<div class="widget" style="color: {color}; background: linear-gradient({bg[0]}, {bg[1]});">
 	<div class="top">
-		<img src="/weather_icons/{weatherData.liveweer[0].image}.svg" alt="" />
-		<div class="gtemp">Gvl temp: {weatherData.liveweer[0].gtemp}</div>
+		<img src="/weather_icons/{image}.svg" alt="" />
+		<div class="gtemp">Gvl temp: {gtemp}</div>
 	</div>
-	<p class="temp">{weatherData.liveweer[0].temp}°</p>
+	<p class="temp">{temperature}°</p>
 	<div class="bottom">
 		<p>
-			{weatherData.liveweer[0].plaats}
-			{new Date(weatherData.liveweer[0].time).getHours()}:{new Date(
-				weatherData.liveweer[0].time
-			).getMinutes()}
+			{location}
+			{hoursOfUpdate}:{minutesOfUpdate}
 		</p>
 	</div>
 </div>
@@ -39,13 +62,14 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		background: linear-gradient(#5586cf, #30afd7);
+		/* background: linear-gradient(#5586cf, #30afd7); */
 		color: white;
 		padding: 0.6rem;
 	}
 	.top {
 		display: flex;
 		justify-content: space-between;
+		/* align-items: center; */
 		width: 100%;
 	}
 	img {
