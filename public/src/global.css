@@ -9,7 +9,7 @@
     --border-focus: 2px solid var(--c-primary-werktijden);
 
     --border-radius-default: 6px;
-    --border-radius-widget: 12px;
+    --border-radius-widget: 14px;
 
     --box-shadow-default: 0px 1px 6px 0px rgba(0, 0, 0, 0.04);
     --box-shadow-extra: 0px 1px 12px 0px rgba(0, 0, 0, 0.1);

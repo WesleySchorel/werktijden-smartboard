@@ -7,8 +7,8 @@
 	$: weatherData = data;
 
 	$: image = weatherData.liveweer[0].image;
-	$: temperature = weatherData.liveweer[0].temp;
-	$: gtemp = weatherData.liveweer[0].gtemp;
+	$: temperature = Math.round(weatherData.liveweer[0].temp);
+	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
 	$: hoursOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getHours()).slice(-2);
 	$: minutesOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getMinutes()).slice(-2);
 	$: location = weatherData.liveweer[0].plaats;
@@ -42,7 +42,7 @@
 			color = '#ffffff';
 			break;
 		case 'halfbewolkt':
-			bg = ['#233858', '#2C333F'];
+			bg = ['#0053A2', '#407EBE'];
 			color = '#ffffff';
 			break;
 		case 'helderenacht':
@@ -50,7 +50,7 @@
 			color = '#ffffff';
 			break;
 		case 'lichtbewolkt':
-			bg = ['#233858', '#2C333F'];
+			bg = ['#0053A2', '#407EBE'];
 			color = '#ffffff';
 			break;
 		case 'mist':
@@ -83,7 +83,7 @@
 	}
 
 	onMount(() => {
-		// image = 'zonnig';
+		// image = 'bliksem';
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
@@ -96,7 +96,7 @@
 <div class="widget" style="color: {color}; background: linear-gradient({bg[0]}, {bg[1]});">
 	<div class="top">
 		<img src="/weather_icons/{image}.svg" alt="" />
-		<div class="gtemp">Gvl temp: {gtemp}</div>
+		<div class="gtemp">Voelt als: {gtemp}°</div>
 	</div>
 	<p class="temp">{temperature}°</p>
 	<div class="bottom">
@@ -114,29 +114,28 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		/* background: linear-gradient(#5586cf, #30afd7); */
 		color: white;
-		padding: 0.6rem;
+		padding: 0.8rem;
 	}
 	.top {
 		display: flex;
 		justify-content: space-between;
-		/* align-items: center; */
 		width: 100%;
 	}
 	img {
 		height: fit-content;
+		max-height: 3rem;
 		width: 2.8rem;
 	}
 	.gtemp {
-		margin-top: 0.2rem;
+		margin-top: 0.1rem;
 	}
 	.temp {
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		font-size: 4rem;
+		font-size: 5rem;
 		margin: auto;
 	}
 	.bottom p {
