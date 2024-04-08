@@ -88,7 +88,6 @@
 	</aside>
 </div>
 
-
 <style>
 	.container {
 		display: grid;
@@ -107,10 +106,9 @@
 
 	.card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+		grid-template-columns: repeat(4, 1fr);
 		justify-content: center;
 		gap: 1rem;
-		max-width: calc(4 * (9rem + 1rem * 2) + 1rem * 2);
 	}
 
 	.content {
@@ -120,23 +118,100 @@
 		align-items: center;
 	}
 
-    .game-info {
-        display: flex;
-        align-items: center;
+	.game-info {
+		display: flex;
+		align-items: center;
 		margin-top: 1rem;
-    }
+	}
 
-    .game-info span {
-        color: var(--c-text-secondary);
-        font-size: 1rem;
-        margin-right: 1rem;
-    }
+	.game-info span {
+		color: var(--c-text-secondary);
+		font-size: 1rem;
+		margin-right: 1rem;
+	}
 
-    .game-info button {
-        color: var(--c-primary-werktijden);
-        background-color: var(--c-background);
-        border: none;
-        font-size: 1rem;
-        cursor: pointer;
-    }
+	.game-info button {
+		color: var(--c-primary-werktijden);
+		background-color: var(--c-background);
+		border: none;
+		font-size: 1rem;
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: 1560px) {
+		.container {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto;
+			gap: 0;
+			grid-template-areas:
+				'content'
+				'game';
+			margin: 3rem 20rem 3rem 20rem;
+		}
+
+		.content {
+			margin: 0rem 0 3rem -5rem;
+			display: flex;
+			align-items: center;
+		}
+
+		.game-info {
+			margin-bottom: 1rem;
+		}
+	}
+
+	@media screen and (max-width: 998px) {
+		.container {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto;
+			gap: 0;
+			grid-template-areas:
+				'content'
+				'game';
+			margin: 0rem;
+		}
+
+		.content {
+			margin: 3rem 0 3rem 0rem;
+			display: flex;
+			align-items: left;
+		}
+
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-auto-rows: auto;
+			justify-content: center;
+			gap: 1rem;
+		}
+	}
+
+	@media screen and (max-width: 560px) {
+		.container {
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto auto;
+			gap: 0;
+			grid-template-areas:
+				'content'
+				'game';
+			margin: 0rem;
+		}
+
+		.content {
+			margin: 3rem;
+			display: flex;
+			align-items: left;
+		}
+
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-auto-rows: auto; 
+			justify-content: center;
+			gap: 1rem;
+		}
+	}
 </style>
