@@ -54,7 +54,7 @@
 			color = '#ffffff';
 			break;
 		case 'mist':
-			bg = ['#233858', '#2C333F'];
+			bg = ['#0053A2', '#407EBE'];
 			color = '#ffffff';
 			break;
 		case 'nachtbewolkt':
@@ -83,7 +83,7 @@
 	}
 
 	onMount(() => {
-		// image = 'bliksem';
+		image = 'bliksem';
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
