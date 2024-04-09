@@ -37,7 +37,7 @@ module.exports = app;
 async function updateLiveWeer() {
   console.log("--weather poll--");
   const res = await fetch(
-    `https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam`
+    `https://weerlive.nl/api/weerlive_api_v2.php?key=${process.env.WEERLIVE}&locatie=Amsterdam`
   );
   const data = await res.json();
 
