@@ -93,6 +93,14 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Weer met gevoelstemperatuur widget</title>
+	<meta
+		name="description"
+		content="Deze widget laat de huidige temperatuur en gevoelstemperatuur zien."
+	/>
+</svelte:head>
+
 <div class="widget" style="color: {color}; background: linear-gradient({bg[0]}, {bg[1]});">
 	<div class="top">
 		<img src="/weather_icons/{image}.svg" alt="" />
