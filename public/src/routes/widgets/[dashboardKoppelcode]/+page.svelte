@@ -15,8 +15,8 @@
 
 	let enabled = false;
 
-	onMount(() => {
-		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
+	onMount(async () => {
+		const presenceChannel = await pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		const allListItemCheckboxes = document.querySelectorAll('input[type="checkbox"]');
 
 		localStorage.setItem('currentDashboard', dashboardKoppelcode);
