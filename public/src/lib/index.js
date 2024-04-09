@@ -39,6 +39,7 @@ export { default as BulletInfo } from '$lib/components/organisms/bulletinfo.svel
 export { default as Demo } from '$lib/components/organisms/demo.svelte';
 export { default as CTA } from '$lib/components/organisms/cta.svelte';
 export { default as Intro } from '$lib/components/organisms/intro.svelte';
+export { default as MemoryCards } from '$lib/components/organisms/MemoryCards.svelte';
 
 // PREVIEWS
 // WIDGETS
