@@ -64,6 +64,11 @@
 	};
 </script>
 
+<svelte:head>
+	<title>LiveWidgets Werktijden - Error</title>
+	<meta name="description" content="Het lijkt er op dat er iets is fout gegaan tijdens het navigeren van Werktijden.nl" />
+</svelte:head>
+
 <div class="container">
 	<section class="game">
 		<div class="card-grid">
@@ -131,7 +136,7 @@
 	}
 
 	.game-info button {
-		color: var(--c-primary-werktijden);
+		color: #007950;
 		background-color: var(--c-background);
 		border: none;
 		font-size: 1rem;
