@@ -12,10 +12,10 @@
 	$: hoursOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getHours()).slice(-2);
 	$: minutesOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getMinutes()).slice(-2);
 	$: location = weatherData.liveweer[0].plaats;
-
+	
 	$: bg = [];
 	$: color = '';
-
+	
 	$: switch (image) {
 		case 'zonnig':
 			bg = ['#0053A2', '#407EBE'];
