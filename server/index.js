@@ -23,6 +23,8 @@ const corsOptions = {
 };
 // app.use(cors());
 
+app.post("/pusher/auth", cors());
+
 app.post("/pusher/auth", cors(corsOptions), function (req, res) {
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
