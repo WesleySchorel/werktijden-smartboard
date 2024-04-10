@@ -54,11 +54,8 @@ import Pusher from 'pusher-js';
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	channelAuthorization: {
-		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`,
-		// endpoint: `http://localhost:3000/pusher/auth`,
-		headers: {
-			'Access-Control-Allow-Headers': '*'
-		}
+		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
+		// endpoint: `http://localhost:3000/pusher/auth`
 	}
 });
 

@@ -9,19 +9,21 @@ const pusher = new Pusher({
   key: process.env.KEY,
   secret: process.env.SECRET,
   cluster: process.env.CLUSTER,
-  useTLS: true,
+  // useTLS: true,
 });
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cors());
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
-app.post("/pusher/auth", function (req, res) {
+
+const corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200,
+};
+// app.use(cors());
+
+app.post("/pusher/auth", cors(corsOptions), function (req, res) {
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
   const presenceData = {
