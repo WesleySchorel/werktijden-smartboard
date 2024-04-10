@@ -11,7 +11,7 @@
 	const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 	onMount(() => {
-		console.log(generatedKoppelcode)
+		console.log(generatedKoppelcode);
 		const presenceChannel = pusher.subscribe(`presence-${generatedKoppelcode.replace(/\s/g, '')}`);
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
 			presenceChannel.bind('pusher:member_added', async () => {
@@ -37,7 +37,7 @@
 	<Intro />
 	<KoppelMobile qrcodesrc={QRcodeSrc} koppelcode={generatedKoppelcode} />
 	<BulletInfo />
-	<Demo />
+	<!-- <Demo /> -->
 	<CTA />
 </div>
 
