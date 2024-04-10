@@ -21,9 +21,7 @@ const corsOptions = {
   origin: "*",
   optionsSuccessStatus: 200,
 };
-// app.use(cors());
-
-app.post("/pusher/auth", cors());
+app.use(cors(corsOptions));
 
 app.post("/pusher/auth", cors(corsOptions), function (req, res) {
   const socketId = req.body.socket_id;
