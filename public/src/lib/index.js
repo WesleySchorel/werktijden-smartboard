@@ -51,12 +51,14 @@ import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg';
 // PUSHER
 import Pusher from 'pusher-js';
 
+// channelAuthorization: {
+// 	endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
+// 	// endpoint: `http://localhost:3000/pusher/auth`
+// }
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
-	channelAuthorization: {
-		endpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
-		// endpoint: `http://localhost:3000/pusher/auth`
-	}
+	// authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`,
+	authEndpoint: `http://localhost:3000/pusher/auth`,
 });
 
 // OTHER
