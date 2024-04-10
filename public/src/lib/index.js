@@ -59,6 +59,11 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	// authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`,
 	authEndpoint: `http://localhost:3000/pusher/auth`,
+	// auth: {
+	// 	headers: {
+	// 		'Access-Control-Allow-Origin': 'http://asdf:3000/pusher/auth'
+	// 	}
+	// }
 });
 
 // OTHER

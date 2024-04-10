@@ -21,11 +21,11 @@ weerLive(pusher);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// const corsOptions = {
-//   origin: "*",
-//   optionsSuccessStatus: 200,
-// };
-app.use(cors());
+const corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;
