@@ -49,7 +49,9 @@ import Kalender1 from '$lib/assets/previews/widgets/kalender-1.jpg';
 import Actualiteitbanner from '$lib/assets/previews/widgets/actualiteitbanner.jpg';
 
 // TEMPLATES
-import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg';
+import PreviewStandaard from '$lib/assets/previews/templates/standaard.jpg';
+import PreviewZomer from '$lib/assets/previews/templates/zomer.jpg';
+import PreviewKerst from '$lib/assets/previews/templates/kerst.jpg';
 
 // PUSHER
 import Pusher from 'pusher-js';
@@ -61,7 +63,7 @@ import Pusher from 'pusher-js';
 export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	cluster: 'eu',
 	// authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`,
-	authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`,
+	authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
 	// auth: {
 	// 	headers: {
 	// 		'Access-Control-Allow-Origin': 'http://asdf:3000/pusher/auth'
@@ -83,9 +85,21 @@ export const sizes = [
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
-	{ title: 'Minimalistische analoge klok', x: 4, y: 4, preview: PreviewAnalogeklok1, path: 'analogeklok-1' },
+	{
+		title: 'Minimalistische analoge klok',
+		x: 4,
+		y: 4,
+		preview: PreviewAnalogeklok1,
+		path: 'analogeklok-1'
+	},
 	{ title: 'Kalender met datum', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
-	{ title: 'Actualiteitbanner', x: 'full', y: 1, preview: Actualiteitbanner, path: 'actualiteitbanner' },
+	{
+		title: 'Actualiteitbanner',
+		x: 'full',
+		y: 1,
+		preview: Actualiteitbanner,
+		path: 'actualiteitbanner'
+	}
 	// { title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
 	// { title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' },
 ];
@@ -94,7 +108,11 @@ export const availableWidgets = [
 // title must be unique
 // preview has IMPORT from PREVIEW TEMPLATES
 export const availableTemplates = [
-	{ title: 'Standaard', preview: PreviewStandaard, widgets: ['weer-1', 'actualiteitbanner'] },
-	{ title: 'Woensdag', widgets: ['digitaleklok-1', 'actualiteitbanner'] },
-	{ title: 'Kerst', widgets: ['weer-1', 'actualiteitbanner'] }
+	{
+		title: 'Standaard',
+		preview: PreviewStandaard,
+		widgets: ['kalender-1', 'analogeklok-1', 'weer-1', 'actualiteitbanner']
+	},
+	{ title: 'Zomer', preview: PreviewZomer, widgets: ['weer-1', 'kalender-1'] },
+	{ title: 'Kerst', preview: PreviewKerst, widgets: ['actualiteitbanner', 'kalender-1'] }
 ];

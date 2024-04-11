@@ -25,9 +25,6 @@
 		{#each availableTemplates as template}
 			<Template title={template.title} preview={template.preview} widgets={template.widgets} />
 		{/each}
-		{#each availableTemplates as template}
-			<Template title={template.title} preview={template.preview} widgets={template.widgets} />
-		{/each}
 	</ul>
 </div>
 
