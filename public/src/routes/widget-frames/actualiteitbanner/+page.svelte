@@ -20,7 +20,7 @@
 			}))
 			.filter((item) => !isRTLNieuws(item.title));
 
-			setInterval(() => document.getElementById('currentTime').innerText = new Date().toLocaleTimeString());
+			setInterval(() => document.getElementById('currentTime').innerText = new Date().toLocaleTimeString(), 990);
 
 			
 	});
