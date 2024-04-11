@@ -45,6 +45,7 @@ export { default as MemoryCards } from '$lib/components/organisms/MemoryCards.sv
 // WIDGETS
 import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
 import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
+import Kalender1 from '$lib/assets/previews/widgets/kalender-1.jpg';
 
 // TEMPLATES
 import PreviewStandaard from '$lib/assets/previews/templates/standaard.svg';
@@ -84,7 +85,8 @@ export const availableWidgets = [
 	{ title: 'Minimalistische analoge klok', x: 4, y: 4, preview: PreviewAnalogeklok1, path: 'analogeklok-1' },
 	{ title: 'Actualiteitbanner', x: 'full', y: 1, path: 'actualiteitbanner' },
 	{ title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
-	{ title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' }
+	{ title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' },
+	{ title: 'Kalender met datum', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' }
 ];
 
 // AVAILABLE TEMPLATES
