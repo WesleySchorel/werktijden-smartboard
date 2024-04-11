@@ -136,6 +136,7 @@
 		max-width: 30rem;
 		margin-inline: auto;
 		padding-bottom: 8rem;
+		margin-top: 2rem;
 	}
 	ul {
 		display: flex;

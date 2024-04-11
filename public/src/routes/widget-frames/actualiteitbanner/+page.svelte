@@ -20,9 +20,10 @@
 			}))
 			.filter((item) => !isRTLNieuws(item.title));
 
-			setInterval(() => document.getElementById('currentTime').innerText = new Date().toLocaleTimeString(), 990);
-
-			
+		setInterval(
+			() => (document.getElementById('currentTime').innerText = new Date().toLocaleTimeString()),
+			990
+		);
 	});
 
 	function isRTLNieuws(title) {
@@ -37,7 +38,7 @@
 </svelte:head>
 
 <div id="rss-feed">
-	<h1 id="currentTime"> </h1>
+	<h1 id="currentTime"></h1>
 	<div class="banner">
 		<div class="banner-content">
 			{#each items as item}
@@ -88,7 +89,7 @@
 
 	.banner {
 		color: white;
-		background-color: #1941A7;
+		background-color: #1941a7;
 		position: relative;
 		flex-shrink: 0;
 		display: flex;

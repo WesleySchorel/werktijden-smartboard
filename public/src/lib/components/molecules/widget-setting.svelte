@@ -90,9 +90,10 @@
 		margin: 0;
 	}
 	.preview {
-		height: 12rem;
+		max-height: 12rem;
 		max-width: 100%;
 		margin-inline: auto;
+		object-fit: contain;
 	}
 
 	/* toggle */
