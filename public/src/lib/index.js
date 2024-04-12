@@ -46,6 +46,7 @@ export { default as MemoryCards } from '$lib/components/organisms/MemoryCards.sv
 import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
 import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
 import Kalender1 from '$lib/assets/previews/widgets/kalender-1.jpg';
+import Kalender2 from '$lib/assets/previews/widgets/kalender-2.jpg';
 import Actualiteitbanner from '$lib/assets/previews/widgets/actualiteitbanner.jpg';
 
 // TEMPLATES
@@ -92,7 +93,8 @@ export const availableWidgets = [
 		preview: PreviewAnalogeklok1,
 		path: 'analogeklok-1'
 	},
-	{ title: 'Kalender met datum', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
+	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
+	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
 	{
 		title: 'Actualiteitbanner',
 		x: 'full',

@@ -1,12 +1,12 @@
 <script>
-	let currentDate = new Date();
-	let dayOfMonth = currentDate.getDate();
-	let currentMonth = currentDate.toLocaleDateString('nl-NL', { month: 'long' });
+	let getDate = new Date();
+	let currentDate = getDate.getDate();
+	let currentMonth = getDate.toLocaleDateString('nl-NL', { month: 'long' });
 </script>
 
 <div class="line"></div>
 <div class="widget">
-	<p>{dayOfMonth}</p>
+	<p>{currentDate}</p>
 	<span>{currentMonth}</span>
 </div>
 
