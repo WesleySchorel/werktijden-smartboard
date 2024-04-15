@@ -1,5 +1,39 @@
+<script>
+	import { pusher } from '$lib/index.js';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		// 	// image = 'zonnig';
+		// 	const liveWeerChannel = pusher.subscribe('liveweer-channel');
+
+		// 	liveWeerChannel.bind('update-liveweer', (data) => {
+		// 		console.log(data);
+		// 		weatherData = data.data;
+		// 	});
+		const incomingCallNotifier = document.querySelector('#incoming-call');
+		const privateCallChannel = pusher.subscribe('private-call');
+
+		privateCallChannel.bind('caller-status', async (data) => {
+			if (data.status == 'INCOMING') {
+				incomingCallNotifier.classList.add('incoming-call');
+				incomingCallNotifier.classList.remove('connected-call');
+				incomingCallNotifier.classList.remove('disconnected-call');
+			} else if (data.status == 'CONNECTED') {
+				incomingCallNotifier.classList.remove('incoming-call');
+				incomingCallNotifier.classList.add('connected-call');
+				incomingCallNotifier.classList.remove('disconnected-call');
+			} else if (data.status == 'DISCONNECTED') {
+				incomingCallNotifier.classList.remove('incoming-call');
+				incomingCallNotifier.classList.remove('connected-call');
+				incomingCallNotifier.classList.add('disconnected-call');
+			}
+			console.log(data);
+		});
+	});
+</script>
+
 <section class="widget">
-	<!-- <div class="incoming-call">
+	<div id="incoming-call">
 		<div class="caller">
 			<img src="" alt="" />
 			<div class="info">
@@ -13,11 +47,11 @@
 				<div class="cancel"></div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 	<h1>Gesprekken</h1>
 
-	<ol>
+	<ol id="history">
 		<li class="in-call">
 			<div class="caller">
 				<img src="" alt="" />
@@ -87,7 +121,8 @@
 </section>
 
 <style>
-	.incoming-call {
+	#incoming-call {
+		display: none;
 		position: absolute;
 		padding: 0.8rem 1rem;
 		margin: 0.5rem;
@@ -95,9 +130,9 @@
 		box-shadow: var(--box-shadow-extra);
 		border-radius: var(--border-radius-widget);
 		background-color: white;
-		animation: incoming 1s forwards;
 		z-index: 1;
 	}
+
 	.call-icons {
 		display: flex;
 		gap: 0.5rem;
@@ -117,6 +152,10 @@
 	section {
 		background-color: white;
 	}
+	#history {
+		position: relative;
+		z-index: 1;
+	}
 	li {
 		display: flex;
 		align-items: center;
@@ -126,6 +165,7 @@
 		border-bottom: 1px solid var(--c-border-default);
 		padding: 0.8rem 1.5rem;
 		width: 100%;
+		background-color: white;
 	}
 	.caller {
 		display: flex;
@@ -164,13 +204,5 @@
 		text-wrap: nowrap;
 		overflow: hidden;
 		max-width: 19rem;
-	}
-	@keyframes incoming {
-		from {
-			transform: translateY(-20rem);
-		}
-		to {
-			transform: translateY(0);
-		}
 	}
 </style>
