@@ -20,12 +20,7 @@ weerLive(pusher);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
-const corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;
