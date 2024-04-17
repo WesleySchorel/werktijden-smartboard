@@ -31,6 +31,7 @@ export { default as WidgetSetting } from '$lib/components/molecules/widget-setti
 export { default as FilterBlock } from '$lib/components/molecules/filter-block.svelte';
 export { default as BottomNav } from '$lib/components/molecules/bottom-nav.svelte';
 export { default as Template } from '$lib/components/molecules/template.svelte';
+export { default as Call } from '$lib/components/molecules/call.svelte';
 
 // ORGANISMS
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';

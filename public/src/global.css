@@ -116,69 +116,64 @@ p {
     height: 100vh;
 }
 
-.in-call {
-    background-color: #009F66 !important;
-    color: white;
-}
-
 .incoming-call {
-    display: block !important;
-    animation:
-        incoming-call 1s forwards,
-        blinking 1s infinite;
+    animation: incoming-call 1s steps(1) infinite;
 }
 
 .connected-call {
-    display: block !important;
-    animation: connected-call 1s forwards;
+    background-color: #009F66;
+    color: white;
 }
 
 .disconnected-call {
+    background-color: white;
+    color: var(--c-text-primary);
+}
+
+.incoming-call .time span {
+    display: none !important;
+}
+
+.connected-call .duration,
+.disconnected-call .duration {
     display: block !important;
-    animation: disconnected-call 1s forwards;
+}
+
+.incoming-call .phone {
+    display: block !important;
+    transform-origin: center;
+    animation: incoming-call-phone 1s steps(1) infinite, shake .3s infinite;
 }
 
 @keyframes incoming-call {
     from {
-        transform: translateY(-20rem);
+        background-color: #009F66;
+        color: white;
     }
 
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes connected-call {
-    from {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    to {
-        transform: translateY(5rem);
-        opacity: 0;
+    50% {
+        background-color: white;
+        color: var(--c-text-primary);
     }
 }
 
-@keyframes disconnected-call {
+@keyframes incoming-call-phone {
     from {
-        transform: translateY(0);
-        opacity: 1;
+        fill: white;
     }
 
-    to {
-        transform: translateY(10rem);
-        opacity: 0;
+    50% {
+        fill: #009F66;
     }
 }
 
-@keyframes blinking {
+@keyframes shake {
     from {
-        box-shadow: inset 0px 0px 0px 3px #009f66;
+        rotate: 0deg;
     }
 
     to {
-        box-shadow: inset 0px 0px 0px 3px white;
+        rotate: 6deg;
     }
 }
 
