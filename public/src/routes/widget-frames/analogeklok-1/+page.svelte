@@ -52,7 +52,7 @@
 		width: 100%;
 		display: grid;
 		place-items: center;
-		background-color: black;
+		background-color: rgb(87, 87, 87);
 		border-radius: var(--border-radius-widget);
 	}
 	.clock-face {

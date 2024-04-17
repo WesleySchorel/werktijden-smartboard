@@ -87,12 +87,13 @@ export const sizes = [
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
 	{
-		title: 'Minimalistische analoge klok',
+		title: 'Analoge klok (met cijfers)',
 		x: 4,
 		y: 4,
 		preview: PreviewAnalogeklok1,
 		path: 'analogeklok-1'
 	},
+	{ title: 'Analoge klok (zonder cijfers)', x: 4, y: 4, path: 'analogeklok-2' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
 	{
