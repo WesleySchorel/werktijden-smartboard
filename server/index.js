@@ -21,12 +21,18 @@ weerLive(pusher);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
-
+// const corsOptions = {
+//   origin: "*",
+//   optionsSuccessStatus: 200,
+// };
+app.use(
+  cors({
+    origin: [
+      "https://werktijden-smartboard.vercel.app",
+      "http://localhost:5173",
+    ],
+  })
+);
 app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
