@@ -24,7 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.post("/pusher/auth", function (req, res) {
-  res.setHeader('Access-Control-Allow-Origin', '*')
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
   const presenceData = {
