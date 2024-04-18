@@ -5,6 +5,7 @@ const cors = require("cors");
 const Pusher = require("pusher");
 
 const weerLive = require("./api/weerlive");
+const actualiteit = require("./api/actualiteit");
 
 const pusher = new Pusher({
   appId: process.env.APP_ID,
@@ -17,6 +18,7 @@ const pusher = new Pusher({
 const app = express();
 
 weerLive(pusher);
+actualiteit(pusher);
 
 app.use(cors());
 app.use(express.json());
