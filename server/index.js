@@ -18,12 +18,13 @@ const app = express();
 
 weerLive(pusher);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(cors());
 
 app.post("/pusher/auth", function (req, res) {
+  res.setHeader('Access-Control-Allow-Origin', '*')
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
   const presenceData = {
