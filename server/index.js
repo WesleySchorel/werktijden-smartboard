@@ -21,20 +21,7 @@ weerLive(pusher);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use(function (req, res) {
-  res.setHeader("Access-Control-Allow-Credentials", true);
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  // another common pattern
-  // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET,OPTIONS,PATCH,DELETE,POST,PUT"
-  );
-  res.setHeader(
-    "Access-Control-Allow-Headers",
-    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
-  );
-});
+app.use(cors());
 
 app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;
