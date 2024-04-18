@@ -25,15 +25,39 @@ app.use(express.urlencoded({ extended: false }));
 //   origin: "*",
 //   optionsSuccessStatus: 200,
 // };
-app.use(
-  cors({
-    origin: [
-      "https://werktijden-smartboard.vercel.app",
-      "http://localhost:5173",
-      "*",
-    ],
-  })
-);
+
+app.use(function (req, res, next) {
+  // Website you wish to allow to connect
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+
+  // Request methods you wish to allow
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+
+  // Request headers you wish to allow
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-Requested-With,content-type"
+  );
+
+  // Set to true if you need the website to include cookies in the requests sent
+  // to the API (e.g. in case you use sessions)
+  res.setHeader("Access-Control-Allow-Credentials", true);
+
+  // Pass to next layer of middleware
+  next();
+});
+// app.use(
+//   cors({
+//     origin: [
+//       "https://werktijden-smartboard.vercel.app",
+//       "http://localhost:5173",
+//       "*",
+//     ],
+//   })
+// );
 app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;
   const channel = req.body.channel_name;
