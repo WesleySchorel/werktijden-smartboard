@@ -30,6 +30,7 @@ app.use(
     origin: [
       "https://werktijden-smartboard.vercel.app",
       "http://localhost:5173",
+      "*",
     ],
   })
 );
