@@ -5,6 +5,7 @@ const cors = require("cors");
 const Pusher = require("pusher");
 
 const weerLive = require("./api/weerlive");
+const actualiteit = require("./api/actualiteit");
 
 const pusher = new Pusher({
   appId: process.env.APP_ID,
@@ -17,15 +18,12 @@ const pusher = new Pusher({
 const app = express();
 
 weerLive(pusher);
+actualiteit(pusher);
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
 
 app.post("/pusher/auth", function (req, res) {
   const socketId = req.body.socket_id;

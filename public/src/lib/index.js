@@ -68,7 +68,7 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 	authEndpoint: `https://werktijden-smartboard-server.vercel.app/pusher/auth`
 	// auth: {
 	// 	headers: {
-	// 		'Access-Control-Allow-Origin': 'http://asdf:3000/pusher/auth'
+	// 		'Access-Control-Allow-Origin': 'http://localhost:3000/pusher/auth'
 	// 	}
 	// }
 });
@@ -88,13 +88,14 @@ export const sizes = [
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
 	{
-		title: 'Minimalistische analoge klok',
+		title: 'Analoge klok (met cijfers)',
 		x: 4,
 		y: 4,
 		preview: PreviewAnalogeklok1,
 		path: 'analogeklok-1'
 	},
 	{ title: 'Incoming calls', x: 12, y: 12, path: 'incomingcalls' },
+	{ title: 'Analoge klok (zonder cijfers)', x: 4, y: 4, path: 'analogeklok-2' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
 	{

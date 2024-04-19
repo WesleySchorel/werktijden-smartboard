@@ -1,16 +1,25 @@
+let news;
 
-let response
+export const load = async ({}) => {
+	const data = await fetch('https://feeds.nos.nl/nosnieuwspolitiek')
+		.then((response) => {
+			return response.text();
+		})
+		.then((html) => {
+			html = html.replace(/\s\s/g, '');
 
-export const load = async ({ }) => {
+			const titles = [];
+			const str = html;
 
-    try {
-        response = await fetch('https://www.rtlnieuws.nl/rss.xml');
-        // console.log(response)
-        const xmlString = await response.text();
-        
-        return {xmlString}
-        
-    } catch (error) {
-        console.error('Oh nee! Error fetching RSS feed:', error);
-    }
-}
+			const parts = str.split(`<title><![CDATA[`);
+
+			for (let i = 1; i < parts.length; i++) {
+				const title = parts[i].split(`]]></title>`)[0];
+				titles.push(title);
+			}
+
+			titles.shift();
+			return titles;
+		});
+	return { data: data };
+};
