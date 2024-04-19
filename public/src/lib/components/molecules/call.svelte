@@ -5,6 +5,9 @@
 
 	const date = new Date();
 
+	const startHours = ('0' + date.getHours()).slice(-2);
+	const startMinutes = ('0' + date.getMinutes()).slice(-2);
+
 	let callDuration;
 	let seconds = 0;
 	let minutes = 0;
@@ -48,7 +51,7 @@
 		</div>
 	</div>
 	<div class="time">
-		<span>{date.getHours()}:{date.getMinutes()}</span>
+		<span>{startHours}:{startMinutes}</span>
 		<svg
 			class="phone"
 			width="15"
