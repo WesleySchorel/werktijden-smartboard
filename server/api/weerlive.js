@@ -4,9 +4,11 @@ module.exports =
     setInterval(async () => {
       console.log("--weather poll--");
       let res = await fetch(
-        `https://weerlive.nl/api/weerlive_api_v2.php?key=${process.env.WEERLIVE}&locatie=Amsterdam`
+        `https://weerlive.nl/api/weerlive_api_v2.php?key=demo&locatie=Amsterdam`
       );
       let data = await res.json();
+
+      console.log(data)
 
       await pusher.trigger("liveweer-channel", "update-liveweer", {
         data: data,
@@ -14,5 +16,5 @@ module.exports =
 
       // setTimeout(updateLiveWeer, 420000);
       // setTimeout(updateLiveWeer, 2000);
-    }, 420000);
+    }, 60000);
   };

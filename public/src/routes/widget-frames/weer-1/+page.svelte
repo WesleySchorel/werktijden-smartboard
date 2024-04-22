@@ -6,20 +6,22 @@
 
 	$: weatherData = data;
 
+	$: console.log(weatherData);
+
 	$: image = weatherData.liveweer[0].image;
 	$: temperature = Math.round(weatherData.liveweer[0].temp);
 	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
 	// $: hoursOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getHours()).slice(-2);
 	// $: minutesOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getMinutes()).slice(-2);
 	$: location = weatherData.liveweer[0].plaats;
-	
+
 	$: bg = [];
 	$: color = '';
 
-	$: timeOfUpdate = weatherData.liveweer[0].time
-	$: hoursOfUpdate = timeOfUpdate.slice(11, 13)
-	$: minutesOfUpdate = timeOfUpdate.slice(14, 16)
-	
+	$: timeOfUpdate = weatherData.liveweer[0].time;
+	$: hoursOfUpdate = timeOfUpdate.slice(11, 13);
+	$: minutesOfUpdate = timeOfUpdate.slice(14, 16);
+
 	$: switch (image) {
 		case 'zonnig':
 			bg = ['#0053A2', '#407EBE'];
