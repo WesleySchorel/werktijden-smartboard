@@ -31,6 +31,7 @@ export { default as WidgetSetting } from '$lib/components/molecules/widget-setti
 export { default as FilterBlock } from '$lib/components/molecules/filter-block.svelte';
 export { default as BottomNav } from '$lib/components/molecules/bottom-nav.svelte';
 export { default as Template } from '$lib/components/molecules/template.svelte';
+export { default as Call } from '$lib/components/molecules/call.svelte';
 
 // ORGANISMS
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
@@ -93,6 +94,7 @@ export const availableWidgets = [
 		preview: PreviewAnalogeklok1,
 		path: 'analogeklok-1'
 	},
+	{ title: 'Incoming calls', x: 12, y: 12, path: 'incomingcalls' },
 	{ title: 'Analoge klok (zonder cijfers)', x: 4, y: 4, path: 'analogeklok-2' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },

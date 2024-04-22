@@ -112,9 +112,69 @@ p {
 
 .widget {
     position: relative;
-    border-radius: var(--border-radius-widget);
     width: 100%;
     height: 100vh;
+}
+
+.incoming-call {
+    animation: incoming-call 1s steps(1) infinite;
+}
+
+.connected-call {
+    background-color: #009F66;
+    color: white;
+}
+
+.disconnected-call {
+    background-color: white;
+    color: var(--c-text-primary);
+}
+
+.incoming-call .time span {
+    display: none !important;
+}
+
+.connected-call .duration,
+.disconnected-call .duration {
+    display: block !important;
+}
+
+.incoming-call .phone {
+    display: block !important;
+    transform-origin: center;
+    animation: incoming-call-phone 1s steps(1) infinite, shake .3s infinite;
+}
+
+@keyframes incoming-call {
+    from {
+        background-color: #009F66;
+        color: white;
+    }
+
+    50% {
+        background-color: white;
+        color: var(--c-text-primary);
+    }
+}
+
+@keyframes incoming-call-phone {
+    from {
+        fill: white;
+    }
+
+    50% {
+        fill: #009F66;
+    }
+}
+
+@keyframes shake {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 6deg;
+    }
 }
 
 @keyframes disable {

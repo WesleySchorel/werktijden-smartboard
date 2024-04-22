@@ -51,6 +51,8 @@
 
 <style>
 	div {
+		display: flex;
+		flex-wrap: wrap;
 		position: absolute;
 		padding: 0.6rem;
 		width: 100%;
