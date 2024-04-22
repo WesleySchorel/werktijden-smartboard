@@ -9,5 +9,5 @@ module.exports = async function updateLiveWeer(pusher) {
     data: data,
   });
 
-  setTimeout(() => { updateLiveWeer(pusher) }, 300000)
+  setTimeout(() => { updateLiveWeer(pusher) }, 180000)
 };
