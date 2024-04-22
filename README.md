@@ -1,6 +1,9 @@
 # Werktijden Smartboard
 Het smartboard met unieke widgets voor werktijden.nl
 
+![image](https://github.com/WesleySchorel/werktijden-smartboard/assets/112857487/82d028c2-97b0-4807-8310-da8cb3906e62)
+
+
 ## 📦Inhoudsopgave
 * Beschrijving
 * Gebruik
