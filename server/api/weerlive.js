@@ -3,10 +3,10 @@ module.exports =
   function updateLiveWeer(pusher) {
     setInterval(async () => {
       console.log("--weather poll--");
-      const res = await fetch(
+      let res = await fetch(
         `https://weerlive.nl/api/weerlive_api_v2.php?key=${process.env.WEERLIVE}&locatie=Amsterdam`
       );
-      const data = await res.json();
+      let data = await res.json();
 
       await pusher.trigger("liveweer-channel", "update-liveweer", {
         data: data,
