@@ -45,7 +45,9 @@ export { default as MemoryCards } from '$lib/components/organisms/MemoryCards.sv
 // PREVIEWS
 // WIDGETS
 import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
-import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
+// import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
+import Analogeklok from '$lib/assets/previews/widgets/analogeklok.jpg';
+import IncomingCalls from '$lib/assets/previews/widgets/incomingcalls.jpg';
 import Kalender1 from '$lib/assets/previews/widgets/kalender-1.jpg';
 import Kalender2 from '$lib/assets/previews/widgets/kalender-2.jpg';
 import Actualiteitbanner from '$lib/assets/previews/widgets/actualiteitbanner.jpg';
@@ -87,15 +89,15 @@ export const sizes = [
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
-	{
-		title: 'Analoge klok (met cijfers)',
-		x: 4,
-		y: 4,
-		preview: PreviewAnalogeklok1,
-		path: 'analogeklok-1'
-	},
-	{ title: 'Incoming calls', x: 12, y: 12, path: 'incomingcalls' },
-	{ title: 'Analoge klok (zonder cijfers)', x: 4, y: 4, path: 'analogeklok-2' },
+	// {
+	// 	title: 'Analoge klok (met cijfers)',
+	// 	x: 4,
+	// 	y: 4,
+	// 	preview: PreviewAnalogeklok1,
+	// 	path: 'analogeklok-1'
+	// },
+	{ title: 'Incoming calls', x: 12, y: 12, preview: IncomingCalls, path: 'incomingcalls' },
+	{ title: 'Analoge klok', x: 4, y: 4, preview: Analogeklok, path: 'analogeklok-2' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
 	{
@@ -116,7 +118,7 @@ export const availableTemplates = [
 	{
 		title: 'Standaard',
 		preview: PreviewStandaard,
-		widgets: ['kalender-1', 'analogeklok-1', 'weer-1', 'actualiteitbanner']
+		widgets: ['incomingcalls', 'kalender-2', 'analogeklok-2', 'weer-1', 'actualiteitbanner']
 	},
 	{ title: 'Zomer', preview: PreviewZomer, widgets: ['weer-1', 'kalender-1'] },
 	{ title: 'Kerst', preview: PreviewKerst, widgets: ['actualiteitbanner', 'kalender-1'] }
