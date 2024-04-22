@@ -14,7 +14,7 @@
 
 {#if x === 'full' && y === 'full'}
 	<iframe
-		style="position: absolute; bottom: 0; left: 0"
+		style="position: absolute; bottom: 0; left: 0;"
 		width="100%"
 		height="100%"
 		src="{$page.url.origin}/widget-frames/{path}"
@@ -23,7 +23,7 @@
 	></iframe>
 {:else if x === 'full'}
 	<iframe
-		style="position: absolute; bottom: 0; left: 0"
+		style="position: absolute; bottom: 0; left: 0; border-radius: 0px;"
 		width="100%"
 		height={defaultPixels * y}
 		src="{$page.url.origin}/widget-frames/{path}"
@@ -49,3 +49,9 @@
 		frameborder="0"
 	></iframe>
 {/if}
+
+<style>
+	iframe {
+		border-radius: var(--border-radius-widget);
+	}
+</style>
