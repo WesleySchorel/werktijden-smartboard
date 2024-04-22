@@ -34,6 +34,9 @@
 	<h1>Gesprekken</h1>
 
 	<ol id="history">
+		{#if history.length == 0}
+			<p>Er heeft nog niemand gebeld...</p>
+		{/if}
 		{#each history as callData}
 			<Call data={callData} />
 		{/each}
@@ -54,5 +57,9 @@
 		margin: 0;
 		font-size: 2.5rem;
 		padding: 1.7rem;
+	}
+	p {
+		padding: 1.7rem;
+		background-color: rgb(240, 240, 240);
 	}
 </style>
