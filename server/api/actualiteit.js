@@ -27,5 +27,5 @@ module.exports =
       await pusher.trigger("actualiteit-channel", "update-actualiteit", {
         data: data,
       });
-    }, 420000);
+    }, 800000);
   };

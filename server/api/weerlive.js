@@ -10,7 +10,7 @@ module.exports = async function updateLiveWeer(pusher) {
       data: data,
     });
 
-    setTimeout(function () { poll(pusher) }, 120000)
+    setTimeout(function () { poll(pusher) }, 300000)
   }
   poll(pusher)
 };
