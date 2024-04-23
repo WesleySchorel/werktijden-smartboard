@@ -100,6 +100,8 @@ export const availableWidgets = [
 	{ title: 'Analoge klok', x: 4, y: 4, preview: Analogeklok, path: 'analogeklok-2' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
+	{ title: 'De Dam Live', x: 16, y: 9, path: 'de-dam-live' },
+	{ title: 'Wereldsteden Live', x: 16, y: 9, path: 'wereldsteden-live' },
 	{
 		title: 'Actualiteitbanner',
 		x: 'full',
