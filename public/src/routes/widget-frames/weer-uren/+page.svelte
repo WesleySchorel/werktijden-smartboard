@@ -157,7 +157,7 @@
 	}
 	.current div:first-of-type {
 		position: relative;
-		top: -1rem;
+		top: -.7rem;
 	}
 	.current .temp {
 		font-size: 4rem;
@@ -166,7 +166,7 @@
 	.current img {
 		height: 3rem;
 		width: 3rem;
-		margin: auto 0 auto 0.3rem;
+		margin: .4rem 0 auto 0.5rem;
 	}
 	.current > div {
 		display: flex;
