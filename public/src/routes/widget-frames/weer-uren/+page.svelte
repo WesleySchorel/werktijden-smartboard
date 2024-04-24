@@ -92,7 +92,7 @@
 	}
 
 	onMount(() => {
-		// image = 'zonnig';
+		// image = 'bliksem';
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
@@ -166,7 +166,7 @@
 	.current img {
 		height: 3rem;
 		width: 3rem;
-		margin: .4rem 0 auto 0.5rem;
+		margin: .6rem 0 auto 0.5rem;
 	}
 	.current > div {
 		display: flex;
