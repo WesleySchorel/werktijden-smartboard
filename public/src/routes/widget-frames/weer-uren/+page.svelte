@@ -92,7 +92,7 @@
 	}
 
 	onMount(() => {
-		// image = 'bliksem';
+		image = 'bliksem';
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
@@ -113,20 +113,22 @@
 <div class="widget" style="color: {color}; background: linear-gradient({bg[0]}, {bg[1]});">
 	<div class="current">
 		<div>
-			<p class="temp">{temperature}°</p>
-			<img src="/weather_icons/{image}.svg" alt="" />
+			<div>
+				<p class="temp">{temperature}°</p>
+				<img src="/weather_icons/{image}.svg" alt="" />
+			</div>
 		</div>
 		<div class="info">
 			<p class="gtemp">Voelt als: {gtemp}°</p>
 			<p>
 				<span class="wind">{wind} km/h</span>
 			</p>
-			<p class="now">
-				{location}
-				{hoursOfUpdate}:{minutesOfUpdate}
-			</p>
 		</div>
 	</div>
+	<p class="now">
+		{location}
+		{hoursOfUpdate}:{minutesOfUpdate}
+	</p>
 	<ol>
 		{#each uurvoorspellingen as uurvoorspelling}
 			<li>
@@ -153,22 +155,22 @@
 	.current {
 		display: flex;
 		justify-content: space-between;
-		flex-grow: 1;
 	}
 	.current div:first-of-type {
 		position: relative;
-		top: -.7rem;
+		top: -0.2rem;
 	}
 	.current .temp {
+		height: 4rem;
 		font-size: 4rem;
 		margin: 0;
 	}
 	.current img {
 		height: 3rem;
 		width: 3rem;
-		margin: .6rem 0 auto 0.5rem;
+		margin: 0.6rem 0 auto 0.5rem;
 	}
-	.current > div {
+	.current > div > div {
 		display: flex;
 	}
 	.info {
@@ -176,7 +178,7 @@
 		text-align: right;
 	}
 	.now {
-		margin-top: auto;
+		margin-left: auto;
 		opacity: 0.7;
 		font-weight: 300;
 	}
@@ -185,14 +187,19 @@
 		justify-content: space-between;
 		list-style: none;
 		border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+		/* margin: auto 0 auto 0; */
 		margin-top: 6px;
 		padding-top: 6px;
+		height: inherit;
 	}
 	ol li {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		align-items: center;
 		width: fit-content;
+		/* height: auto; */
 	}
 	ol li img {
 		height: 2rem;
