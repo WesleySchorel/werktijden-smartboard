@@ -1,8 +1,13 @@
 <script>
-	import { pusher, WeerUrenLijst } from '$lib/index.js';
+	import { pusher, WeerWeekLijst } from '$lib/index.js';
 	import { onMount } from 'svelte';
 
 	export let data;
+
+	const days = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
+	const currentDayIndex = new Date().getDay() - 1;
+
+	// console.log(days[currentDayIndex + 0]);
 
 	$: weatherData = data;
 
@@ -23,7 +28,16 @@
 	$: hoursOfUpdate = timeOfUpdate.slice(11, 13);
 	$: minutesOfUpdate = timeOfUpdate.slice(14, 16);
 
-	$: uurvoorspellingen = weatherData.uur_verw.slice(0, 5);
+	$: weekverwachting = weatherData.wk_verw.slice(0, 5);
+
+	$: weekverwachting.forEach((element, index) => {
+		let day_of_week = currentDayIndex + index;
+		if (day_of_week > 6) {
+			day_of_week -= 7;
+		}
+
+		element.naam = index === 0 ? 'vandaag' : days[day_of_week];
+	});
 
 	$: switch (image) {
 		case 'zonnig':
@@ -129,7 +143,7 @@
 		{location}
 		{hoursOfUpdate}:{minutesOfUpdate}
 	</p>
-	<WeerUrenLijst {uurvoorspellingen} />
+	<WeerWeekLijst {weekverwachting} />
 </div>
 
 <style>
@@ -137,6 +151,7 @@
 		margin: 0;
 		font-size: 1rem;
 	}
+	
 	.widget {
 		position: relative;
 		display: flex;
@@ -174,4 +189,5 @@
 		opacity: 0.7;
 		font-weight: 300;
 	}
+	
 </style>
