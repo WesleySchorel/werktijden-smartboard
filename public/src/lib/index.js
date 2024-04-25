@@ -45,6 +45,7 @@ export { default as MemoryCards } from '$lib/components/organisms/MemoryCards.sv
 // PREVIEWS
 // WIDGETS
 import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
+import PreviewWeerUren from '$lib/assets/previews/widgets/weer-uren.jpg';
 // import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
 import Analogeklok from '$lib/assets/previews/widgets/analogeklok.jpg';
 import IncomingCalls from '$lib/assets/previews/widgets/incomingcalls.jpg';
@@ -89,6 +90,7 @@ export const sizes = [
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
+	{ title: 'Weer met urenvoorspelling', x: 8, y: 4, preview: PreviewWeerUren, path: 'weer-uren' },
 	// {
 	// 	title: 'Analoge klok (met cijfers)',
 	// 	x: 4,
