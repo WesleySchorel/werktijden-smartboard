@@ -1,13 +1,6 @@
 <script>
-	import { pusher, WeerUrenLijst } from '$lib/index.js';
-	import { onMount } from 'svelte';
-
-	export let data;
-
-	$: weatherData = data;
-
-	// $: console.log(weatherData);
-
+	export let weatherData;
+    
 	$: image = weatherData.liveweer[0].image;
 	$: temperature = Math.round(weatherData.liveweer[0].temp);
 	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
@@ -23,7 +16,16 @@
 	$: hoursOfUpdate = timeOfUpdate.slice(11, 13);
 	$: minutesOfUpdate = timeOfUpdate.slice(14, 16);
 
-	$: uurvoorspellingen = weatherData.uur_verw.slice(0, 5);
+	$: weekverwachting = weatherData.wk_verw.slice(0, 5);
+
+	$: weekverwachting.forEach((element, index) => {
+		let day_of_week = currentDayIndex + index;
+		if (day_of_week > 6) {
+			day_of_week -= 7;
+		}
+
+		element.naam = index === 0 ? 'vandaag' : days[day_of_week];
+	});
 
 	$: switch (image) {
 		case 'zonnig':
@@ -90,88 +92,23 @@
 			bg = ['#000000', '#ffffff'];
 			color = '#ffffff';
 	}
-
-	onMount(() => {
-		// image = 'bliksem';
-		const liveWeerChannel = pusher.subscribe('liveweer-channel');
-
-		liveWeerChannel.bind('update-liveweer', (data) => {
-			// console.log(data);
-			weatherData = data.data;
-		});
-	});
 </script>
 
-<svelte:head>
-	<title>Weer met urenvoorspelling widget</title>
-	<meta
-		name="description"
-		content="Deze widget laat de huidige temperatuur en gevoelstemperatuur zien met een urenvoorspelling."
-	/>
-</svelte:head>
-
-<div class="widget" style="color: {color}; background: linear-gradient({bg[0]}, {bg[1]});">
-	<div class="current">
+<div class="current">
+	<div>
 		<div>
-			<div>
-				<p class="temp">{temperature}°</p>
-				<img src="/weather_icons/{image}.svg" alt="" />
-			</div>
-		</div>
-		<div class="info">
-			<p class="gtemp">Voelt als: {gtemp}°</p>
-			<p>
-				<span class="wind">{wind} km/h</span>
-			</p>
+			<p class="temp">{temperature}°</p>
+			<img src="/weather_icons/{image}.svg" alt="" />
 		</div>
 	</div>
-	<p class="now">
-		{location}
-		{hoursOfUpdate}:{minutesOfUpdate}
-	</p>
-	<WeerUrenLijst {uurvoorspellingen} />
+	<div class="info">
+		<p class="gtemp">Voelt als: {gtemp}°</p>
+		<p>
+			<span class="wind">{wind} km/h</span>
+		</p>
+	</div>
 </div>
-
-<style>
-	p {
-		margin: 0;
-		font-size: 1rem;
-	}
-	.widget {
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		color: white;
-		padding: 0.8rem;
-	}
-	.current {
-		display: flex;
-		justify-content: space-between;
-	}
-	.current div:first-of-type {
-		position: relative;
-		top: -0.2rem;
-	}
-	.current .temp {
-		height: 4rem;
-		font-size: 4rem;
-		margin: 0;
-	}
-	.current img {
-		height: 3rem;
-		width: 3rem;
-		margin: 0.6rem 0 auto 0.5rem;
-	}
-	.current > div > div {
-		display: flex;
-	}
-	.info {
-		flex-direction: column;
-		text-align: right;
-	}
-	.now {
-		margin-left: auto;
-		opacity: 0.7;
-		font-weight: 300;
-	}
-</style>
+<p class="now">
+	{location}
+	{hoursOfUpdate}:{minutesOfUpdate}
+</p>

@@ -32,6 +32,8 @@ export { default as FilterBlock } from '$lib/components/molecules/filter-block.s
 export { default as BottomNav } from '$lib/components/molecules/bottom-nav.svelte';
 export { default as Template } from '$lib/components/molecules/template.svelte';
 export { default as Call } from '$lib/components/molecules/call.svelte';
+export { default as WeerUrenLijst } from '$lib/components/molecules/weer-uren-lijst.svelte';
+export { default as WeerWeekLijst } from '$lib/components/molecules/weer-week-lijst.svelte';
 
 // ORGANISMS
 export { default as KoppelMobile } from '$lib/components/organisms/koppelmobile.svelte';
@@ -91,6 +93,8 @@ export const sizes = [
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Weer met urenvoorspelling', x: 8, y: 4, preview: PreviewWeerUren, path: 'weer-uren' },
+	{ title: 'Weer met weekvoorspelling', x: 8, y: 6, path: 'weer-week' },
+	{ title: 'Weer met alles', x: 8, y: 8, path: 'weer-uren-week' },
 	// {
 	// 	title: 'Analoge klok (met cijfers)',
 	// 	x: 4,
