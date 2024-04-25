@@ -48,6 +48,8 @@ export { default as MemoryCards } from '$lib/components/organisms/MemoryCards.sv
 // WIDGETS
 import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
 import PreviewWeerUren from '$lib/assets/previews/widgets/weer-uren.jpg';
+import PreviewWeerWeek from '$lib/assets/previews/widgets/weer-week.jpg';
+import PreviewWeerAlles from '$lib/assets/previews/widgets/weer-alles.jpg';
 // import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
 import Analogeklok from '$lib/assets/previews/widgets/analogeklok.jpg';
 import IncomingCalls from '$lib/assets/previews/widgets/incomingcalls.jpg';
@@ -93,8 +95,8 @@ export const sizes = [
 export const availableWidgets = [
 	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Weer met urenvoorspelling', x: 8, y: 4, preview: PreviewWeerUren, path: 'weer-uren' },
-	{ title: 'Weer met weekvoorspelling', x: 8, y: 6, path: 'weer-week' },
-	{ title: 'Weer met alles', x: 8, y: 8, path: 'weer-uren-week' },
+	{ title: 'Weer met weekvoorspelling', x: 8, y: 6, preview: PreviewWeerWeek, path: 'weer-week' },
+	{ title: 'Weer met alles', x: 8, y: 8, preview: PreviewWeerAlles, path: 'weer-uren-week' },
 	// {
 	// 	title: 'Analoge klok (met cijfers)',
 	// 	x: 4,
