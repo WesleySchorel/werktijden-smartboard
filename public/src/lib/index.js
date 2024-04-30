@@ -107,7 +107,7 @@ export const availableWidgets = [
 	// },
 	{ title: 'Incoming calls', x: 12, y: 12, preview: IncomingCalls, path: 'incomingcalls' },
 	{ title: 'Analoge klok', x: 4, y: 4, preview: Analogeklok, path: 'analogeklok-2' },
-	{ title: 'Digitale klok', x: 6, y: 4, preview: Digitaleklok, path: 'digitaleklok-1' },
+	{ title: 'Digitale klok', x: 4, y: 4, preview: Digitaleklok, path: 'digitaleklok-1' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
 	{ title: 'De Dam Live', x: 16, y: 9, path: 'de-dam-live' },
