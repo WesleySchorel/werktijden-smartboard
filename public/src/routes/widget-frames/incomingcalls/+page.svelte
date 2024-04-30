@@ -70,7 +70,7 @@
 		align-items: center;
 		background-color: rgb(240, 240, 240);
 		padding: 1.7rem;
-		height: 5.5rem;
+		height: 5.2rem;
 	}
 	p {
 		padding: 0;

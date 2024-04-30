@@ -1,9 +1,12 @@
 <script>
-	import Bottle from '$lib/assets/bottle.svg';
+	import Intercom from '$lib/assets/intercom.svg';
+	import All from '$lib/assets/all.svg';
+	import Assigned from '$lib/assets/assigned.svg';
+	import Unassigned from '$lib/assets/unassigned.svg';
 
 	export let data;
 
-	console.log(data);
+	console.log(data.data);
 </script>
 
 <svelte:head>
@@ -15,17 +18,30 @@
 </svelte:head>
 
 <section class="widget">
-	<h1><img src={Bottle} alt="" />Proefperiodes</h1>
+	<h1><img src={Intercom} alt="" />Tickets</h1>
 
 	<ol id="history">
-		{#each data.data as item}
-			<li>
-				<div>
-					<p>{item.employee.name}</p>
-					<span class="name">{item.name}</span>
-				</div>
-			</li>
-		{/each}
+		<li>
+			<div>
+				<img src={All} alt="" />
+				<p>All</p>
+			</div>
+			<span>{data.data.open}</span>
+		</li>
+		<li>
+			<div>
+				<img src={Unassigned} alt="" />
+				<p>Unassigned</p>
+			</div>
+			<span>{data.data.unassigned}</span>
+		</li>
+		<li>
+			<div>
+				<img src={Assigned} alt="" />
+				<p>Assigned</p>
+			</div>
+			<span>{data.data.assigned}</span>
+		</li>
 	</ol>
 </section>
 
@@ -34,12 +50,15 @@
 		height: 1.9rem;
 		margin-right: 0.6rem;
 	}
+	.dot {
+		font-size: 0.5rem;
+	}
 	section {
 		background-color: white;
 	}
 	#history {
 		display: flex;
-		flex-direction: column-reverse;
+		flex-direction: column;
 		position: relative;
 		z-index: 1;
 	}
@@ -58,14 +77,14 @@
 		width: 100%;
 		height: 5.2rem;
 	}
+	div {
+		display: flex;
+	}
 	p {
 		margin: 0;
 		font-size: 1.7rem;
 	}
-	.name {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-size: 1.2rem;
+	span {
+		font-size: 1.7rem;
 	}
 </style>

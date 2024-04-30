@@ -55,6 +55,7 @@ import Analogeklok from '$lib/assets/previews/widgets/analogeklok.jpg';
 import IncomingCalls from '$lib/assets/previews/widgets/incomingcalls.jpg';
 import PreviewProefperiodes from '$lib/assets/previews/widgets/proefperiodes.jpg';
 import PreviewVerlengingen from '$lib/assets/previews/widgets/verlengingen.jpg';
+import PreviewTickets from '$lib/assets/previews/widgets/tickets.jpg';
 import Kalender1 from '$lib/assets/previews/widgets/kalender-1.jpg';
 import Kalender2 from '$lib/assets/previews/widgets/kalender-2.jpg';
 import Actualiteitbanner from '$lib/assets/previews/widgets/actualiteitbanner.jpg';
@@ -109,6 +110,7 @@ export const availableWidgets = [
 	{ title: 'Incoming calls', x: 12, y: 12, preview: IncomingCalls, path: 'incomingcalls' },
 	{ title: 'Proefperiodes', x: 12, y: 12, preview: PreviewProefperiodes, path: 'proefperiode' },
 	{ title: 'Verlengingen', x: 12, y: 12, preview: PreviewVerlengingen, path: 'verlengingen' },
+	{ title: 'Tickets', x: 8, y: 7, preview: PreviewTickets, path: 'tickets' },
 	{ title: 'Analoge klok', x: 4, y: 4, preview: Analogeklok, path: 'analogeklok-2' },
 	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },

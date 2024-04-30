@@ -59,7 +59,7 @@
 		border-bottom: 1px solid var(--c-border-default);
 		padding: 0 1.7rem;
 		width: 100%;
-		height: 5.5rem;
+		height: 5.2rem;
 	}
 	p {
 		margin: 0;
