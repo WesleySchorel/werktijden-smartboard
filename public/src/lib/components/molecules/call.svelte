@@ -85,8 +85,9 @@
 		justify-content: space-between;
 		border-top: 1px solid var(--c-border-default);
 		border-bottom: 1px solid var(--c-border-default);
-		padding: 1rem 1.7rem;
+		padding: 0 1.7rem;
 		width: 100%;
+		height: 5.5rem;
 	}
 	.call-layout {
 		display: flex;

@@ -1,4 +1,5 @@
 <script>
+	import Phone from '$lib/assets/phone.svg';
 	import { Call, pusher } from '$lib/index.js';
 	import { onMount } from 'svelte';
 
@@ -31,11 +32,13 @@
 </script>
 
 <section class="widget">
-	<h1>Gesprekken</h1>
+	<h1><img src={Phone} alt="" />Gesprekken</h1>
 
 	<ol id="history">
 		{#if history.length == 0}
-			<p>Er heeft nog niemand gebeld...</p>
+			<li>
+				<p>Er heeft nog niemand gebeld...</p>
+			</li>
 		{/if}
 		{#each history as callData}
 			<Call data={callData} />
@@ -44,6 +47,10 @@
 </section>
 
 <style>
+	img {
+		height: 1.9rem;
+		margin-right: 0.6rem;
+	}
 	section {
 		background-color: white;
 	}
@@ -58,8 +65,15 @@
 		font-size: 2.5rem;
 		padding: 1.7rem;
 	}
-	p {
-		padding: 1.7rem;
+	li {
+		display: flex;
+		align-items: center;
 		background-color: rgb(240, 240, 240);
+		padding: 1.7rem;
+		height: 5.5rem;
+	}
+	p {
+		padding: 0;
+		margin: 0;
 	}
 </style>
