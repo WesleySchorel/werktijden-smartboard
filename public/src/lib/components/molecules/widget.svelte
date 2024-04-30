@@ -53,5 +53,7 @@
 <style>
 	iframe {
 		border-radius: var(--border-radius-widget);
+		border: 1px solid var(--c-border-default);
+		box-shadow: var(--box-shadow-default);
 	}
 </style>

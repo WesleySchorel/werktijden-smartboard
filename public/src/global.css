@@ -2,7 +2,7 @@
     --c-primary-werktijden: #00AE4A;
     --c-text-primary: #202020;
     --c-text-secondary: #727272;
-    --c-border-default: #ebebeb;
+    --c-border-default: #e8e8e8;
     --c-background: #f8f8f8;
 
     --border-default: 2px solid var(--c-border-default);
@@ -11,7 +11,7 @@
     --border-radius-default: 6px;
     --border-radius-widget: 14px;
 
-    --box-shadow-default: 0px 1px 6px 0px rgba(0, 0, 0, 0.04);
+    --box-shadow-default: 0px 0px 8px 0px rgba(0, 0, 0, 0.045);
     --box-shadow-extra: 0px 1px 12px 0px rgba(0, 0, 0, 0.1);
 }
 
