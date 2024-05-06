@@ -11,7 +11,7 @@
 	// $: sizeInPx = sizes.find(({ reference }) => reference === size);
 </script>
 
-{#if x === 'full' && y === 'full'}
+<!-- {#if x === 'full' && y === 'full'}
 	<iframe
 		style="position: absolute; bottom: 0; left: 0;"
 		width="100%"
@@ -47,12 +47,23 @@
 		title={`${path} Widget`}
 		frameborder="0"
 	></iframe>
-{/if}
+{/if} -->
+
+<iframe
+		style=""
+		width={size.x}
+		height={size.y}
+		src="{$page.url.origin}/widget-frames/{path}"
+		title={`${path} Widget`}
+		frameborder="0"
+	></iframe>
 
 <style>
 	iframe {
+		display: block;
 		border-radius: var(--border-radius-widget);
-		border: 1px solid var(--c-border-default);
-		box-shadow: var(--box-shadow-default);
+		border: 6px solid var(--c-background);
+		/* box-shadow: var(--box-shadow-default); */
+		/* padding: .2rem; */
 	}
 </style>

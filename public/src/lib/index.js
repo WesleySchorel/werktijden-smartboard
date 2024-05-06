@@ -87,9 +87,9 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 // OTHER
 // WIDGET SIZES
 export const sizes = [
-	{ reference: 's', name: 'Small', x: 190, y: 190 },
-	{ reference: 'm', name: 'Medium', x: 380, y: 190 },
-	{ reference: 'l', name: 'Large', x: 380, y: 380 },
+	{ reference: 's', name: 'Small', x: 210, y: 210 },
+	{ reference: 'm', name: 'Medium', x: 420, y: 210 },
+	{ reference: 'l', name: 'Large', x: 420, y: 420 },
 	{ reference: 'xl', name: 'Extra large', x: 760, y: 380 },
 	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
@@ -109,14 +109,14 @@ export const availableWidgets = [
 	// 	preview: PreviewAnalogeklok1,
 	// 	path: 'analogeklok-1'
 	// },
-	{ title: 'Incoming calls', preview: IncomingCalls, path: 'incomingcalls' },
-	{ title: 'Proefperiodes', preview: PreviewProefperiodes, path: 'proefperiode' },
-	{ title: 'Verlengingen', preview: PreviewVerlengingen, path: 'verlengingen' },
-	{ title: 'Tickets', preview: PreviewTickets, path: 'tickets' },
-	{ title: 'Analoge klok', preview: Analogeklok, path: 'analogeklok-2' },
-	{ title: 'Digitale klok', preview: Digitaleklok, path: 'digitaleklok-1' },
+	{ title: 'Incoming calls', size: sizes[2], preview: IncomingCalls, path: 'incomingcalls' },
+	{ title: 'Proefperiodes', size: sizes[2], preview: PreviewProefperiodes, path: 'proefperiode' },
+	{ title: 'Verlengingen', size: sizes[2], preview: PreviewVerlengingen, path: 'verlengingen' },
+	{ title: 'Tickets', size: sizes[2], preview: PreviewTickets, path: 'tickets' },
+	{ title: 'Analoge klok', size: sizes[0], preview: Analogeklok, path: 'analogeklok-2' },
+	{ title: 'Digitale klok', size: sizes[0], preview: Digitaleklok, path: 'digitaleklok-1' },
 	{ title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
-	{ title: 'Kalender (weekdag & datum)', preview: Kalender2, path: 'kalender-2' },
+	{ title: 'Kalender (weekdag & datum)', size: sizes[0], preview: Kalender2, path: 'kalender-2' },
 	{ title: 'De Dam Live', path: 'de-dam-live' },
 	{ title: 'Wereldsteden Live', path: 'wereldsteden-live' },
 	{

@@ -53,7 +53,7 @@
 		<div id="left">
 			<div class="widgets l">
 				{#each res.l.slice(0, 4) as widget}
-					<div class="widget l"><div class="content">{widget.path}</div></div>
+					<Widget size={widget.size} path={widget.path} />
 				{/each}
 			</div>
 		</div>
@@ -63,7 +63,7 @@
 		<div id="center">
 			<div class="widgets xl">
 				{#each res.xl.slice(0, 2) as widget}
-					<div class="widget xl"><div class="content">{widget.path}</div></div>
+					<Widget size={widget.size} path={widget.path} />
 				{/each}
 			</div>
 		</div>
@@ -74,21 +74,21 @@
 			{#if res.s}
 				<div class="widgets s">
 					{#each res.s.slice(0, 2) as widget}
-						<div class="widget s"><div class="content">{widget.path}</div></div>
+						<Widget size={widget.size} path={widget.path} />
 					{/each}
 				</div>
 			{/if}
 			{#if res.m}
 				<div class="widgets m">
 					{#each res.m.slice(0, 1) as widget}
-						<div class="widget m"><div class="content">{widget.path}</div></div>
+						<Widget size={widget.size} path={widget.path} />
 					{/each}
 				</div>
 			{/if}
 			{#if res.l}
 				<div class="widgets l">
 					{#each res.l.slice(4, 5) as widget}
-						<div class="widget l"><div class="content">{widget.path}</div></div>
+						<Widget size={widget.size} path={widget.path} />
 					{/each}
 				</div>
 			{/if}
@@ -107,7 +107,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		padding: 0.2rem;
+		padding: 6px;
 	}
 
 	.dashboard > div {
@@ -117,7 +117,6 @@
 	}
 
 	#left {
-		
 	}
 
 	#center {
@@ -131,19 +130,20 @@
 	.widgets {
 		display: flex;
 		flex-wrap: wrap;
+		/* width: min-content; */
 	}
 
 	.widgets.s {
-		flex-direction: row-reverse;
-		max-width: 395px;
+		margin-left: auto;
+		width: max-content;
 	}
 
 	.widgets.m {
-		max-width: 400px;
+		/* max-width: 400px; */
 	}
 
 	.widgets.l {
-		max-width: 780px;
+		max-width: 840px;
 	}
 
 	.widgets.xl {
@@ -152,16 +152,18 @@
 
 	.widget {
 		padding: 0.2rem;
+		/* height: min-content;
+		width: min-content; */
 	}
 
 	.widget .content {
-		width: 100%;
-		height: 100%;
-		border: 2px solid black;
-		border-radius: 8px;
+		/* width: 100%; */
+		height: min-content;
+		border: 1px solid black;
+		/* border-radius: 8px; */
 	}
 
-	.widget.s {
+	/* .widget.s {
 		width: 190px;
 		height: 190px;
 	}
@@ -179,5 +181,5 @@
 	.widget.xl {
 		width: 760px;
 		height: 380px;
-	}
+	} */
 </style>
