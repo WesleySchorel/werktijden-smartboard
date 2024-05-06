@@ -1,29 +1,32 @@
 # Werktijden Smartboard
-Het smartboard met unieke widgets voor werktijden.nl
-
-![image](https://github.com/WesleySchorel/werktijden-smartboard/assets/112857487/82d028c2-97b0-4807-8310-da8cb3906e62)
+``werktijden-smartboard is een narrowcasting app voor op het web bedoeld om widgets naar een smarttv te halen.``
 
 
-## 📦Inhoudsopgave
-* Beschrijving
-* Gebruik
-* Kenmerken
-* Installatie
-* Bronnen
+# ✨ Demo 
+Wanneer de gebruiker de ''werktijden-smartboard'' website opent op een smarttv heeft de gebruiker de mogelijkheid zijn telefoon te koppelen met de gegeven QR-code op het scherm van de smarttv. Wanneer de gebruiker beide apparaten gekoppeld heeft kan de gebruiker eenvoudig de widgets aan- en uitzetten, door gebruik te maken van de vooraf geslecteerde widget samenstellingen kan de gebruiker ervoor kiezen om een template aan te zetten.
 
-## ℹ️ Beschrijving
-Het smartboard met unieke widgets voor werktijden.nl
+`Voorbeeld Smarttv:`
 
-## 🖥️ Gebruik
-N/A
+(video)
 
-## ✨ Kenmerken
-De volgende technieken worden gebruikt in dit project:  HTML, CSS, JS, SVELTE, PUSHER
+`Voorbeeld telefoon:`
 
-## 📥 Installatie
-N/A
+(video)
 
-## 🌍 Bronnen
-PusherJS - https://pusher.com/
+
+# 💻 Techstack
+Voor `werktijden-smartboard` hebben wij de volgende techstack samen gesteld:
+- HTML, CSS & JS
+- Svelte/Sveltekit
+- PusherJS
+
+
+# 🤝 Contributors
+- [Tom](https://github.com/tom-2810)
+- [Wesley](https://github.com/WesleySchorel)
+
+
+# 📝 License
+Copyright © 2024 | This project is MIT licensed.
 
 
