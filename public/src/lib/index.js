@@ -87,9 +87,10 @@ export const pusher = new Pusher('64fb6baf53ed716416d3', {
 // OTHER
 // WIDGET SIZES
 export const sizes = [
-	{ reference: 's', name: 'Small', x: 300, y: 100 },
-	{ reference: 'm', name: 'Medium', x: 400, y: 200 },
-	{ reference: 'l', name: 'Large', x: 500, y: 300 },
+	{ reference: 's', name: 'Small', x: 190, y: 190 },
+	{ reference: 'm', name: 'Medium', x: 380, y: 190 },
+	{ reference: 'l', name: 'Large', x: 380, y: 380 },
+	{ reference: 'xl', name: 'Extra large', x: 760, y: 380 },
 	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
 
@@ -97,10 +98,10 @@ export const sizes = [
 // path must be unique
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
-	{ title: 'Weer gevoelstemperatuur', x: 4, y: 4, preview: PreviewWeer1, path: 'weer-1' },
-	{ title: 'Weer met urenvoorspelling', x: 8, y: 4, preview: PreviewWeerUren, path: 'weer-uren' },
-	{ title: 'Weer met weekvoorspelling', x: 8, y: 6, preview: PreviewWeerWeek, path: 'weer-week' },
-	{ title: 'Weer met alles', x: 8, y: 8, preview: PreviewWeerAlles, path: 'weer-uren-week' },
+	{ title: 'Weer gevoelstemperatuur', size: sizes[0], preview: PreviewWeer1, path: 'weer-1' },
+	{ title: 'Weer met urenvoorspelling', size: sizes[1], preview: PreviewWeerUren, path: 'weer-uren' },
+	{ title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
+	{ title: 'Weer met alles', size: sizes[2], preview: PreviewWeerAlles, path: 'weer-uren-week' },
 	// {
 	// 	title: 'Analoge klok (met cijfers)',
 	// 	x: 4,
@@ -108,20 +109,18 @@ export const availableWidgets = [
 	// 	preview: PreviewAnalogeklok1,
 	// 	path: 'analogeklok-1'
 	// },
-	{ title: 'Incoming calls', x: 12, y: 12, preview: IncomingCalls, path: 'incomingcalls' },
-	{ title: 'Proefperiodes', x: 12, y: 12, preview: PreviewProefperiodes, path: 'proefperiode' },
-	{ title: 'Verlengingen', x: 12, y: 12, preview: PreviewVerlengingen, path: 'verlengingen' },
-	{ title: 'Tickets', x: 8, y: 7, preview: PreviewTickets, path: 'tickets' },
-	{ title: 'Analoge klok', x: 4, y: 4, preview: Analogeklok, path: 'analogeklok-2' },
-	{ title: 'Digitale klok', x: 4, y: 4, preview: Digitaleklok, path: 'digitaleklok-1' },
-	{ title: 'Kalender (datum)', x: 4, y: 4, preview: Kalender1, path: 'kalender-1' },
-	{ title: 'Kalender (weekdag & datum)', x: 4, y: 4, preview: Kalender2, path: 'kalender-2' },
-	{ title: 'De Dam Live', x: 16, y: 9, path: 'de-dam-live' },
-	{ title: 'Wereldsteden Live', x: 16, y: 9, path: 'wereldsteden-live' },
+	{ title: 'Incoming calls', preview: IncomingCalls, path: 'incomingcalls' },
+	{ title: 'Proefperiodes', preview: PreviewProefperiodes, path: 'proefperiode' },
+	{ title: 'Verlengingen', preview: PreviewVerlengingen, path: 'verlengingen' },
+	{ title: 'Tickets', preview: PreviewTickets, path: 'tickets' },
+	{ title: 'Analoge klok', preview: Analogeklok, path: 'analogeklok-2' },
+	{ title: 'Digitale klok', preview: Digitaleklok, path: 'digitaleklok-1' },
+	{ title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
+	{ title: 'Kalender (weekdag & datum)', preview: Kalender2, path: 'kalender-2' },
+	{ title: 'De Dam Live', path: 'de-dam-live' },
+	{ title: 'Wereldsteden Live', path: 'wereldsteden-live' },
 	{
 		title: 'Actualiteitbanner',
-		x: 'full',
-		y: 1,
 		preview: Actualiteitbanner,
 		path: 'actualiteitbanner'
 	}

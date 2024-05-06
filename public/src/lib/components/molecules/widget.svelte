@@ -3,8 +3,7 @@
 	// import { sizes } from '$lib/index.js';
 
 	// export let size;
-	export let x;
-	export let y;
+	export let size;
 	export let path;
 
 	const defaultPixels = 50;

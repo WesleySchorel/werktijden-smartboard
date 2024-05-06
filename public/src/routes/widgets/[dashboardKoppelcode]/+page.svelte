@@ -98,8 +98,7 @@
 		{#each availableWidgets as widget}
 			<WidgetSetting
 				title={widget.title}
-				x={widget.x}
-				y={widget.y}
+				size={widget.size}
 				path={widget.path}
 				preview={widget.preview}
 				{enabled}

@@ -7,8 +7,7 @@
 
 	export let title;
 	// export let size;
-	export let x;
-	export let y;
+	export let size;
 	export let path;
 	export let enabled;
 	export let preview;
@@ -17,11 +16,13 @@
 
 	const presenceChannel = pusher.subscribe(`presence-${$page.params.dashboardKoppelcode}`);
 
-	function triggerEvent(path, x, y) {
+	function triggerEvent(path, size) {
+		console.log(size)
 		presenceChannel.trigger('client-change-setting', {
 			path: path,
-			x: x,
-			y: y,
+			size: size,
+			x: size.x,
+			y: size.y,
 			enabled: Array.from(allListItemCheckboxes).find((obj) => obj.dataset.path === path).checked
 		});
 	}
@@ -37,7 +38,7 @@
 			<div class="description">
 				<h2>{title}</h2>
 				<p>
-					{x} x {y}
+					
 				</p>
 			</div>
 			<div class="switch">
@@ -47,7 +48,7 @@
 					data-path={path}
 					type="checkbox"
 					name="enabled"
-					on:change={triggerEvent(path, x, y)}
+					on:change={triggerEvent(path, size)}
 				/>
 				<span class="slider round"></span>
 			</div>
