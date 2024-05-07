@@ -128,7 +128,6 @@
 
 	.widgets.l {
 		max-width: 840px;
-		flex-direction: column;
 	}
 
 	.widgets.xl {
