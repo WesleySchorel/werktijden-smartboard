@@ -2,8 +2,6 @@
 	import CheckBadge from '$lib/assets/check-badge.svg';
 
 	export let data;
-
-	console.log(data);
 </script>
 
 <svelte:head>

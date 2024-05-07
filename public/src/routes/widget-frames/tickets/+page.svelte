@@ -5,8 +5,6 @@
 	import Unassigned from '$lib/assets/unassigned.svg';
 
 	export let data;
-
-	console.log(data.data);
 </script>
 
 <svelte:head>

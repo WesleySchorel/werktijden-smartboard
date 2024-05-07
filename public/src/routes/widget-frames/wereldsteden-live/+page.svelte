@@ -12,6 +12,7 @@
 
 <style>
     iframe {
-        border-radius: var(--border-radius-widget);
+        /* border-radius: var(--border-radius-widget); */
+		overflow: hidden;
     }
 </style>

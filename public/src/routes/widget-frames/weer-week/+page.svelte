@@ -7,17 +7,12 @@
 	const days = ['maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag', 'zondag'];
 	const currentDayIndex = new Date().getDay() - 1;
 
-	// console.log(days[currentDayIndex + 0]);
-
 	$: weatherData = data;
-
-	// $: console.log(weatherData);
 
 	$: image = weatherData.liveweer[0].image;
 	$: temperature = Math.round(weatherData.liveweer[0].temp);
 	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
-	// $: hoursOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getHours()).slice(-2);
-	// $: minutesOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getMinutes()).slice(-2);
+
 	$: location = weatherData.liveweer[0].plaats;
 	$: wind = Math.round(weatherData.liveweer[0].windkmh);
 
@@ -110,7 +105,6 @@
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
-			// console.log(data);
 			weatherData = data.data;
 		});
 	});
@@ -151,7 +145,7 @@
 		margin: 0;
 		font-size: 1rem;
 	}
-	
+
 	.widget {
 		position: relative;
 		display: flex;
@@ -189,5 +183,4 @@
 		opacity: 0.7;
 		font-weight: 300;
 	}
-	
 </style>

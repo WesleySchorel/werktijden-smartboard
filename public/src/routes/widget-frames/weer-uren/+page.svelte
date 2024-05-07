@@ -6,13 +6,10 @@
 
 	$: weatherData = data;
 
-	// $: console.log(weatherData);
-
 	$: image = weatherData.liveweer[0].image;
 	$: temperature = Math.round(weatherData.liveweer[0].temp);
 	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
-	// $: hoursOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getHours()).slice(-2);
-	// $: minutesOfUpdate = ('0' + new Date(weatherData.liveweer[0].time).getMinutes()).slice(-2);
+
 	$: location = weatherData.liveweer[0].plaats;
 	$: wind = Math.round(weatherData.liveweer[0].windkmh);
 
@@ -96,7 +93,6 @@
 		const liveWeerChannel = pusher.subscribe('liveweer-channel');
 
 		liveWeerChannel.bind('update-liveweer', (data) => {
-			// console.log(data);
 			weatherData = data.data;
 		});
 	});

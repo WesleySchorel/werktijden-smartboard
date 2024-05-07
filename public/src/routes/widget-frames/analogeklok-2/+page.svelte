@@ -52,7 +52,7 @@
 		display: grid;
 		place-items: center;
 		background-color: #000000;
-		border-radius: var(--border-radius-widget);
+		/* border-radius: var(--border-radius-widget); */
 	}
 	.clock-face {
 		width: 180px;
@@ -69,7 +69,7 @@
 			linear-gradient(-60deg, transparent 50%, #000000 50%, transparent 51%);
 		margin: 0 auto;
 		position: relative;
-		inline-size: 88%;
+		/* inline-size: 88%; */
 	}
 
 	.dot {

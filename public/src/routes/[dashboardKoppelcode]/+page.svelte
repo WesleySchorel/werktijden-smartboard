@@ -9,6 +9,8 @@
 
 	let widgetList = [];
 
+	let res = [];
+
 	onMount(() => {
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
 		let localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
@@ -16,6 +18,8 @@
 		localStorage.setItem(`localWidgetListOf${dashboardKoppelcode}`, localWidgetList);
 		localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 		if (JSON.parse(localWidgetList)) widgetList = JSON.parse(localWidgetList);
+
+		res = Object.groupBy(widgetList, (o) => o.size.reference);
 
 		presenceChannel.bind('client-change-setting', (widget) => {
 			if (widget.enabled && !widgetList.find((obj) => obj.path === widget.path)) {
@@ -31,6 +35,8 @@
 			localStorage.setItem(`localWidgetListOf${dashboardKoppelcode}`, JSON.stringify(widgetList));
 			localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 			widgetList = widgetList;
+
+			res = Object.groupBy(widgetList, (o) => o.size.reference);
 		});
 
 		presenceChannel.bind('client-request-data', () => {
@@ -39,23 +45,94 @@
 	});
 </script>
 
-<!-- <h1>
-	Dashboard: {dashboardKoppelcode}
-</h1> -->
+<div class="dashboard">
+	{#if res.l}
+		<div id="left">
+			<div class="widgets l">
+				{#each res.l.slice(1, 5) as widget}
+					<Widget size={widget.size} path={widget.path} />
+				{/each}
+			</div>
+		</div>
+	{/if}
 
-<div>
-	{#each widgetList as widget}
-		<Widget path={widget.path} x={widget.x} y={widget.y} />
-	{/each}
+	{#if res.xl}
+		<div id="center">
+			<div class="widgets xl">
+				{#each res.xl.slice(0, 2) as widget}
+					<Widget size={widget.size} path={widget.path} />
+				{/each}
+			</div>
+		</div>
+	{/if}
+
+	{#if res.s || res.m || res.l}
+		<div id="right">
+			{#if res.s}
+				<div class="widgets s">
+					{#each res.s.slice(0, 2) as widget}
+						<Widget size={widget.size} path={widget.path} />
+					{/each}
+				</div>
+			{/if}
+			{#if res.m}
+				<div class="widgets m">
+					{#each res.m.slice(0, 1) as widget}
+						<Widget size={widget.size} path={widget.path} />
+					{/each}
+				</div>
+			{/if}
+			{#if res.l}
+				<div class="widgets l">
+					{#each res.l.slice(0, 1) as widget}
+						<Widget size={widget.size} path={widget.path} />
+					{/each}
+				</div>
+			{/if}
+		</div>
+	{/if}
 </div>
 
 <style>
-	div {
+	* {
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	.dashboard {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding: 6px;
+	}
+
+	.dashboard > div {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#center {
+		margin-left: auto;
+	}
+
+	.widgets {
 		display: flex;
 		flex-wrap: wrap;
-		position: absolute;
-		padding: 0.6rem;
-		width: 100%;
-		height: 100vh;
+	}
+
+	.widgets.s {
+		margin-left: auto;
+		width: max-content;
+	}
+
+	.widgets.l {
+		max-width: 840px;
+		flex-direction: column;
+	}
+
+	.widgets.xl {
+		max-width: min-content;
+		margin-left: auto;
 	}
 </style>

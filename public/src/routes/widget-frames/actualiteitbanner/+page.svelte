@@ -14,7 +14,6 @@
 		const actualiteitChannel = pusher.subscribe('actualiteit-channel');
 
 		actualiteitChannel.bind('update-actualiteit', (data) => {
-			console.log(data);
 			headlines = data.data;
 		});
 	});
