@@ -6,11 +6,9 @@
 	$: history = [];
 
 	onMount(() => {
-		const incomingCallNotifier = document.querySelector('#incoming-call');
 		const privateCallChannel = pusher.subscribe('private-call');
 
 		privateCallChannel.bind('caller-status', async (data) => {
-			// console.log(data);
 			if (!history.find((obj) => obj.id === data.id)) {
 				history.push(data);
 			} else {
@@ -25,8 +23,6 @@
 				);
 			}
 			history = history;
-
-			console.log(history);
 		});
 	});
 </script>

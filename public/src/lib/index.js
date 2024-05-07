@@ -90,7 +90,7 @@ export const sizes = [
 	{ reference: 's', name: 'Small', x: 210, y: 210 },
 	{ reference: 'm', name: 'Medium', x: 420, y: 210 },
 	{ reference: 'l', name: 'Large', x: 420, y: 420 },
-	{ reference: 'xl', name: 'Extra large', x: 760, y: 380 },
+	{ reference: 'xl', name: 'Extra large', x: 830, y: 420 },
 	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
 
@@ -117,8 +117,8 @@ export const availableWidgets = [
 	{ title: 'Digitale klok', size: sizes[0], preview: Digitaleklok, path: 'digitaleklok-1' },
 	{ title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', size: sizes[0], preview: Kalender2, path: 'kalender-2' },
-	{ title: 'De Dam Live', path: 'de-dam-live' },
-	{ title: 'Wereldsteden Live', path: 'wereldsteden-live' },
+	{ title: 'De Dam Live', size: sizes[3], path: 'de-dam-live' },
+	{ title: 'Wereldsteden Live', size: sizes[3], path: 'wereldsteden-live' },
 	{
 		title: 'Actualiteitbanner',
 		preview: Actualiteitbanner,

@@ -17,7 +17,6 @@
 	const presenceChannel = pusher.subscribe(`presence-${$page.params.dashboardKoppelcode}`);
 
 	function triggerEvent(path, size) {
-		console.log(size)
 		presenceChannel.trigger('client-change-setting', {
 			path: path,
 			size: size,

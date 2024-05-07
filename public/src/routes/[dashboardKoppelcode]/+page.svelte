@@ -20,10 +20,8 @@
 		if (JSON.parse(localWidgetList)) widgetList = JSON.parse(localWidgetList);
 
 		res = Object.groupBy(widgetList, (o) => o.size.reference);
-		console.log(res);
 
 		presenceChannel.bind('client-change-setting', (widget) => {
-			console.log(widget);
 			if (widget.enabled && !widgetList.find((obj) => obj.path === widget.path)) {
 				widgetList.push(widget);
 			}
@@ -39,7 +37,6 @@
 			widgetList = widgetList;
 
 			res = Object.groupBy(widgetList, (o) => o.size.reference);
-			console.log(res);
 		});
 
 		presenceChannel.bind('client-request-data', () => {
@@ -52,7 +49,7 @@
 	{#if res.l}
 		<div id="left">
 			<div class="widgets l">
-				{#each res.l.slice(0, 4) as widget}
+				{#each res.l.slice(1, 5) as widget}
 					<Widget size={widget.size} path={widget.path} />
 				{/each}
 			</div>
@@ -87,7 +84,7 @@
 			{/if}
 			{#if res.l}
 				<div class="widgets l">
-					{#each res.l.slice(4, 5) as widget}
+					{#each res.l.slice(0, 1) as widget}
 						<Widget size={widget.size} path={widget.path} />
 					{/each}
 				</div>
@@ -113,24 +110,15 @@
 	.dashboard > div {
 		display: flex;
 		flex-direction: column;
-		/*   justify-content: space-between; */
-	}
-
-	#left {
 	}
 
 	#center {
 		margin-left: auto;
 	}
 
-	#right {
-		margin-left: auto;
-	}
-
 	.widgets {
 		display: flex;
 		flex-wrap: wrap;
-		/* width: min-content; */
 	}
 
 	.widgets.s {
@@ -138,48 +126,13 @@
 		width: max-content;
 	}
 
-	.widgets.m {
-		/* max-width: 400px; */
-	}
-
 	.widgets.l {
 		max-width: 840px;
+		flex-direction: column;
 	}
 
 	.widgets.xl {
 		max-width: min-content;
+		margin-left: auto;
 	}
-
-	.widget {
-		padding: 0.2rem;
-		/* height: min-content;
-		width: min-content; */
-	}
-
-	.widget .content {
-		/* width: 100%; */
-		height: min-content;
-		border: 1px solid black;
-		/* border-radius: 8px; */
-	}
-
-	/* .widget.s {
-		width: 190px;
-		height: 190px;
-	}
-
-	.widget.m {
-		width: 380px;
-		height: 190px;
-	}
-
-	.widget.l {
-		width: 380px;
-		height: 380px;
-	}
-
-	.widget.xl {
-		width: 760px;
-		height: 380px;
-	} */
 </style>

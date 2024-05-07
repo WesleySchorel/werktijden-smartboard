@@ -2,8 +2,6 @@
 	import Bottle from '$lib/assets/bottle.svg';
 
 	export let data;
-
-	console.log(data);
 </script>
 
 <svelte:head>

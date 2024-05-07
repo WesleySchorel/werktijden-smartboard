@@ -22,13 +22,10 @@
 		localStorage.setItem('currentDashboard', dashboardKoppelcode);
 
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
-			// console.log('pusher:subscription_succeeded');
 
 			presenceChannel.trigger('client-request-data', {});
-			// console.log('client-request-data');
 
 			presenceChannel.bind('client-new-data', (data) => {
-				// console.log('client-new-data');
 				enabledSettings = data.settings;
 
 				allListItemCheckboxes.forEach((checkbox) => {
@@ -51,10 +48,8 @@
 			});
 		});
 		presenceChannel.trigger('client-request-data', {});
-		// console.log('client-request-data');
 
 		presenceChannel.bind('client-new-data', (data) => {
-			// console.log('client-new-data');
 			enabledSettings = data.settings;
 
 			allListItemCheckboxes.forEach((checkbox) => {
