@@ -90,7 +90,7 @@ export const sizes = [
 	{ reference: 's', name: 'Small', x: 210, y: 210 },
 	{ reference: 'm', name: 'Medium', x: 420, y: 210 },
 	{ reference: 'l', name: 'Large', x: 420, y: 420 },
-	{ reference: 'xl', name: 'Extra large', x: 830, y: 420 },
+	{ reference: 'xl', name: 'Extra large', x: 715, y: 420 },
 	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
 
