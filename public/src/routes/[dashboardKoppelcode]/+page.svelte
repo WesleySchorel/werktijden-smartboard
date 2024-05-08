@@ -46,6 +46,11 @@
 </script>
 
 <div class="dashboard">
+	<ul>
+		{#each widgetList as widget}
+			<li>{widget.path}</li>
+		{/each}
+	</ul>
 	{#if res.l}
 		<div id="left">
 			<div class="widgets l">
