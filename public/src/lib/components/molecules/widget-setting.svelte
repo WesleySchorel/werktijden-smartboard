@@ -20,6 +20,7 @@
 		presenceChannel.trigger('client-change-setting', {
 			path: path,
 			size: size,
+			sizeReference: size.reference,
 			x: size.x,
 			y: size.y,
 			enabled: Array.from(allListItemCheckboxes).find((obj) => obj.dataset.path === path).checked
@@ -36,9 +37,9 @@
 		<label for={path}>
 			<div class="description">
 				<h2>{title}</h2>
-				<p>
-					
-				</p>
+				{#if size}
+					<p>{size.name}</p>
+				{/if}
 			</div>
 			<div class="switch">
 				<input
