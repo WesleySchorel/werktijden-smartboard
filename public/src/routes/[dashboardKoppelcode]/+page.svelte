@@ -19,7 +19,7 @@
 		localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 		if (JSON.parse(localWidgetList)) widgetList = JSON.parse(localWidgetList);
 
-		res = Object.groupBy(widgetList, (o) => o.size.reference);
+		// res = Object.groupBy(widgetList, (o) => o.size.reference);
 
 		presenceChannel.bind('client-change-setting', (widget) => {
 			if (widget.enabled && !widgetList.find((obj) => obj.path === widget.path)) {
@@ -36,7 +36,7 @@
 			localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 			widgetList = widgetList;
 
-			res = Object.groupBy(widgetList, (o) => o.size.reference);
+			// res = Object.groupBy(widgetList, (o) => o.size.reference);
 		});
 
 		presenceChannel.bind('client-request-data', () => {
@@ -48,10 +48,10 @@
 <div class="dashboard">
 	<ul>
 		{#each widgetList as widget}
-			<li>{widget.path}</li>
+			<Widget size={widget.size} path={widget.path} />
 		{/each}
 	</ul>
-	{#if res.l}
+	<!-- {#if res.l}
 		<div id="left">
 			<div class="widgets l">
 				{#each res.l.slice(1, 5) as widget}
@@ -95,7 +95,7 @@
 				</div>
 			{/if}
 		</div>
-	{/if}
+	{/if} -->
 </div>
 
 <style>
