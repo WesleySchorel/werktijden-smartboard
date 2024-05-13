@@ -19,7 +19,7 @@
 		localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 		if (JSON.parse(localWidgetList)) widgetList = JSON.parse(localWidgetList);
 
-		res = Object.groupBy(widgetList, (o) => o.size.reference);
+		res = groupBy(widgetList, 'sizeReference');
 
 		presenceChannel.bind('client-change-setting', (widget) => {
 			if (widget.enabled && !widgetList.find((obj) => obj.path === widget.path)) {
@@ -36,12 +36,22 @@
 			localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 			widgetList = widgetList;
 
-			res = Object.groupBy(widgetList, (o) => o.size.reference);
+			res = groupBy(widgetList, 'sizeReference');
 		});
 
 		presenceChannel.bind('client-request-data', () => {
 			presenceChannel.trigger('client-new-data', { settings: widgetList });
 		});
+
+		function groupBy(arr, property) {
+			return arr.reduce(function (memo, x) {
+				if (!memo[x[property]]) {
+					memo[x[property]] = [];
+				}
+				memo[x[property]].push(x);
+				return memo;
+			}, {});
+		}
 	});
 </script>
 
