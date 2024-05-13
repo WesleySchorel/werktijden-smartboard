@@ -98,6 +98,7 @@ export const sizes = [
 // path must be unique
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
+	{ title: 'Kan ik een korte broek aan?', size: sizes[1], path: 'kanikeenkortebroekaan' },
 	{ title: 'Weer gevoelstemperatuur', size: sizes[0], preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Weer met urenvoorspelling', size: sizes[1], preview: PreviewWeerUren, path: 'weer-uren' },
 	{ title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
