@@ -165,6 +165,8 @@
 	}
 
 	.werktijden-banner {
+		position: relative;
+		top: -.3rem;
 		display: flex;
 		align-items: center;
 		padding: 0 1rem;
