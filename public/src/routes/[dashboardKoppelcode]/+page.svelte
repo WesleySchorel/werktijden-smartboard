@@ -61,7 +61,7 @@
 		setInterval(() => {
 			let newDate = new Date();
 			document.getElementById('currentTime').innerText =
-				newDate.getHours() + ':' + newDate.getMinutes();
+				('0' + newDate.getHours()).slice(-2) + ':' + ('0' + newDate.getMinutes()).slice(-2);
 		}, 990);
 
 		const actualiteitChannel = pusher.subscribe('actualiteit-channel');
@@ -127,14 +127,14 @@
 			<div class="banner">
 				<div class="banner-content">
 					{#each headlines as item}
-						<h2>{item}</h2>
-						<span>●</span>
+							<h2>{item}</h2>
+							<span>●</span>
 					{/each}
 				</div>
 				<div class="banner-content">
 					{#each headlines as item}
-						<h2>{item}</h2>
-						<span>●</span>
+							<h2>{item}</h2>
+							<span>●</span>
 					{/each}
 				</div>
 			</div>
@@ -166,7 +166,7 @@
 
 	.werktijden-banner {
 		position: relative;
-		top: -.3rem;
+		top: -0.3rem;
 		display: flex;
 		align-items: center;
 		padding: 0 1rem;
@@ -255,7 +255,7 @@
 		border-radius: 24px;
 
 		/* background-color: var(--c-background); */
-		background-image: url("https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=4896&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+		background-image: url('/dashboard-bg.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
