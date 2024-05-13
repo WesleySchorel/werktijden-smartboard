@@ -6,9 +6,9 @@
 
 	$: weatherData = data;
 
-	$: gtemp = Math.round(weatherData.liveweer[0].temp);
+	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
 
-	$: korteBroekAan = gtemp > 70;
+	$: korteBroekAan = gtemp > 20;
 </script>
 
 <svelte:head>
