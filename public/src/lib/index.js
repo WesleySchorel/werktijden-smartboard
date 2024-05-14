@@ -17,6 +17,7 @@ export { default as BulletCheck } from '$lib/components/atoms/bulletcheck.svelte
 export { default as SearchBar } from '$lib/components/atoms/searchbar.svelte';
 export { default as FilterOption } from '$lib/components/atoms/filter-option.svelte';
 export { default as Kebab } from '$lib/components/atoms/kebab.svelte';
+export { default as ClearDashboardBtn } from '$lib/components/atoms/clear-dashboard-btn.svelte';
 export { default as NavItem } from '$lib/components/atoms/nav-item.svelte';
 export { default as TemplateList } from '$lib/components/atoms/template-list.svelte';
 
