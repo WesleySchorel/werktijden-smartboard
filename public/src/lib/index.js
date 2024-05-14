@@ -136,8 +136,12 @@ export const availableTemplates = [
 	{
 		title: 'Standaard',
 		preview: PreviewStandaard,
-		widgets: ['analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week', 'incomingcalls', 'tickets', 'proefperiode', 'verlengingen', 'de-dam-live', 'wereldsteden-live']
+		widgets: ['de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week', 'incomingcalls', 'tickets', 'proefperiode', 'verlengingen']
 	},
-	{ title: 'Zomer', preview: PreviewZomer, widgets: ['weer-1', 'kalender-1'] },
+	{
+		title: 'Eenvoudig',
+		preview: PreviewStandaard,
+		widgets: ['de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week']
+	},
 	{ title: 'Kerst', preview: PreviewKerst, widgets: ['actualiteitbanner', 'kalender-1'] }
 ];
