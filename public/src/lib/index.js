@@ -136,7 +136,7 @@ export const availableTemplates = [
 	{
 		title: 'Standaard',
 		preview: PreviewStandaard,
-		widgets: ['incomingcalls', 'kalender-2', 'analogeklok-2', 'weer-1', 'actualiteitbanner']
+		widgets: ['analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week', 'incomingcalls', 'tickets', 'proefperiode', 'verlengingen', 'de-dam-live', 'wereldsteden-live']
 	},
 	{ title: 'Zomer', preview: PreviewZomer, widgets: ['weer-1', 'kalender-1'] },
 	{ title: 'Kerst', preview: PreviewKerst, widgets: ['actualiteitbanner', 'kalender-1'] }
