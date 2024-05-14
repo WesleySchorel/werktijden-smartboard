@@ -12,7 +12,8 @@
 <style>
 	label {
 		position: relative;
-		display: inline-block;
+		display: flex;
+		align-items: center;
 		color: var(--c-text-primary);
 		border-radius: var(--border-radius-default);
 		padding: 0.3rem 0.6rem;

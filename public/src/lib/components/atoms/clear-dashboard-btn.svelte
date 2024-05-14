@@ -25,9 +25,9 @@
 		display: block;
 		/* width: -webkit-fill-available; */
 		/* min-width: 9rem; */
-		padding: 0.6rem;
+		/* padding: 0.6rem; */
 		border-radius: var(--border-radius-default);
-        border: 1px solid red;
+        /* border: 1px solid red; */
 	}
 	button.warning {
 		color: red;
@@ -36,6 +36,6 @@
 		background-color: var(--c-background);
 	}
 	button.warning:hover {
-		background-color: rgba(255, 0, 0, 0.05);
+		opacity: .8;
 	}
 </style>

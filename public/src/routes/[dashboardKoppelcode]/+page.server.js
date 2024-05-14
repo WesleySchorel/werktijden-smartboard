@@ -1,4 +1,7 @@
-export const load = async ({}) => {
+export const load = async ({params}) => {
+
+	const { dashboardKoppelcode } = params
+
 	const data = await fetch('https://feeds.nos.nl/nosnieuwsalgemeen')
 		.then((response) => {
 			return response.text();
@@ -19,5 +22,9 @@ export const load = async ({}) => {
 			titles.shift();
 			return titles;
 		});
-	return { data: data };
+	return { data: data, QRcodeSrc: generateQRcodeSrc(dashboardKoppelcode) };
 };
+
+function generateQRcodeSrc(koppelcode) {
+	return `https://scorenu.app/qr/highres.php?link=https://werktijden-smartboard.vercel.app/widgets/${koppelcode}`;
+}
