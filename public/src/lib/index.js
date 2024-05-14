@@ -98,6 +98,7 @@ export const sizes = [
 // path must be unique
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
+	{ title: 'Kan ik een korte broek aan?', size: sizes[1], path: 'kanikeenkortebroekaan' },
 	{ title: 'Weer gevoelstemperatuur', size: sizes[0], preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Weer met urenvoorspelling', size: sizes[1], preview: PreviewWeerUren, path: 'weer-uren' },
 	{ title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
@@ -135,8 +136,12 @@ export const availableTemplates = [
 	{
 		title: 'Standaard',
 		preview: PreviewStandaard,
-		widgets: ['incomingcalls', 'kalender-2', 'analogeklok-2', 'weer-1', 'actualiteitbanner']
+		widgets: ['de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week', 'incomingcalls', 'tickets', 'proefperiode', 'verlengingen']
 	},
-	{ title: 'Zomer', preview: PreviewZomer, widgets: ['weer-1', 'kalender-1'] },
+	{
+		title: 'Eenvoudig',
+		preview: PreviewStandaard,
+		widgets: ['de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week']
+	},
 	{ title: 'Kerst', preview: PreviewKerst, widgets: ['actualiteitbanner', 'kalender-1'] }
 ];
