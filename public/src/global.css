@@ -39,6 +39,10 @@ body {
     background-color: #F8F8F8;
 }
 
+body:has(.dashboard) {
+    background-color: var(--c-primary-werktijden);
+}
+
 h1 {
     margin: 0 0 1rem 0;
     font-size: clamp(2rem, 9vw, 3rem);
