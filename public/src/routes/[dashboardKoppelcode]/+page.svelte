@@ -140,6 +140,7 @@
 			</div>
 		</div>
 		<span id="currentTime"></span>
+		<img src={data.QRcodeSrc} alt="" />
 	</div>
 </div>
 
@@ -155,6 +156,11 @@
 		display: flex;
 		flex-direction: column;
 		height: 100dvh;
+	}
+
+	img {
+		height: 3rem;
+		margin-left: 1rem;
 	}
 
 	span {
@@ -191,7 +197,9 @@
 	}
 
 	.logo {
-		width: 12rem;
+		position: relative;
+		top: .2rem;
+		width: 15rem;
 		padding-right: 1rem;
 	}
 
