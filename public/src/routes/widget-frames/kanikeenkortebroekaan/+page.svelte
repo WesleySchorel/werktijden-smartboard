@@ -25,13 +25,13 @@
 	<p>Kan je een korte broek aan?</p>
 	{#if korteBroekAan}
 		<div class="content">
-			<img src={kortebroek} alt="" />
 			<h1>JA</h1>
+			<img src={kortebroek} alt="" />
 		</div>
 	{:else}
 		<div class="content">
-			<img src={langebroek} alt="" />
 			<h1>NEE</h1>
+			<img src={langebroek} alt="" />
 		</div>
 	{/if}
 </div>
