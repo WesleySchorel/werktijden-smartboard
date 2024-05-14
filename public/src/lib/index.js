@@ -63,8 +63,7 @@ import Actualiteitbanner from '$lib/assets/previews/widgets/actualiteitbanner.jp
 
 // TEMPLATES
 import PreviewStandaard from '$lib/assets/previews/templates/standaard.jpg';
-import PreviewZomer from '$lib/assets/previews/templates/zomer.jpg';
-import PreviewKerst from '$lib/assets/previews/templates/kerst.jpg';
+import PreviewEenvoudig from '$lib/assets/previews/templates/eenvoudig.jpg';
 
 // PUSHER
 import Pusher from 'pusher-js';
@@ -91,40 +90,27 @@ export const sizes = [
 	{ reference: 'm', name: 'Medium', x: 420, y: 210 },
 	{ reference: 'l', name: 'Large', x: 420, y: 420 },
 	{ reference: 'xl', name: 'Extra large', x: 715, y: 420 },
-	{ reference: 'banner', name: 'Full width', x: '100%', y: 70 }
 ];
 
 // AVAILABLE WIDGETS
 // path must be unique
 // preview has IMPORT from PREVIEW WIDGETS
 export const availableWidgets = [
-	{ title: 'Kan ik een korte broek aan?', size: sizes[1], path: 'kanikeenkortebroekaan' },
 	{ title: 'Weer gevoelstemperatuur', size: sizes[0], preview: PreviewWeer1, path: 'weer-1' },
 	{ title: 'Weer met urenvoorspelling', size: sizes[1], preview: PreviewWeerUren, path: 'weer-uren' },
-	{ title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
+	// { title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
 	{ title: 'Weer met alles', size: sizes[2], preview: PreviewWeerAlles, path: 'weer-uren-week' },
-	// {
-	// 	title: 'Analoge klok (met cijfers)',
-	// 	x: 4,
-	// 	y: 4,
-	// 	preview: PreviewAnalogeklok1,
-	// 	path: 'analogeklok-1'
-	// },
+	{ title: 'Kan ik een korte broek aan?', size: sizes[1], path: 'kanikeenkortebroekaan' },
 	{ title: 'Incoming calls', size: sizes[2], preview: IncomingCalls, path: 'incomingcalls' },
 	{ title: 'Proefperiodes', size: sizes[2], preview: PreviewProefperiodes, path: 'proefperiode' },
 	{ title: 'Verlengingen', size: sizes[2], preview: PreviewVerlengingen, path: 'verlengingen' },
 	{ title: 'Tickets', size: sizes[2], preview: PreviewTickets, path: 'tickets' },
 	{ title: 'Analoge klok', size: sizes[0], preview: Analogeklok, path: 'analogeklok-2' },
 	{ title: 'Digitale klok', size: sizes[0], preview: Digitaleklok, path: 'digitaleklok-1' },
-	{ title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
+	// { title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },
 	{ title: 'Kalender (weekdag & datum)', size: sizes[0], preview: Kalender2, path: 'kalender-2' },
 	{ title: 'De Dam Live', size: sizes[3], path: 'de-dam-live' },
 	{ title: 'Wereldsteden Live', size: sizes[3], path: 'wereldsteden-live' },
-	{
-		title: 'Actualiteitbanner',
-		preview: Actualiteitbanner,
-		path: 'actualiteitbanner'
-	}
 	// { title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
 	// { title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' },
 ];
@@ -136,12 +122,11 @@ export const availableTemplates = [
 	{
 		title: 'Standaard',
 		preview: PreviewStandaard,
-		widgets: ['de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week', 'incomingcalls', 'tickets', 'proefperiode', 'verlengingen']
+		widgets: ['weer-uren-week', 'de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'incomingcalls', 'tickets', 'proefperiode', 'verlengingen']
 	},
 	{
 		title: 'Eenvoudig',
-		preview: PreviewStandaard,
-		widgets: ['de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan', 'weer-uren-week']
-	},
-	{ title: 'Kerst', preview: PreviewKerst, widgets: ['actualiteitbanner', 'kalender-1'] }
+		preview: PreviewEenvoudig,
+		widgets: ['weer-uren-week', 'de-dam-live', 'wereldsteden-live', 'analogeklok-2', 'kalender-2', 'kanikeenkortebroekaan']
+	}
 ];
