@@ -1,5 +1,3 @@
-let news;
-
 export const load = async ({}) => {
 	const data = await fetch('https://feeds.nos.nl/nosnieuwsalgemeen')
 		.then((response) => {

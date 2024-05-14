@@ -127,14 +127,14 @@
 			<div class="banner">
 				<div class="banner-content">
 					{#each headlines as item}
-							<h2>{item}</h2>
-							<span>●</span>
+						<h2>{item}</h2>
+						<span>●</span>
 					{/each}
 				</div>
 				<div class="banner-content">
 					{#each headlines as item}
-							<h2>{item}</h2>
-							<span>●</span>
+						<h2>{item}</h2>
+						<span>●</span>
 					{/each}
 				</div>
 			</div>
@@ -169,17 +169,14 @@
 		top: -0.3rem;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		padding: 0 1rem;
 	}
 
 	#rss-feed {
 		position: relative;
-		/* margin: -6px; */
-		/* top: 2px; */
-		/* height: fill-available; */
 		display: flex;
 		overflow: hidden;
-		/* background-color: #524040; */
 	}
 
 	#currentTime {
@@ -187,10 +184,8 @@
 		background-color: var(--c-primary-werktijden);
 		text-transform: uppercase;
 		font-size: 2rem;
-		width: 12rem;
 		padding-left: 1.5rem;
-		/* padding-right: 1rem; */
-		/* border-left: 1px solid white; */
+		width: 12rem;
 		margin: 0;
 		z-index: 1;
 	}
@@ -210,7 +205,6 @@
 	.banner {
 		position: relative;
 		color: white;
-		/* background-color: #1941a7; */
 		position: relative;
 		flex-shrink: 0;
 		display: flex;
@@ -254,7 +248,6 @@
 		border: 12px solid var(--c-primary-werktijden);
 		border-radius: 24px;
 
-		/* background-color: var(--c-background); */
 		background-image: url('/dashboard-bg.jpg');
 		background-repeat: no-repeat;
 		background-size: cover;
@@ -286,5 +279,15 @@
 	.widgets.xl {
 		max-width: min-content;
 		margin-left: auto;
+	}
+
+	@media screen and (max-width: 400px) {
+		#rss-feed {
+			display: none;
+		}
+		#currentTime {
+			width: fit-content;
+			font-size: 1.8rem;
+		}
 	}
 </style>
