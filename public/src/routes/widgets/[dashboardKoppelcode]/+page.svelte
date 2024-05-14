@@ -7,7 +7,7 @@
 		availableWidgets,
 		SearchBar,
 		FilterBlock,
-		Kebab
+		ClearDashboardBtn
 	} from '$lib/index.js';
 
 	const { dashboardKoppelcode } = $page.params;
@@ -85,7 +85,7 @@
 
 		<div class="options">
 			<FilterBlock />
-			<Kebab />
+			<ClearDashboardBtn />
 		</div>
 	</header>
 

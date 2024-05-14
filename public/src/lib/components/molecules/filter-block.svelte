@@ -9,8 +9,9 @@
 
 <style>
 	div {
-		background-color: #ebebeb;
+		display: flex;
 		width: fit-content;
+		background-color: #ebebeb;
 		padding: 2px;
 		border-radius: var(--border-radius-default);
 	}
