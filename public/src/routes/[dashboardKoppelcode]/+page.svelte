@@ -140,7 +140,7 @@
 			</div>
 		</div>
 		<span id="currentTime"></span>
-		<img src={data.QRcodeSrc} alt="" />
+		<img id="qrcode" src={data.QRcodeSrc} alt="" />
 	</div>
 </div>
 
@@ -155,11 +155,11 @@
 	.werktijden {
 		display: flex;
 		flex-direction: column;
-		height: 100dvh;
+		height: 100vh;
 	}
 
-	img {
-		height: 3rem;
+	#qrcode {
+		height: 3.4rem;
 		margin-left: 1rem;
 	}
 
@@ -189,8 +189,8 @@
 		color: white;
 		background-color: var(--c-primary-werktijden);
 		text-transform: uppercase;
-		font-size: 2rem;
-		padding-left: 1.5rem;
+		font-size: 1.8rem;
+		padding-left: 1rem;
 		width: 12rem;
 		margin: 0;
 		z-index: 1;
@@ -199,7 +199,8 @@
 	.logo {
 		position: relative;
 		top: .2rem;
-		width: 15rem;
+		width: 13rem;
+		margin: 0;
 		padding-right: 1rem;
 	}
 
@@ -207,7 +208,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 2rem;
+		font-size: 1.8rem;
 	}
 
 	.banner {
@@ -219,7 +220,7 @@
 		overflow: hidden;
 		z-index: 1;
 		font-size: 1.85rem;
-		height: 3.5rem;
+		height: 3rem;
 	}
 
 	.banner-content {
@@ -295,7 +296,13 @@
 		}
 		#currentTime {
 			width: fit-content;
-			font-size: 1.8rem;
+		}
+		#qrcode {
+			display: none;
+		}
+		.logo {
+			padding-right: 0;
+			width: 9rem;
 		}
 	}
 </style>
