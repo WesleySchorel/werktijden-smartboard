@@ -1,5 +1,6 @@
 :root {
     --c-primary-werktijden: #00AE4A;
+    /* --c-primary-werktijden: #009f66; */
     --c-text-primary: #202020;
     --c-text-secondary: #727272;
     --c-border-default: #e8e8e8;
@@ -127,8 +128,8 @@ p {
     height: 100dvh !important;
 }
 
-#templatesBtn.open::after {
-    rotate: 180deg;
+#templatesBtn.open svg {
+    transform: rotateX(180deg);
 }
 
 .widget {

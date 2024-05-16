@@ -9,7 +9,7 @@
 <div class="bottom-nav">
 	<TemplateList />
 
-	<nav>
+	<!-- <nav>
 		<a class:active={$page.url.pathname.includes('widgets')} href="/widgets">
 			<NavItem content="Widgets" icon={WidgetsIcon} />
 		</a>
@@ -19,7 +19,7 @@
 		<a class:active={$page.url.pathname.includes('settings')} href="/settings">
 			<NavItem content="Settings" icon={Gear} />
 		</a>
-	</nav>
+	</nav> -->
 </div>
 
 <style>

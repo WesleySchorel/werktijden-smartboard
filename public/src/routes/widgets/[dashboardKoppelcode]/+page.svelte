@@ -105,6 +105,9 @@
 </div>
 
 <style>
+	h1 {
+		padding: 0;
+	}
 	header {
 		position: sticky;
 		top: 0;

@@ -55,13 +55,16 @@
 	}
 
 	h1 {
+		position: relative;
+		top: -.5rem;
 		font-size: 6rem;
 		margin-bottom: 0;
 	}
 
 	p {
 		margin-bottom: 0;
-		font-size: 1.2rem;
+		font-size: 1.3rem;
+		font-weight: 500;
 	}
 	img {
 		height: 8rem;
