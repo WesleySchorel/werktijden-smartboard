@@ -17,7 +17,7 @@
 <style>
 	iframe {
 		display: block;
-		border-radius: 18px;
-		border: 3px solid transparent;
+		border-radius: 20px;
+		border: 4px solid transparent;
 	}
 </style>

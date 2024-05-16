@@ -34,7 +34,7 @@
 			<img src="" alt="" />
 		</div>
 		<div>
-			<p>{data.customer}</p>
+			<h2>{data.customer}</h2>
 			<p class="activity">
 				<span class="duration">
 					{('0' + minutes).slice(-2)}:{('0' + seconds).slice(-2)}
@@ -108,7 +108,7 @@
 	}
 	.time span {
 		display: block;
-		font-size: 1.7rem;
+		font-size: 1.4rem;
 	}
 	.duration {
 		display: none;

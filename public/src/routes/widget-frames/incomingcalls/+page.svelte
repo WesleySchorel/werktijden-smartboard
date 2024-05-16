@@ -33,7 +33,7 @@
 	<ol id="history">
 		{#if history.length == 0}
 			<li>
-				<p>Er heeft nog niemand gebeld...</p>
+				<h2>Er heeft nog niemand gebeld...</h2>
 			</li>
 		{/if}
 		{#each history as callData}
@@ -43,10 +43,6 @@
 </section>
 
 <style>
-	img {
-		height: 1.9rem;
-		margin-right: 0.6rem;
-	}
 	section {
 		background-color: white;
 	}
@@ -56,20 +52,11 @@
 		position: relative;
 		z-index: 1;
 	}
-	h1 {
-		margin: 0;
-		font-size: 2.5rem;
-		padding: 1.7rem;
-	}
 	li {
 		display: flex;
 		align-items: center;
 		background-color: rgb(240, 240, 240);
 		padding: 1.7rem;
 		height: 5.2rem;
-	}
-	p {
-		padding: 0;
-		margin: 0;
 	}
 </style>

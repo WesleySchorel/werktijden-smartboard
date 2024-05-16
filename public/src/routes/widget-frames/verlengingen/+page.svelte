@@ -18,23 +18,16 @@
 	<ol id="history">
 		{#each data.data as item}
 			<li>
-					<div>
-						<p>{item.employee.name}</p>
-						<span class="name">{item.name} <span class="dot">●</span> {item.employees_count}</span>
-					</div>
+				<div>
+					<h2>{item.employee.name}</h2>
+					<p class="name">{item.name}<span class="employees-count">{item.employees_count}</span></p>
+				</div>
 			</li>
 		{/each}
 	</ol>
 </section>
 
 <style>
-    img {
-        height: 1.9rem;
-        margin-right: .6rem;
-    }
-    .dot {
-        font-size: .5rem;
-    }
 	section {
 		background-color: white;
 	}
@@ -43,11 +36,6 @@
 		flex-direction: column-reverse;
 		position: relative;
 		z-index: 1;
-	}
-	h1 {
-		margin: 0;
-		font-size: 2.5rem;
-		padding: 1.7rem;
 	}
 	li {
 		display: flex;
@@ -59,14 +47,24 @@
 		width: 100%;
 		height: 5.2rem;
 	}
-	p {
-		margin: 0;
-		font-size: 1.7rem;
+	li > div {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
 	}
-    .name {
-        display: flex;
-        align-items: center;
-        gap: .4rem;
-        font-size: 1.2rem;
-    }
+	.name {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+	.employees-count {
+		display: grid;
+		place-items: center;
+		padding: .2rem;
+		border-radius: 6px;
+		width: 2rem;
+		color: white;
+		font-size: 1rem;
+		background-color: var(--c-primary-werktijden);
+	}
 </style>

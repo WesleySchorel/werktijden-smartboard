@@ -22,67 +22,40 @@
 		<li>
 			<div>
 				<img src={All} alt="" />
-				<p>All</p>
+				<h2>All</h2>
 			</div>
-			<span>{data.data.open}</span>
+			<p>{data.data.open}</p>
 		</li>
 		<li>
 			<div>
 				<img src={Unassigned} alt="" />
-				<p>Unassigned</p>
+				<h2>Unassigned</h2>
 			</div>
-			<span>{data.data.unassigned}</span>
+			<p>{data.data.unassigned}</p>
 		</li>
 		<li>
 			<div>
 				<img src={Assigned} alt="" />
-				<p>Assigned</p>
+				<h2>Assigned</h2>
 			</div>
-			<span>{data.data.assigned}</span>
+			<p>{data.data.assigned}</p>
 		</li>
 	</ol>
 </section>
 
 <style>
-	img {
+	li img {
 		height: 1.9rem;
 		margin-right: 0.6rem;
 	}
-	.dot {
-		font-size: 0.5rem;
-	}
 	section {
 		background-color: white;
-	}
-	#history {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		z-index: 1;
-	}
-	h1 {
-		margin: 0;
-		font-size: 2.5rem;
-		padding: 1.7rem;
-	}
-	li {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		border-top: 1px solid var(--c-border-default);
-		border-bottom: 1px solid var(--c-border-default);
-		padding: 0 1.7rem;
-		width: 100%;
-		height: 5.2rem;
 	}
 	div {
 		display: flex;
 	}
 	p {
 		margin: 0;
-		font-size: 1.7rem;
-	}
-	span {
 		font-size: 1.7rem;
 	}
 </style>

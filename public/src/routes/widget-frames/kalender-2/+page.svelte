@@ -56,7 +56,7 @@
 
 	.layered-paper h1 {
 		font-size: 5rem;
-		margin-bottom: 2.7rem;
+		margin-bottom: 0.9rem;
 	}
 
 	.layered-paper p {

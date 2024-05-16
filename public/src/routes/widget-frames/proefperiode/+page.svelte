@@ -19,8 +19,8 @@
 		{#each data.data as item}
 			<li>
 				<div>
-					<p>{item.employee.name}</p>
-					<span class="name">{item.name}</span>
+					<h2>{item.employee.name}</h2>
+					<p class="name">{item.name}</p>
 				</div>
 			</li>
 		{/each}
@@ -28,10 +28,6 @@
 </section>
 
 <style>
-	img {
-		height: 1.9rem;
-		margin-right: 0.6rem;
-	}
 	section {
 		background-color: white;
 	}
@@ -40,11 +36,6 @@
 		flex-direction: column-reverse;
 		position: relative;
 		z-index: 1;
-	}
-	h1 {
-		margin: 0;
-		font-size: 2.5rem;
-		padding: 1.7rem;
 	}
 	li {
 		display: flex;
@@ -56,14 +47,14 @@
 		width: 100%;
 		height: 5.2rem;
 	}
-	p {
-		margin: 0;
-		font-size: 1.7rem;
+	li > div {
+		display: flex;
+		flex-direction: column;
+		gap: .1rem;
 	}
 	.name {
 		display: flex;
 		align-items: center;
 		gap: 0.4rem;
-		font-size: 1.2rem;
 	}
 </style>
