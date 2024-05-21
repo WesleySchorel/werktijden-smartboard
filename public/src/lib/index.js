@@ -112,6 +112,7 @@ export const availableWidgets = [
 	{ title: 'Kalender (weekdag & datum)', size: sizes[0], preview: Kalender2, path: 'kalender-2' },
 	{ title: 'De Dam Live', size: sizes[3], path: 'de-dam-live' },
 	{ title: 'Wereldsteden Live', size: sizes[3], path: 'wereldsteden-live' },
+	{ title: 'Natuur Live', size: sizes[3], path: 'natuur-live' },
 	// { title: 'De digitale klok', x: 6, y: 4, path: 'digitaleklok-1' },
 	// { title: 'De digitale klok met seconden', x: 10, y: 4, path: 'digitaleklok-seconden' },
 ];
