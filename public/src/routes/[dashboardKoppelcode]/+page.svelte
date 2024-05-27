@@ -3,6 +3,7 @@
 	import { Widget } from '$lib/index.js';
 
 	import { pusher } from '$lib/index.js';
+	import { qr } from '@svelte-put/qr/svg';
 	import { onMount } from 'svelte';
 
 	import Werktijden from '$lib/assets/werktijden.svg';
@@ -140,7 +141,14 @@
 			</div>
 		</div>
 		<span id="currentTime"></span>
-		<img id="qrcode" src={data.QRcodeSrc} alt="" />
+		<div id="qrcode">
+			<svg
+		id="qr-code"
+		use:qr={{
+			data: `${data.QRcodeSrc}`,
+		}}
+	/>
+		</div>
 	</div>
 </div>
 
@@ -155,13 +163,19 @@
 	.werktijden {
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		min-height: 100vh;
 		background-color: var(--c-primary-werktijden);
 	}
 
 	#qrcode {
 		height: 3.4rem;
 		margin-left: 1rem;
+		background-color: white;
+	}
+
+	#qrcode > * {
+		height: 100%;
+		aspect-ratio: 1/1;
 	}
 
 	span {
@@ -251,6 +265,7 @@
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
+		flex-grow: 1;
 		justify-content: space-between;
 		padding: 6px;
 

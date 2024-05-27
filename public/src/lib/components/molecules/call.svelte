@@ -124,21 +124,4 @@
 		background-color: rgb(94, 66, 255);
 		border-radius: 60%;
 	}
-	@keyframes dots {
-		from {
-			content: '.';
-		}
-		20% {
-			content: '.';
-		}
-		40% {
-			content: '..';
-		}
-		60% {
-			content: '...';
-		}
-		to {
-			content: '...';
-		}
-	}
 </style>

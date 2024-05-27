@@ -9,9 +9,10 @@
 		FilterBlock,
 		ClearDashboardBtn
 	} from '$lib/index.js';
+	import Loading from '$lib/assets/loading.svg';
 
 	const { dashboardKoppelcode } = $page.params;
-	let enabledSettings;
+	$: enabledSettings = '';
 
 	let enabled = false;
 
@@ -22,7 +23,6 @@
 		localStorage.setItem('currentDashboard', dashboardKoppelcode);
 
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
-
 			presenceChannel.trigger('client-request-data', {});
 
 			presenceChannel.bind('client-new-data', (data) => {
@@ -78,6 +78,11 @@
 	/>
 </svelte:head>
 
+{#if enabledSettings == []}
+	<div class="state loading">
+		<img src={Loading} alt="" />
+	</div>
+{/if}
 <div class="content">
 	<h1>Widgets</h1>
 	<header>
@@ -105,6 +110,22 @@
 </div>
 
 <style>
+	.state {
+		display: grid;
+		place-items: center;
+		position: fixed;
+		top: 0;
+		height: 100vh;
+		width: 100%;
+		background-color: white;
+		font-size: 2rem;
+		z-index: 3;
+	}
+	.state.loading > img {
+		height: 5rem;
+		width: 5rem;
+		animation: 0.8s rotate infinite;
+	}
 	h1 {
 		padding: 0;
 	}

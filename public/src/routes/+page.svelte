@@ -21,8 +21,9 @@
 				img.classList.add('connected');
 				qrcode.classList.add('fadeout');
 
-				await delay(1000);
-				goto(generatedKoppelcode.replace(/\s/g, ''));
+				await delay(500);
+				console.log(generatedKoppelcode)
+				goto(generatedKoppelcode);
 			});
 		});
 	});
