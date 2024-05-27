@@ -12,9 +12,10 @@
 	import Loading from '$lib/assets/loading.svg';
 
 	const { dashboardKoppelcode } = $page.params;
-	$: enabledSettings = '';
+	let enabledSettings = [];
 
 	let enabled = false;
+	let loading = true;
 
 	onMount(() => {
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
@@ -24,8 +25,10 @@
 
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
 			presenceChannel.trigger('client-request-data', {});
+			console.log('requested');
 
 			presenceChannel.bind('client-new-data', (data) => {
+				console.log('recieved');
 				enabledSettings = data.settings;
 
 				allListItemCheckboxes.forEach((checkbox) => {
@@ -42,7 +45,9 @@
 						checkbox.checked = false;
 					}
 				});
+				loading = false;
 			});
+
 			presenceChannel.bind('client-change-setting', (data) => {
 				document.querySelector(`input[data-path="${data.path}"]`).checked = data.enabled;
 			});
@@ -66,7 +71,11 @@
 					checkbox.checked = false;
 				}
 			});
+			loading = false;
 		});
+		if (enabledSettings.length === 0) {
+			loading = false;
+		}
 	});
 </script>
 
@@ -78,7 +87,7 @@
 	/>
 </svelte:head>
 
-{#if enabledSettings == []}
+{#if loading === true}
 	<div class="state loading">
 		<img src={Loading} alt="" />
 	</div>
