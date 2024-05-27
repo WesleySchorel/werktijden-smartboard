@@ -8,5 +8,5 @@ function generateKoppelcode() {
 }
 
 function generateQRcodeSrc(koppelcode) {
-	return `https://scorenu.app/qr/highres.php?link=https://werktijden-smartboard.vercel.app/widgets/${koppelcode}`;
+	return `https://werktijden-smartboard.vercel.app/widgets/${koppelcode}`;
 }

@@ -20,6 +20,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@svelte-put/qr": "^1.2.1",
 		"pusher-js": "^8.4.0-rc2"
 	}
 }

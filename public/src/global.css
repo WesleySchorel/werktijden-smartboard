@@ -240,3 +240,30 @@ p {
         opacity: .1;
     }
 }
+
+@keyframes dots {
+    from {
+        content: '.';
+    }
+    20% {
+        content: '.';
+    }
+    40% {
+        content: '..';
+    }
+    60% {
+        content: '...';
+    }
+    to {
+        content: '...';
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
