@@ -1,1 +1,0 @@
-dit is een digitale klok met seconden
