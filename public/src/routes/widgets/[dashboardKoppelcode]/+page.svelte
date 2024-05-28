@@ -24,11 +24,13 @@
 		localStorage.setItem('currentDashboard', dashboardKoppelcode);
 
 		presenceChannel.bind('pusher:subscription_succeeded', () => {
+			presenceChannel.bind('client-dashboard-says-hi', (data) => {
+				loading = false;
+			});
+
 			presenceChannel.trigger('client-request-data', {});
-			console.log('requested');
 
 			presenceChannel.bind('client-new-data', (data) => {
-				console.log('recieved');
 				enabledSettings = data.settings;
 
 				allListItemCheckboxes.forEach((checkbox) => {
@@ -73,9 +75,6 @@
 			});
 			loading = false;
 		});
-		if (enabledSettings.length === 0) {
-			loading = false;
-		}
 	});
 </script>
 

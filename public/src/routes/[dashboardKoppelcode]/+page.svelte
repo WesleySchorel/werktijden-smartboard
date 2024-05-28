@@ -19,6 +19,13 @@
 
 	onMount(() => {
 		const presenceChannel = pusher.subscribe(`presence-${dashboardKoppelcode}`);
+		presenceChannel.trigger('client-dashboard-says-hi', { message: 'hi' });
+
+		presenceChannel.bind('pusher:subscription_succeeded', () => {
+			presenceChannel.trigger('client-dashboard-says-hi', { message: 'hi' });
+			presenceChannel.trigger('client-new-data', { settings: widgetList });
+		});
+
 		let localWidgetList = localStorage.getItem(`localWidgetListOf${dashboardKoppelcode}`);
 		localStorage.clear();
 		localStorage.setItem(`localWidgetListOf${dashboardKoppelcode}`, localWidgetList);
@@ -143,11 +150,11 @@
 		<span id="currentTime"></span>
 		<div id="qrcode">
 			<svg
-		id="qr-code"
-		use:qr={{
-			data: `${data.QRcodeSrc}`,
-		}}
-	/>
+				id="qr-code"
+				use:qr={{
+					data: `${data.QRcodeSrc}`
+				}}
+			/>
 		</div>
 	</div>
 </div>
@@ -213,7 +220,7 @@
 
 	.logo {
 		position: relative;
-		top: .2rem;
+		top: 0.2rem;
 		width: 13rem;
 		margin: 0;
 		padding-right: 1rem;
@@ -273,7 +280,8 @@
 		border: 12px solid var(--c-primary-werktijden);
 		border-radius: 24px;
 
-		background-image: url('/dashboard-bg.jpg');
+		/* background-image: url('/dashboard-bg.jpg'); */
+		background-color: var(--c-background);
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
