@@ -6,7 +6,7 @@ Wat houd deze Pull Request in en wat heb je ervoor gedaan?
 - [ ] Een onderdeel waaraan voldoen moet zijn
 - [ ] Nog een onderdeel waaraan voldoen moet zijn
 
-## Figma ontwerp en/of
+## Figma ontwerp en/of demo
 
 Screenshot van het Figma ontwerp, zodat de reviewer weet hoe het eruit hoort te zien.
 Of een demo video die de functionaliteit toont.
