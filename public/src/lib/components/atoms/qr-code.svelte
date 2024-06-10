@@ -17,17 +17,16 @@
 
 <style>
 	div {
-		display: grid;
-		place-items: center;
-		position: relative;
-		margin: 6rem 0 auto 0;
+		display: flex;
 	}
 	#check {
 		display: none;
 		position: absolute;
 	}
 	svg {
-		width: 180px;
-		height: 180px;
+		width: 280px;
+		height: 280px;
+		background-color: white;
+		border: 6px solid #333333;
 	}
 </style>

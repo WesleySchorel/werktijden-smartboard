@@ -1,54 +1,77 @@
 <script>
-	import { Step, Iphone } from '$lib/index.js';
+	import { PipeHeading, QRcode } from '$lib/index.js';
+	import werktijden from '$lib/assets/werktijden.svg';
 
 	export let koppelcode;
 	export let qrcodesrc;
 </script>
 
-<div class="koppel-container">
-	<Iphone {qrcodesrc} {koppelcode} />
-	<div class="steps">
-		<Step
-			heading={'QR-code'}
-			text={'Scan deze qr-code om te koppelen met het dashboard.'}
-		/>
+<div class="werktijden">
+	<div class="koppel-container">
+		<ol>
+			<img id="check" src={werktijden} alt="" />
+			<li>
+				<PipeHeading heading={'Scan qr-code'} />
+				Scan de qr-code om uw apparaten te koppelen.
+			</li>
+			<li>
+				<PipeHeading heading={'Activeer widgets'} />
+				Stel de widgets handmatig in of activeer een template.
+			</li>
+		</ol>
+		<div class="qr-border">
+			<QRcode {qrcodesrc} {koppelcode} />
+		</div>
 	</div>
 </div>
 
 <style>
+	.werktijden {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+		background-color: var(--c-primary-werktijden);
+	}
+
 	.koppel-container {
 		display: flex;
 		justify-content: center;
-		height: 23rem;
-		overflow: hidden;
-		gap: 1rem;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
 
-		padding-top: 2.5rem;
-		width: 90vw;
-		background-color: rgba(199, 232, 216, 0.2);
-		border-radius: 2rem;
+		border: 12px solid var(--c-primary-werktijden);
+		border-radius: 24px;
+
+		gap: 4rem;
+		color: #333333;
+		background-color: #333333;
 	}
 
-	.steps {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		text-align: left;
-		margin-bottom: 2.5rem;
+	.qr-border {
+		border: 6px solid white;
+	}
+
+	img {
+		height: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	li {
+		font-size: clamp(0.75rem, 1vw + 0.5rem, 1.25rem);
+		list-style: none;
+		margin-bottom: 2rem;
+		width: 20ch;
+		color: #d2d2d2;
 	}
 
 	@media screen and (max-width: 720px) {
-		.steps {
-			padding: 0 1rem 0 1rem;
-			margin: 0;
-			gap: 2rem;
-		}
 		.koppel-container {
-			flex-direction: column-reverse;
+			flex-direction: column;
 			margin-inline: auto;
 			gap: 2rem;
-			height: auto;
 			overflow: inherit;
+			padding: 5rem 0;
 		}
 	}
 </style>

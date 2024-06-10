@@ -2,15 +2,16 @@
     export let heading
 </script>
 
-<h3><span>&#124;</span>{heading}</h3>
+<h2><span>&#124;</span>{heading}</h2>
 
 <style>
-    h3 {
-        font-size: 1.5rem;
-        color: #202020;
+    h2 {
+        font-size: clamp(1rem, 1.25vw + 0.75rem, 1.5rem);
+        color: white;
     }
 
 	span {
+        font-size: clamp(1rem, 1.25vw + 0.75rem, 1.5rem);
 		color: #009f66;
         margin-right: 0.3rem;
 	}
