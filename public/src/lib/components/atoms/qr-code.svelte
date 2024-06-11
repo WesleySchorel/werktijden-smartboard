@@ -12,16 +12,11 @@
 			logo: 'werktijden-logo.svg'
 		}}
 	/>
-	<img id="check" src={check} alt="" />
 </div>
 
 <style>
 	div {
 		display: flex;
-	}
-	#check {
-		display: none;
-		position: absolute;
 	}
 	svg {
 		width: 280px;

@@ -73,6 +73,7 @@ p {
     position: relative;
     z-index: 1;
 }
+
 #history li {
     display: flex;
     align-items: center;
@@ -223,11 +224,11 @@ p {
 
 @keyframes connected {
     from {
-        scale: 0;
+        opacity: 0;
     }
 
     to {
-        scale: 1;
+        opacity: 1;
     }
 }
 
@@ -245,15 +246,19 @@ p {
     from {
         content: '.';
     }
+
     20% {
         content: '.';
     }
+
     40% {
         content: '..';
     }
+
     60% {
         content: '...';
     }
+
     to {
         content: '...';
     }
@@ -263,6 +268,7 @@ p {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }

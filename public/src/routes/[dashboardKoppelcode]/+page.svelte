@@ -280,7 +280,7 @@
 		border: 12px solid var(--c-primary-werktijden);
 		border-radius: 24px;
 
-		/* background-image: url('/dashboard-bg.jpg'); */
+		background-image: url('/dashboard-bg.jpg');
 		background-color: var(--c-background);
 		background-repeat: no-repeat;
 		background-size: cover;

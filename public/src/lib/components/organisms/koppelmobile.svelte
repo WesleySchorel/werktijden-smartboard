@@ -1,55 +1,53 @@
 <script>
 	import { PipeHeading, QRcode } from '$lib/index.js';
-	import werktijden from '$lib/assets/werktijden.svg';
+	import werktijden from '$lib/assets/werktijden-green.svg';
+	import Check from '$lib/assets/check.svg';
 
 	export let koppelcode;
 	export let qrcodesrc;
 </script>
 
-<div class="werktijden">
-	<div class="koppel-container">
-		<ol>
-			<img id="check" src={werktijden} alt="" />
-			<li>
-				<PipeHeading heading={'Scan qr-code'} />
-				Scan de qr-code om uw apparaten te koppelen.
-			</li>
-			<li>
-				<PipeHeading heading={'Activeer widgets'} />
-				Stel de widgets handmatig in of activeer een template.
-			</li>
-		</ol>
-		<div class="qr-border">
+<div class="koppel-container">
+	<ol>
+		<img src={werktijden} alt="" />
+		<li>
+			<PipeHeading heading={'Scan qr-code'} />
+			Scan de qr-code om uw apparaten te koppelen.
+		</li>
+		<li>
+			<PipeHeading heading={'Activeer widgets'} />
+			Stel de widgets handmatig in of activeer een template.
+		</li>
+	</ol>
+	<div class="qr-border">
+		<div id="qr-code">
 			<QRcode {qrcodesrc} {koppelcode} />
 		</div>
+		<img id="check" src={Check} alt="" />
 	</div>
 </div>
 
 <style>
-	.werktijden {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-		background-color: var(--c-primary-werktijden);
+	.qr-border {
+		position: relative;
 	}
-
+	#check {
+		display: none;
+		height: 10rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 	.koppel-container {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		height: 100vh;
-		width: 100vw;
-
-		border: 12px solid var(--c-primary-werktijden);
-		border-radius: 24px;
+		height: auto;
+		width: 100%;
 
 		gap: 4rem;
 		color: #333333;
-		background-color: #333333;
-	}
-
-	.qr-border {
-		border: 6px solid white;
 	}
 
 	img {
@@ -58,11 +56,11 @@
 	}
 
 	li {
-		font-size: clamp(0.75rem, 1vw + 0.5rem, 1.25rem);
+		font-size: 1.5rem;
 		list-style: none;
 		margin-bottom: 2rem;
 		width: 20ch;
-		color: #d2d2d2;
+		color: #888888;
 	}
 
 	@media screen and (max-width: 720px) {

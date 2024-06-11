@@ -6,12 +6,12 @@
 
 <style>
     h2 {
-        font-size: clamp(1rem, 1.25vw + 0.75rem, 1.5rem);
-        color: white;
+        font-size: 1.75rem;
+        color: #202020;
     }
 
 	span {
-        font-size: clamp(1rem, 1.25vw + 0.75rem, 1.5rem);
+        font-size: 1.75rem;
 		color: #009f66;
         margin-right: 0.3rem;
 	}
