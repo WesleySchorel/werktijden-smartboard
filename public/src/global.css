@@ -41,8 +41,10 @@ body {
 }
 
 h1 {
+    display: flex;
+    align-items: center;
     margin: 0;
-    font-size: 2.2rem;
+    font-size: 2rem;
     padding: 1.4rem;
     line-height: 100%;
 }
@@ -53,17 +55,17 @@ h1 img {
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 110%;
 }
 
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     line-height: 110%;
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 400;
 }
 

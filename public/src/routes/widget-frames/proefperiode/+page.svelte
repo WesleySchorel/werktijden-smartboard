@@ -19,8 +19,8 @@
 		{#each data.data as item}
 			<li>
 				<div>
-					<h2>{item.employee.name}</h2>
-					<p class="name">{item.name}</p>
+					<h2>{item.name}</h2>
+					<p class="name">{item.employee.name}</p>
 				</div>
 			</li>
 		{/each}
