@@ -32,6 +32,7 @@ import PreviewWeer1 from '$lib/assets/previews/widgets/weer-1.jpg';
 import PreviewWeerUren from '$lib/assets/previews/widgets/weer-uren.jpg';
 import PreviewWeerWeek from '$lib/assets/previews/widgets/weer-week.jpg';
 import PreviewWeerAlles from '$lib/assets/previews/widgets/weer-alles.jpg';
+import PreviewKanikeenkortebroekaan from '$lib/assets/previews/widgets/kanikeenkortebroekaan.jpg';
 // import PreviewAnalogeklok1 from '$lib/assets/previews/widgets/analogeklok-1.jpg';
 import Analogeklok from '$lib/assets/previews/widgets/analogeklok.jpg';
 import Digitaleklok from '$lib/assets/previews/widgets/digitaleklok-1.jpg';
@@ -82,7 +83,7 @@ export const availableWidgets = [
 	{ title: 'Weer met urenvoorspelling', size: sizes[1], preview: PreviewWeerUren, path: 'weer-uren' },
 	// { title: 'Weer met weekvoorspelling', size: sizes[1], preview: PreviewWeerWeek, path: 'weer-week' },
 	{ title: 'Weer met alles', size: sizes[2], preview: PreviewWeerAlles, path: 'weer-uren-week' },
-	{ title: 'Kan ik een korte broek aan?', size: sizes[1], path: 'kanikeenkortebroekaan' },
+	{ title: 'Kan ik een korte broek aan?', size: sizes[1], preview: PreviewKanikeenkortebroekaan, path: 'kanikeenkortebroekaan' },
 	{ title: 'Incoming calls', size: sizes[3], preview: IncomingCalls, path: 'incomingcalls' },
 	{ title: 'Proefperiodes', size: sizes[2], preview: PreviewProefperiodes, path: 'proefperiode' },
 	{ title: 'Verlengingen', size: sizes[2], preview: PreviewVerlengingen, path: 'verlengingen' },
