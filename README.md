@@ -7,7 +7,9 @@ Wanneer de gebruiker de ''werktijden-smartboard'' website opent op een smarttv h
 
 `Voorbeeld Smarttv:`
 
-(video)
+https://github.com/WesleySchorel/werktijden-smartboard/assets/112857487/4ab24855-b3f5-4206-b528-138e897e774f
+
+
 
 `Voorbeeld telefoon:`
 
