@@ -115,9 +115,21 @@
 		<span id="no-content" class="state hide">Geen widgets met: </span>
 		<span id="no-active">Er staan momenteel geen widgets aan.</span>
 	</ul>
+	<section>
+		<h2>Werktijden Smartboard</h2>
+		<span>Versie: 1.0.0</span>
+	</section>
 </div>
 
 <style>
+	section {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	section > * {
+		font-size: 0.8rem;
+	}
 	.state.loading {
 		display: grid;
 		place-items: center;
@@ -160,7 +172,7 @@
 		width: 93%;
 		max-width: 30rem;
 		margin-inline: auto;
-		padding-bottom: 8rem;
+		padding-bottom: 5rem;
 		margin-top: 2rem;
 	}
 	ul {

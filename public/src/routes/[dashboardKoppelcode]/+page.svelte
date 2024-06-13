@@ -280,10 +280,10 @@
 		border: 12px solid var(--c-primary-werktijden);
 		border-radius: 24px;
 
-		background-image: url('/dashboard-bg.jpg');
+		background-image: url('/werktijden-bg.svg');
 		background-color: var(--c-background);
-		background-repeat: no-repeat;
-		background-size: cover;
+		background-repeat: repeat;
+		background-size: 30rem;
 	}
 
 	.dashboard > div {

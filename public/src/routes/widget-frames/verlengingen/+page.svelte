@@ -2,8 +2,6 @@
 	import CheckBadge from '$lib/assets/check-badge.svg';
 
 	export let data;
-
-	console.log(data);
 </script>
 
 <svelte:head>
@@ -65,7 +63,8 @@
 		gap: 0.4rem;
 		width: 100%;
 	}
-	.company, .name {
+	.company,
+	.name {
 		display: block;
 
 		white-space: nowrap;
@@ -75,7 +74,7 @@
 	.employees-count {
 		display: grid;
 		place-items: center;
-		padding: 0.1rem .3rem;
+		padding: 0.1rem 0.3rem;
 		border-radius: 6px;
 		width: fit-content;
 		color: white;

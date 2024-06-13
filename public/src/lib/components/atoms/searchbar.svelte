@@ -97,6 +97,7 @@
 		border: var(--border-default);
 		background-color: white;
 		transition: 0.2s;
+		font-size: 1rem;
 	}
 	input:hover {
 		background-color: var(--c-background);
@@ -115,8 +116,8 @@
 	}
 	input:focus + span,
 	input:not(:placeholder-shown) + span {
-		top: -0.5rem;
-		font-size: 0.8rem;
+		top: -0.7rem;
+		font-size: 1rem;
 		color: var(--c-primary-werktijden);
 		background-color: var(--c-background);
 		border: 2px solid var(--c-background);
