@@ -33,7 +33,7 @@
 		<div>
 			<img src="" alt="" />
 		</div>
-		<div>
+		<div class="status">
 			<h2>{data.customer}</h2>
 			<p class="activity">
 				<span class="duration">
@@ -92,11 +92,23 @@
 	.call-layout {
 		display: flex;
 		gap: 0.6rem;
+
+		width: 75%;
 	}
 	.call-layout > div {
 		display: flex;
 		flex-direction: column;
 		gap: 0.1rem;
+	}
+	.call-layout .status {
+		width: 100%;
+	}
+	.call-layout .status h2 {
+		display: block;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	p {
 		font-size: 1.7rem;

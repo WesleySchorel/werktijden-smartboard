@@ -50,11 +50,14 @@
 	li > div {
 		display: flex;
 		flex-direction: column;
-		gap: .1rem;
+		gap: 0.1rem;
+		width: 100%;
 	}
-	.name {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
+	h2, .name {
+		display: block;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 </style>

@@ -57,18 +57,27 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.1rem;
+		width: 100%;
 	}
 	h2 {
 		display: flex;
 		align-items: center;
 		gap: 0.4rem;
+		width: 100%;
+	}
+	.company, .name {
+		display: block;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	.employees-count {
 		display: grid;
 		place-items: center;
-		padding: 0.1rem;
+		padding: 0.1rem .3rem;
 		border-radius: 6px;
-		width: 2rem;
+		width: fit-content;
 		color: white;
 		font-size: 1.1rem;
 		background-color: var(--c-primary-werktijden);

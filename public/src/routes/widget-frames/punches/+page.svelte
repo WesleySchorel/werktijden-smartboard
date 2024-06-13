@@ -21,12 +21,16 @@
 	<ol id="history">
 		{#each data.data as item}
 			<li>
-				<div>
+				<div class="employee">
 					<img src={item.employee.avatar} alt="" />
 					<h2>{item.employee.name}</h2>
 				</div>
 				<div class="time">
-					<span>{('0' + new Date(item.timestamp).getHours()).slice(-2)}:{('0' + new Date(item.timestamp).getMinutes()).slice(-2)}</span>
+					<span
+						>{('0' + new Date(item.timestamp).getHours()).slice(-2)}:{(
+							'0' + new Date(item.timestamp).getMinutes()
+						).slice(-2)}</span
+					>
 				</div>
 			</li>
 		{/each}
@@ -35,7 +39,7 @@
 
 <style>
 	li {
-		animation: .5s flash forwards;
+		animation: 0.5s flash forwards;
 	}
 	li img {
 		height: 2rem;
@@ -48,14 +52,20 @@
 		display: flex;
 		align-items: center;
 	}
-	p {
-		margin: 0;
-		font-size: 1.7rem;
+	.employee {
+		width: 80%;
+	}
+
+	.employee h2 {
+		display: block;
+
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	.time span {
 		display: block;
 		font-size: 1.4rem;
-		margin-left: 2rem;
 	}
 	@keyframes flash {
 		from {
