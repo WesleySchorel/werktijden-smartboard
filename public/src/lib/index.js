@@ -40,6 +40,7 @@ import IncomingCalls from '$lib/assets/previews/widgets/incomingcalls.jpg';
 import PreviewProefperiodes from '$lib/assets/previews/widgets/proefperiodes.jpg';
 import PreviewVerlengingen from '$lib/assets/previews/widgets/verlengingen.jpg';
 import PreviewTickets from '$lib/assets/previews/widgets/tickets.jpg';
+import PreviewIngeklokteMedewerkers from '$lib/assets/previews/widgets/ingeklokte-medewerkers.jpg';
 import Kalender1 from '$lib/assets/previews/widgets/kalender-1.jpg';
 import Kalender2 from '$lib/assets/previews/widgets/kalender-2.jpg';
 import Actualiteitbanner from '$lib/assets/previews/widgets/actualiteitbanner.jpg';
@@ -88,7 +89,7 @@ export const availableWidgets = [
 	{ title: 'Proefperiodes', size: sizes[2], preview: PreviewProefperiodes, path: 'proefperiode' },
 	{ title: 'Verlengingen', size: sizes[2], preview: PreviewVerlengingen, path: 'verlengingen' },
 	{ title: 'Tickets', size: sizes[2], preview: PreviewTickets, path: 'tickets' },
-	{ title: 'Ingeklokte medewerkers', size: sizes[2], preview: PreviewTickets, path: 'punches' },
+	{ title: 'Ingeklokte medewerkers', size: sizes[2], preview: PreviewIngeklokteMedewerkers, path: 'punches' },
 	{ title: 'Analoge klok', size: sizes[0], preview: Analogeklok, path: 'analogeklok-2' },
 	{ title: 'Digitale klok', size: sizes[0], preview: Digitaleklok, path: 'digitaleklok-1' },
 	// { title: 'Kalender (datum)', preview: Kalender1, path: 'kalender-1' },

@@ -34,6 +34,9 @@
 </section>
 
 <style>
+	section {
+		background-color: white;
+	}
 	#history {
 		display: flex;
 		flex-direction: column-reverse;

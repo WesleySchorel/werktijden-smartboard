@@ -13,6 +13,5 @@
 <style>
 	iframe {
 		position: absolute;
-		border-radius: var(--border-radius-widget);
 	}
 </style>

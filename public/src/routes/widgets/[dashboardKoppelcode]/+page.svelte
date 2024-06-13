@@ -118,7 +118,7 @@
 </div>
 
 <style>
-	.state {
+	.state.loading {
 		display: grid;
 		place-items: center;
 		position: fixed;

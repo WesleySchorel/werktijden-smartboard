@@ -20,7 +20,6 @@
 		text-transform: uppercase;
 		background-color: #009f66;
 		background-image: linear-gradient(to right, #009f66, #008e5b);
-		border-radius: var(--border-radius-widget) var(--border-radius-widget) 0 0;
 
 		width: 100%;
 		padding: 0.45rem 0 0.36rem 0;
@@ -48,7 +47,7 @@
 			0 8px 1px 0 rgba(0, 0, 0, 0.2),
 			0 15px 0 0 white,
 			0 16px 1px 0 rgba(0, 0, 0, 0.2);
-		border-radius: 0 0 var(--border-radius-widget) var(--border-radius-widget);
+		border-radius: 0 0 8px 8px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
