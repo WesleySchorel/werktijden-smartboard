@@ -24,7 +24,7 @@
 							>{item.employees_count}</span
 						>
 					</h2>
-					<p class="name">{item.employee.name}</p>
+					<p class="name">{item.employee}</p>
 				</div>
 			</li>
 		{/each}

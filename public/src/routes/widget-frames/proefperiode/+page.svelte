@@ -20,7 +20,7 @@
 			<li>
 				<div>
 					<h2>{item.name}</h2>
-					<p class="name">{item.employee.name}</p>
+					<p class="name">{item.employee}</p>
 				</div>
 			</li>
 		{/each}
