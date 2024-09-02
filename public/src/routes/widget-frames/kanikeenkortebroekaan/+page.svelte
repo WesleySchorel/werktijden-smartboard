@@ -8,7 +8,7 @@
 
 	$: gtemp = Math.round(weatherData.liveweer[0].gtemp);
 
-	$: korteBroekAan = gtemp > 20;
+	$: korteBroekAan = gtemp > 15;
 </script>
 
 <svelte:head>
